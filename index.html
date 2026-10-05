@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO -->
+    <title>AgendaAI - Automatiza tus Citas con IA</title>
+    <meta name="description" content="AgendaAI automatiza la gestión de citas con IA. Integra Telegram, WhatsApp, Google Calendar y Cal.com. Ahorra 15h/semana y reduce no-shows un 80%. Desde $29/mes.">
+    <meta name="author" content="AgendaAI">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#4F46E5">
+    <link rel="canonical" href="https://agendaai.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agendaai.com/">
+    <meta property="og:site_name" content="AgendaAI">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:title" content="AgendaAI - Automatiza tus Citas con IA">
+    <meta property="og:description" content="Sistema inteligente de reservas con IA. Integra Telegram, WhatsApp, Google Calendar y Cal.com. Desde $29/mes.">
+    <meta property="og:image" content="https://agendaai.com/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Panel de AgendaAI mostrando reservas automáticas con IA">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@agendaai">
+    <meta name="twitter:url" content="https://agendaai.com/">
+    <meta name="twitter:title" content="AgendaAI - Automatiza tus Citas con IA">
+    <meta name="twitter:description" content="Sistema inteligente de reservas con IA. Integra Telegram, WhatsApp, Google Calendar y Cal.com. Desde $29/mes.">
+    <meta name="twitter:image" content="https://agendaai.com/images/og-image.jpg">
+    <meta name="twitter:image:alt" content="Panel de AgendaAI mostrando reservas automáticas con IA">
+
+    <!-- Structured Data: Software -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "AgendaAI",
+        "url": "https://agendaai.com/",
+        "image": "https://agendaai.com/images/og-image.jpg",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "softwareVersion": "2.0",
+        "description": "Sistema inteligente de reservas con IA que automatiza la gestión de citas integrando Telegram, WhatsApp, Google Calendar y Cal.com.",
+        "offers": {
+            "@type": "Offer",
+            "url": "https://agendaai.com/#pricing",
+            "price": "29.00",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        },
+        "featureList": [
+            "Agendamiento automático por IA",
+            "Integración Telegram y WhatsApp",
+            "Sincronización Google Calendar y Cal.com",
+            "Recordatorios automáticos",
+            "Multi-idioma y multi-zona horaria"
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "127"
+        }
+    }
+    </script>
+
+    <!-- Structured Data: FAQ (rich results) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "¿Cómo funciona la prueba gratuita de 14 días?", "acceptedAnswer": {"@type": "Answer", "text": "Acceso completo al plan Professional durante 14 días sin tarjeta de crédito."}},
+            {"@type": "Question", "name": "¿Necesito conocimientos técnicos para configurarlo?", "acceptedAnswer": {"@type": "Answer", "text": "No. La configuración guiada tarda menos de 10 minutos."}},
+            {"@type": "Question", "name": "¿Es seguro para datos de mis clientes?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Cifrado AES-256, SOC2 Type II, GDPR y HIPAA-ready."}},
+            {"@type": "Question", "name": "¿Puedo migrar mis citas actuales?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Importamos desde CSV, Google Calendar, Calendly y Cal.com."}}
+        ]
+    }
+    </script>
+
+    <!-- WebMCP discovery for AI browsing agents -->
+    <link rel="mcp-actions" href="/mcp-actions.json">
+
+    <!-- Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="apple-touch-icon" href="images/favicon.svg">
+</head>
+<body>
+    <a href="#main" class="skip-link">Saltar al contenido principal</a>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <header class="header">
+        <nav class="nav container" aria-label="Navegación principal">
+            <a href="/" class="logo" aria-label="AgendaAI - Inicio">
+                <svg class="logo-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
+                    <rect width="32" height="32" rx="8" fill="currentColor"/>
+                    <path d="M8 10h16M8 16h12M8 22h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+                <span class="logo-text">AgendaAI</span>
+            </a>
+
+            <div class="nav-links" id="nav-menu">
+                <a href="#features" class="nav-link">Características</a>
+                <a href="#demo" class="nav-link">Demo</a>
+                <a href="#pricing" class="nav-link">Precios</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#contact" class="nav-link">Contactar</a>
+                <a href="#pricing" class="nav-link btn btn-primary btn-sm">Comenzar Gratis</a>
+            </div>
+
+            <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
+                <span class="hamburger" aria-hidden="true"></span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="main">
+        <!-- Hero -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <span class="hero-badge"><span class="pulse-dot" aria-hidden="true"></span> Nuevo: Agentes IA con WebMCP</span>
+                    <h1 id="hero-title">Automatiza tus Citas con <span class="highlight">Inteligencia Artificial</span></h1>
+                    <p class="hero-description">AgendaAI gestiona tus reservas 24/7 por Telegram, WhatsApp y Web. Se sincroniza con Google Calendar y Cal.com. Reduce no-shows un 80% y ahorra 15h/semana.</p>
+
+                    <form class="hero-form" action="/api/trial" method="POST"
+                        data-mcp-action="start-trial"
+                        data-mcp-description="Iniciar prueba gratuita de 14 días de AgendaAI. Requiere email."
+                        data-mcp-params='{"required": ["email"], "optional": ["plan"]}'>
+                        <label class="sr-only" for="hero-email">Email de trabajo</label>
+                        <input type="email" id="hero-email" name="email" required autocomplete="email"
+                            placeholder="tu@empresa.com"
+                            data-mcp-param="email"
+                            data-mcp-description="Email para crear la cuenta de prueba">
+                        <input type="hidden" name="plan" value="professional" data-mcp-param="plan" data-mcp-description="Plan a probar">
+                        <button type="submit" class="btn btn-primary btn-lg">Empezar Gratis 14 Días</button>
+                    </form>
+                    <p class="hero-micro">Sin tarjeta de crédito · Configuración en 10 min · Cancela en 1 clic</p>
+                    <p class="hero-alt"><a href="#demo">Ver demo de 2 min ↓</a></p>
+
+                    <div class="hero-trust">
+                        <span class="trust-text">Confiado por +500 negocios</span>
+                        <div class="trust-badges">
+                            <span class="badge"><span role="img" aria-label="4.9 de 5 estrellas">★★★★★</span> 4.9/5</span>
+                            <span class="badge">SOC2 Type II</span>
+                            <span class="badge">GDPR Ready</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="demo-window">
+                        <div class="window-header">
+                            <div class="window-controls" aria-hidden="true"><span></span><span></span><span></span></div>
+                            <div class="window-title">AgendaAI — Chat en vivo</div>
+                            <span class="live-badge" aria-hidden="true"><span class="pulse-dot"></span> En vivo</span>
+                        </div>
+                        <div class="chat-demo" role="log" aria-live="polite" aria-label="Ejemplo de conversación con AgendaAI (no interactivo)">
+                            <div class="message bot">
+                                <div class="message-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5h-2v-2h2v2zm0-4.5h-2v-6h2v6z"/></svg></div>
+                                <div class="message-content">¡Hola! Soy tu asistente de citas. ¿En qué puedo ayudarte hoy?</div>
+                            </div>
+                            <div class="message user">
+                                <div class="message-content">Quiero agendar una cita para el martes a las 10am</div>
+                            </div>
+                            <div class="message bot">
+                                <div class="message-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5h-2v-2h2v2zm0-4.5h-2v-6h2v6z"/></svg></div>
+                                <div class="message-content">Perfecto. Tengo disponibilidad el martes a las 10:00. ¿Confirmo la reserva?</div>
+                            </div>
+                            <div class="message user">
+                                <div class="message-content">Sí, confirma por favor</div>
+                            </div>
+                            <div class="message bot">
+                                <div class="message-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5h-2v-2h2v2zm0-4.5h-2v-6h2v6z"/></svg></div>
+                                <div class="message-content"><span aria-hidden="true">✅</span> ¡Reserva confirmada! Martes 10:00. Añadida a Google Calendar + recordatorio 24h antes.</div>
+                            </div>
+                        </div>
+                        <div class="chat-input-area" aria-hidden="true">
+                            <div class="fake-input">Escribe tu mensaje…</div>
+                            <div class="fake-send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Logos / social proof strip -->
+        <section class="logos" aria-label="Empresas que usan AgendaAI">
+            <div class="container logos-row">
+                <span>Clínicas</span><span aria-hidden="true">·</span>
+                <span>Consultorías</span><span aria-hidden="true">·</span>
+                <span>Salones</span><span aria-hidden="true">·</span>
+                <span>Gimnasios</span><span aria-hidden="true">·</span>
+                <span>Talleres</span>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section id="features" class="features" aria-labelledby="features-title">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="features-title">Todo lo que necesitas para <span class="highlight">automatizar tus citas</span></h2>
+                    <p class="section-subtitle">AgendaAI combina IA conversacional con integraciones nativas para que tus clientes reserven sin fricción.</p>
+                </header>
+
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        </div>
+                        <h3>Chat IA Natural</h3>
+                        <p>Tus clientes hablan como con una persona. La IA entiende contexto, preguntas complejas y gestiona la reserva completa.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                        </div>
+                        <h3>Telegram &amp; WhatsApp</h3>
+                        <p>Atención donde están tus clientes. Bots nativos en ambas plataformas con respuestas instantáneas 24/7.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                        </div>
+                        <h3>Google Calendar &amp; Cal.com</h3>
+                        <p>Sincronización bidireccional en tiempo real. Evita dobles reservas y gestiona disponibilidad desde un solo lugar.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-3-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                        </div>
+                        <h3>Recordatorios Inteligentes</h3>
+                        <p>Recordatorios automáticos por chat y email 24h y 1h antes. Reduce no-shows hasta un 80%.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        </div>
+                        <h3>Multi-zona &amp; Multi-idioma</h3>
+                        <p>Detección automática de zona horaria e idioma. Soporte para español, inglés, portugués y más.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 6 11 12 11z"/></svg>
+                        </div>
+                        <h3>WebMCP Ready</h3>
+                        <p>Primera plataforma de citas compatible con WebMCP. Los agentes IA pueden descubrir y completar reservas en tu web.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section id="how" class="how" aria-labelledby="how-title">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="how-title">Activa tu agenda en <span class="highlight">3 pasos</span></h2>
+                    <p class="section-subtitle">Sin código. Sin fricción. En menos de 10 minutos.</p>
+                </header>
+                <ol class="steps">
+                    <li class="step"><span class="step-num" aria-hidden="true">1</span><h3>Conecta tu calendario</h3><p>Google Calendar o Cal.com con un clic. Importamos tus citas actuales gratis.</p></li>
+                    <li class="step"><span class="step-num" aria-hidden="true">2</span><h3>Activa tus canales</h3><p>Telegram, WhatsApp y widget web. La IA responde con el tono de tu marca.</p></li>
+                    <li class="step"><span class="step-num" aria-hidden="true">3</span><h3>La IA agenda por ti</h3><p>Reservas, recordatorios y reprogramaciones en automático, 24/7.</p></li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Demo -->
+        <section id="demo" class="demo" aria-labelledby="demo-title">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="demo-title">Mira cómo funciona en <span class="highlight">tiempo real</span></h2>
+                    <p class="section-subtitle">Prueba la experiencia completa sin registrarte. Chatea con el agente y reserva una cita de prueba.</p>
+                </header>
+
+                <div class="demo-container">
+                    <button class="video-placeholder" aria-haspopup="dialog" aria-controls="demo-dialog">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                            <polygon points="23 7 16 12 23 17 23 7"/>
+                            <rect x="1" y="5" width="15" height="14" rx="2"/>
+                        </svg>
+                        <span>Ver demo interactiva (2 min)</span>
+                    </button>
+
+                    <div class="demo-stats">
+                        <div class="stat">
+                            <span class="stat-value">98%</span>
+                            <span class="stat-label">Tasa de éxito en reservas</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">&lt;3s</span>
+                            <span class="stat-label">Tiempo medio por reserva</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">24/7</span>
+                            <span class="stat-label">Disponibilidad total</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">99.9%</span>
+                            <span class="stat-label">Uptime garantizado</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials" class="testimonials" aria-labelledby="testimonials-title">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="testimonials-title">Lo que dicen nuestros <span class="highlight">clientes</span></h2>
+                    <p class="section-subtitle">Negocios de todos los tamaños confían en AgendaAI para automatizar sus reservas.</p>
+                </header>
+
+                <div class="testimonials-grid">
+                    <figure class="testimonial-card">
+                        <div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
+                        <blockquote><p>“AgendaAI nos ahorra 20 horas semanales. El bot de WhatsApp gestiona todo: citas, recordatorios, reprogramaciones. El ROI fue inmediato.”</p></blockquote>
+                        <figcaption class="testimonial-author">
+                            <div class="author-avatar" aria-hidden="true">MC</div>
+                            <div class="author-info"><strong>María González</strong><span>Directora, Clínica Dental Sonríe</span></div>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="testimonial-card">
+                        <div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
+                        <blockquote><p>“La integración con Cal.com fue perfecta. Mis clientes reservan desde la web y se sincroniza al instante con Google Calendar. Cero dobles reservas.”</p></blockquote>
+                        <figcaption class="testimonial-author">
+                            <div class="author-avatar" aria-hidden="true">JR</div>
+                            <div class="author-info"><strong>Juan Ruiz</strong><span>Fundador, Ruiz Asesores Legales</span></div>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="testimonial-card">
+                        <div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
+                        <blockquote><p>“El agente IA entiende contexto: ‘la semana que viene por la tarde’ y encuentra huecos reales. Mis clientes flipan con lo natural que es.”</p></blockquote>
+                        <figcaption class="testimonial-author">
+                            <div class="author-avatar" aria-hidden="true">AL</div>
+                            <div class="author-info"><strong>Ana López</strong><span>Owner, Studio Pilates Centro</span></div>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section id="pricing" class="pricing" aria-labelledby="pricing-title">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="pricing-title">Precios transparentes, <span class="highlight">sin sorpresas</span></h2>
+                    <p class="section-subtitle">Elige el plan que se adapte a tu negocio. Todos incluyen prueba gratuita de 14 días. Sin tarjeta de crédito.</p>
+                </header>
+
+                <div class="pricing-toggle">
+                    <span id="lbl-monthly">Mensual</span>
+                    <button type="button" role="switch" aria-checked="false" aria-labelledby="lbl-monthly lbl-yearly" id="billing-toggle" class="toggle-switch">
+                        <span class="toggle-slider" aria-hidden="true"></span>
+                    </button>
+                    <span id="lbl-yearly">Anual <span class="badge-save">-20%</span></span>
+                </div>
+                <div aria-live="polite" class="sr-only" id="price-announce"></div>
+
+                <div class="pricing-grid" role="list" aria-label="Planes de precios">
+                    <article class="pricing-card" role="listitem" data-plan="starter">
+                        <header class="pricing-header">
+                            <h3>Starter</h3>
+                            <div class="price">
+                                <span class="currency">$</span>
+                                <span class="amount" data-monthly="29" data-yearly="23">29</span>
+                                <span class="period">/mes</span>
+                            </div>
+                            <p class="pricing-desc">Para pequeños negocios que empiezan</p>
+                        </header>
+                        <ul class="pricing-features">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Hasta 100 citas/mes</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> 1 canal (Telegram o WhatsApp)</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Google Calendar + Cal.com</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Recordatorios automáticos</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Multi-idioma</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Soporte email 48h</li>
+                        </ul>
+                        <form action="/api/subscribe" method="POST" class="pricing-cta-form"
+                            data-mcp-action="subscribe-plan"
+                            data-mcp-description="Suscribirse al plan Starter de AgendaAI por $29/mes. Requiere email."
+                            data-mcp-params='{"required": ["email", "plan"], "optional": ["payment_method_id"]}'>
+                            <label class="sr-only" for="email-starter">Email para plan Starter</label>
+                            <input type="email" id="email-starter" name="email" required autocomplete="email" placeholder="tu@empresa.com"
+                                data-mcp-param="email" data-mcp-description="Email para crear la suscripción Starter">
+                            <input type="hidden" name="plan" value="starter" data-mcp-param="plan" data-mcp-description="Plan seleccionado">
+                            <button type="submit" class="btn btn-outline btn-block">Empezar Gratis 14 Días</button>
+                        </form>
+                    </article>
+
+                    <article class="pricing-card popular" role="listitem" data-plan="professional" aria-label="Plan Professional - Recomendado">
+                        <div class="popular-badge">Más Popular</div>
+                        <header class="pricing-header">
+                            <h3>Professional</h3>
+                            <div class="price">
+                                <span class="currency">$</span>
+                                <span class="amount" data-monthly="79" data-yearly="63">79</span>
+                                <span class="period">/mes</span>
+                            </div>
+                            <p class="pricing-desc">Para PYMES en crecimiento</p>
+                        </header>
+                        <ul class="pricing-features">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Hasta 1,000 citas/mes</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Telegram + WhatsApp + Web</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Google Calendar + Cal.com + API</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Recordatorios + reprogramación IA</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Multi-idioma + multi-zona</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Analytics y reportes</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Soporte prioritario 24h</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> WebMCP + API acceso</li>
+                        </ul>
+                        <form action="/api/subscribe" method="POST" class="pricing-cta-form"
+                            data-mcp-action="subscribe-plan"
+                            data-mcp-description="Suscribirse al plan Professional de AgendaAI por $79/mes. Requiere email."
+                            data-mcp-params='{"required": ["email", "plan"], "optional": ["payment_method_id"]}'>
+                            <label class="sr-only" for="email-pro">Email para plan Professional</label>
+                            <input type="email" id="email-pro" name="email" required autocomplete="email" placeholder="tu@empresa.com"
+                                data-mcp-param="email" data-mcp-description="Email para crear la suscripción Professional">
+                            <input type="hidden" name="plan" value="professional" data-mcp-param="plan" data-mcp-description="Plan seleccionado">
+                            <button type="submit" class="btn btn-primary btn-block">Empezar Gratis 14 Días</button>
+                        </form>
+                    </article>
+
+                    <article class="pricing-card" role="listitem" data-plan="enterprise">
+                        <header class="pricing-header">
+                            <h3>Enterprise</h3>
+                            <div class="price">
+                                <span class="currency">$</span>
+                                <span class="amount" data-monthly="299" data-yearly="239">299</span>
+                                <span class="period">/mes</span>
+                            </div>
+                            <p class="pricing-desc">Para empresas y franquicias</p>
+                        </header>
+                        <ul class="pricing-features">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Citas ilimitadas</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Canales ilimitados + API completa</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Multi-sede + multi-usuario</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> SSO + RBAC + Auditoría</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> SLA 99.9% + soporte 24/7</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Onboarding dedicado</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Contrato personalizado</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> WebMCP + Webhooks</li>
+                        </ul>
+                        <form action="/api/sales" method="POST" class="pricing-cta-form"
+                            data-mcp-action="contact-sales"
+                            data-mcp-description="Contactar ventas para plan Enterprise personalizado. Requiere email y empresa."
+                            data-mcp-params='{"required": ["email", "company"], "optional": ["requirements"]}'>
+                            <label class="sr-only" for="email-ent">Email corporativo</label>
+                            <input type="email" id="email-ent" name="email" required autocomplete="email" placeholder="tu@empresa.com"
+                                data-mcp-param="email" data-mcp-description="Email corporativo de contacto">
+                            <label class="sr-only" for="company-ent">Empresa</label>
+                            <input type="text" id="company-ent" name="company" required autocomplete="organization" placeholder="Empresa"
+                                data-mcp-param="company" data-mcp-description="Nombre de la empresa">
+                            <button type="submit" class="btn btn-outline btn-block">Contactar Ventas</button>
+                        </form>
+                    </article>
+                </div>
+
+                <p class="pricing-note">Todos los planes incluyen prueba gratuita de 14 días. Cancela en cualquier momento. Impuestos no incluidos.</p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="faq" aria-labelledby="faq-title">
+            <div class="container container-narrow">
+                <header class="section-header">
+                    <h2 id="faq-title">Preguntas <span class="highlight">frecuentes</span></h2>
+                    <p class="section-subtitle">Todo lo que necesitas saber antes de empezar.</p>
+                </header>
+
+                <div class="faq-grid">
+                    <details class="faq-item" open>
+                        <summary>¿Cómo funciona la prueba gratuita de 14 días?</summary>
+                        <p>Te damos acceso completo al plan Professional durante 14 días sin pedir tarjeta de crédito. Al final, eliges tu plan o cancelas sin compromiso.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>¿Necesito conocimientos técnicos para configurarlo?</summary>
+                        <p>No. La configuración guiada tarda menos de 10 minutos. Conectas tus cuentas (Google, WhatsApp, Telegram) con un clic y el asistente te guía paso a paso.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>¿Puedo cambiar de plan después?</summary>
+                        <p>Sí, puedes subir o bajar de plan en cualquier momento. Los cambios se aplican en el siguiente ciclo de facturación. Los datos se conservan siempre.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>¿Qué pasa si supero el límite de citas?</summary>
+                        <p>Te avisamos al 80% y 95% del límite. Puedes comprar citas extra ($0.10/cita) o actualizar tu plan al instante. Nunca se bloquean reservas.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>¿Es seguro para datos de mis clientes?</summary>
+                        <p>Sí. Cifrado AES-256 en tránsito y reposo. SOC2 Type II, GDPR, HIPAA-ready. Tus datos nunca se venden ni se usan para entrenar modelos ajenos.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>¿Puedo migrar mis citas actuales?</summary>
+                        <p>Sí. Importamos desde CSV, Google Calendar, Calendly, Cal.com y más. El equipo te ayuda gratis en la migración inicial.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>¿Funciona en mi país / zona horaria?</summary>
+                        <p>Sí. Soporte global con detección automática de zona horaria. Idiomas: español, inglés, portugués, francés, italiano, alemán.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>¿Qué integraciones tienen además de Calendar?</summary>
+                        <p>Zapier, Make, n8n, webhooks, API REST, WebMCP. Próximamente: HubSpot, Salesforce, Pipedrive, Slack, Teams.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section id="cta" class="cta" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-card">
+                    <h2 id="cta-title">¿Listo para automatizar tus citas?</h2>
+                    <p>Únete a +500 negocios que ya ahorran 15h/semana con AgendaAI.</p>
+                    <div class="cta-buttons">
+                        <a href="#pricing" class="btn btn-white btn-lg">Empezar Gratis Ahora</a>
+                        <a href="#contact" class="btn btn-outline-white btn-lg">Agendar Demo Personalizada</a>
+                    </div>
+                    <p class="cta-note"><span aria-hidden="true">✓</span> Sin tarjeta de crédito <span aria-hidden="true">·</span> <span aria-hidden="true">✓</span> Configuración en 10 min <span aria-hidden="true">·</span> <span aria-hidden="true">✓</span> Cancelación en 1 clic</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="contact" aria-labelledby="contact-title">
+            <div class="container container-narrow">
+                <header class="section-header">
+                    <h2 id="contact-title">¿Preguntas? <span class="highlight">Hablemos</span></h2>
+                    <p class="section-subtitle">Nuestro equipo te responde en menos de 4 horas laborables.</p>
+                </header>
+
+                <form id="contact-form" class="contact-form" action="/api/leads" method="POST" novalidate
+                    data-mcp-action="submit-lead"
+                    data-mcp-description="Formulario de contacto para solicitar información o demo de AgendaAI"
+                    data-mcp-params='{"required": ["name", "email", "message"], "optional": ["company", "plan_interest"]}'>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Nombre completo *</label>
+                            <input type="text" id="name" name="name" required autocomplete="name" minlength="2"
+                                data-mcp-param="name"
+                                data-mcp-description="Nombre completo de la persona de contacto"
+                                placeholder="Tu nombre" aria-describedby="name-err">
+                            <p class="field-error" id="name-err" hidden></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email corporativo *</label>
+                            <input type="email" id="email" name="email" required autocomplete="email"
+                                data-mcp-param="email"
+                                data-mcp-description="Email de contacto corporativo"
+                                placeholder="tu@empresa.com" aria-describedby="email-err">
+                            <p class="field-error" id="email-err" hidden></p>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company">Empresa</label>
+                            <input type="text" id="company" name="company" autocomplete="organization"
+                                data-mcp-param="company"
+                                data-mcp-description="Nombre de la empresa u organización"
+                                placeholder="Nombre de tu empresa">
+                        </div>
+                        <div class="form-group">
+                            <label for="plan_interest">Plan de interés</label>
+                            <select id="plan_interest" name="plan_interest"
+                                data-mcp-param="plan_interest"
+                                data-mcp-description="Plan que más le interesa evaluar">
+                                <option value="">Selecciona un plan</option>
+                                <option value="starter">Starter ($29/mes)</option>
+                                <option value="professional">Professional ($79/mes)</option>
+                                <option value="enterprise">Enterprise ($299/mes)</option>
+                                <option value="not_sure">Aún no lo sé</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje *</label>
+                        <textarea id="message" name="message" required rows="5" minlength="10"
+                            data-mcp-param="message"
+                            data-mcp-description="Descripción de necesidades, dudas o solicitud de demo"
+                            placeholder="Cuéntanos qué necesitas..." aria-describedby="message-err"></textarea>
+                        <p class="field-error" id="message-err" hidden></p>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar Mensaje</button>
+                    <p aria-live="polite" id="form-status" class="form-status" hidden></p>
+                    <p class="form-note">Respondemos en menos de 4h laborables. Tus datos están seguros (<a href="/privacidad">Política de Privacidad</a>).</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo" aria-label="AgendaAI - Inicio">
+                        <svg class="logo-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
+                            <rect width="32" height="32" rx="8" fill="currentColor"/>
+                            <path d="M8 10h16M8 16h12M8 22h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                        <span class="logo-text">AgendaAI</span>
+                    </a>
+                    <p>Automatiza tus citas con IA. La forma inteligente de gestionar reservas.</p>
+                    <div class="social-links" aria-label="Redes sociales">
+                        <a href="https://twitter.com/agendaai" target="_blank" rel="noopener" aria-label="Twitter de AgendaAI"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+                        <a href="https://linkedin.com/company/agendaai" target="_blank" rel="noopener" aria-label="LinkedIn de AgendaAI"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></a>
+                        <a href="https://github.com/agendaai" target="_blank" rel="noopener" aria-label="GitHub de AgendaAI"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></a>
+                    </div>
+                </div>
+
+                <nav class="footer-column" aria-label="Producto">
+                    <h3 class="footer-title">Producto</h3>
+                    <ul>
+                        <li><a href="#features">Características</a></li>
+                        <li><a href="#pricing">Precios</a></li>
+                        <li><a href="#demo">Demo</a></li>
+                        <li><a href="/api-docs">API Docs</a></li>
+                        <li><a href="/integraciones">Integraciones</a></li>
+                        <li><a href="/changelog">Changelog</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="footer-column" aria-label="Empresa">
+                    <h3 class="footer-title">Empresa</h3>
+                    <ul>
+                        <li><a href="/nosotros">Sobre nosotros</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/carreras">Carreras</a></li>
+                        <li><a href="/prensa">Prensa</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="footer-column" aria-label="Recursos">
+                    <h3 class="footer-title">Recursos</h3>
+                    <ul>
+                        <li><a href="/ayuda">Centro de ayuda</a></li>
+                        <li><a href="/api-docs">API Docs</a></li>
+                        <li><a href="/webmcp">WebMCP Guide</a></li>
+                        <li><a href="/comunidad">Comunidad</a></li>
+                        <li><a href="/webinars">Webinars</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="footer-column" aria-label="Legal">
+                    <h3 class="footer-title">Legal</h3>
+                    <ul>
+                        <li><a href="/privacidad">Privacidad</a></li>
+                        <li><a href="/terminos">Términos</a></li>
+                        <li><a href="/seguridad">Seguridad</a></li>
+                        <li><a href="/cookies">Cookies</a></li>
+                        <li><a href="/dpa">DPA/GDPR</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2026</span> AgendaAI. Todos los derechos reservados.</p>
+                <div class="footer-legal">
+                    <a href="/privacidad">Política de Privacidad</a>
+                    <a href="/terminos">Términos de Servicio</a>
+                    <a href="/cookies">Política de Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <dialog id="demo-dialog" aria-labelledby="demo-dialog-title">
+        <div class="dialog-content">
+            <header class="dialog-header">
+                <h2 id="demo-dialog-title">Demo: AgendaAI en acción</h2>
+                <button class="dialog-close" data-close-dialog aria-label="Cerrar demo">✕</button>
+            </header>
+            <p>En el video completo verías: conexión de Google Calendar en 1 clic, reserva por WhatsApp en &lt;3 segundos y recordatorio automático 24h antes.</p>
+            <ul class="dialog-list">
+                <li><strong>0:00</strong> — Conecta Google Calendar</li>
+                <li><strong>0:40</strong> — Cliente reserva por WhatsApp</li>
+                <li><strong>1:20</strong> — Recordatorio y anti no-show</li>
+            </ul>
+            <div class="dialog-cta">
+                <a href="#pricing" class="btn btn-primary" data-close-dialog>Probar gratis 14 días</a>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>
