@@ -3,36 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- SEO -->
-    <title>AgendaAI - Automatiza tus Citas con IA</title>
-    <meta name="description" content="AgendaAI automatiza la gestión de citas con IA. Integra Telegram, WhatsApp, Google Calendar y Cal.com. Ahorra 15h/semana y reduce no-shows un 80%. Desde $29/mes.">
+    <title>AgendaAI: automatiza tus citas con IA en Telegram</title>
+    <meta name="description" content="Tus clientes reservan citas por Telegram en 3 mensajes. AgendaAI consulta huecos, confirma, programa recordatorios y sincroniza con Google Calendar.">
     <meta name="author" content="AgendaAI">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#4F46E5">
-    <link rel="canonical" href="https://agendaai.com/">
+    <link rel="canonical" href="https://agenda-landing-hector-gs-projects-1a437fbd.vercel.app/">
+    <!-- TODO(dominio): este alias de Vercel es el único dominio vivo hoy. Cuando
+         exista el dominio definitivo hay que sustituirlo en canonical, og:url,
+         twitter:image, JSON-LD (url/image), sitemap.xml y robots.txt. -->
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://agendaai.com/">
+    <meta property="og:url" content="https://agenda-landing-hector-gs-projects-1a437fbd.vercel.app/">
     <meta property="og:site_name" content="AgendaAI">
     <meta property="og:locale" content="es_ES">
-    <meta property="og:title" content="AgendaAI - Automatiza tus Citas con IA">
-    <meta property="og:description" content="Sistema inteligente de reservas con IA. Integra Telegram, WhatsApp, Google Calendar y Cal.com. Desde $29/mes.">
-    <meta property="og:image" content="https://agendaai.com/images/og-image.jpg">
+    <meta property="og:title" content="AgendaAI: automatiza tus citas con IA en Telegram">
+    <meta property="og:description" content="Tu cliente escribe, el bot consulta huecos, confirma y agenda. Reservas por Telegram con recordatorios y Google Calendar.">
+    <meta property="og:image" content="https://agenda-landing-hector-gs-projects-1a437fbd.vercel.app/images/og-image.jpg">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Panel de AgendaAI mostrando reservas automáticas con IA">
+    <meta property="og:image:alt" content="AgendaAI: automatiza tus citas con IA en Telegram">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@agendaai">
-    <meta name="twitter:url" content="https://agendaai.com/">
-    <meta name="twitter:title" content="AgendaAI - Automatiza tus Citas con IA">
-    <meta name="twitter:description" content="Sistema inteligente de reservas con IA. Integra Telegram, WhatsApp, Google Calendar y Cal.com. Desde $29/mes.">
-    <meta name="twitter:image" content="https://agendaai.com/images/og-image.jpg">
-    <meta name="twitter:image:alt" content="Panel de AgendaAI mostrando reservas automáticas con IA">
+    <meta name="twitter:title" content="AgendaAI: automatiza tus citas con IA en Telegram">
+    <meta name="twitter:description" content="Tu cliente escribe, el bot consulta huecos, confirma y agenda. Reservas por Telegram con recordatorios y Google Calendar.">
+    <meta name="twitter:image" content="https://agenda-landing-hector-gs-projects-1a437fbd.vercel.app/images/og-image.jpg">
+    <meta name="twitter:image:alt" content="AgendaAI: automatiza tus citas con IA en Telegram">
 
     <!-- Structured Data: Software -->
     <script type="application/ld+json">
@@ -40,44 +41,42 @@
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "AgendaAI",
-        "url": "https://agendaai.com/",
-        "image": "https://agendaai.com/images/og-image.jpg",
+        "url": "https://agenda-landing-hector-gs-projects-1a437fbd.vercel.app/",
+        "image": "https://agenda-landing-hector-gs-projects-1a437fbd.vercel.app/images/og-image.jpg",
         "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web",
-        "softwareVersion": "2.0",
-        "description": "Sistema inteligente de reservas con IA que automatiza la gestión de citas integrando Telegram, WhatsApp, Google Calendar y Cal.com.",
-        "offers": {
-            "@type": "Offer",
-            "url": "https://agendaai.com/#pricing",
-            "price": "29.00",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
-        },
+        "operatingSystem": "Telegram, Web",
+        "inLanguage": "es",
+        "description": "Asistente de citas con IA en Telegram: consulta disponibilidad, confirma reservas, envía recordatorios y sincroniza con Google Calendar.",
+        "sameAs": ["https://t.me/agenda_ia_sdr_bot"],
         "featureList": [
-            "Agendamiento automático por IA",
-            "Integración Telegram y WhatsApp",
-            "Sincronización Google Calendar y Cal.com",
-            "Recordatorios automáticos",
-            "Multi-idioma y multi-zona horaria"
+            "Reserva de citas por lenguaje natural en Telegram",
+            "Consulta de disponibilidad y confirmación de reservas",
+            "Recordatorios automáticos antes de la cita",
+            "Sincronización con Google Calendar y Cal.com",
+            "Widget de chat embebible para la web"
         ],
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "reviewCount": "127"
-        }
+        "offers": [
+            {"@type": "Offer", "name": "Fundador", "price": "399", "priceCurrency": "MXN", "category": "subscription", "description": "Primeros 3 consultorios. Precio congelado de por vida."},
+            {"@type": "Offer", "name": "Estándar", "price": "599", "priceCurrency": "MXN", "category": "subscription", "description": "1 profesional, hasta 300 citas al mes."},
+            {"@type": "Offer", "name": "Pro", "price": "999", "priceCurrency": "MXN", "category": "subscription", "description": "Hasta 3 profesionales, hasta 1,000 citas al mes."}
+        ]
     }
     </script>
 
-    <!-- Structured Data: FAQ (rich results) -->
+    <!-- Structured Data: FAQ (debe coincidir con el bloque visible #faq) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-            {"@type": "Question", "name": "¿Cómo funciona la prueba gratuita de 14 días?", "acceptedAnswer": {"@type": "Answer", "text": "Acceso completo al plan Professional durante 14 días sin tarjeta de crédito."}},
-            {"@type": "Question", "name": "¿Necesito conocimientos técnicos para configurarlo?", "acceptedAnswer": {"@type": "Answer", "text": "No. La configuración guiada tarda menos de 10 minutos."}},
-            {"@type": "Question", "name": "¿Es seguro para datos de mis clientes?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Cifrado AES-256, SOC2 Type II, GDPR y HIPAA-ready."}},
-            {"@type": "Question", "name": "¿Puedo migrar mis citas actuales?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Importamos desde CSV, Google Calendar, Calendly y Cal.com."}}
+            {"@type": "Question", "name": "¿Cómo empiezo a usar AgendaAI?", "acceptedAnswer": {"@type": "Answer", "text": "Escribe al bot en Telegram. Te guía en la conversación para dejar lista tu agenda y te indica el plan y el precio vigente antes de cualquier pago."}},
+            {"@type": "Question", "name": "¿Necesito conocimientos técnicos para configurarlo?", "acceptedAnswer": {"@type": "Answer", "text": "No. La configuración se hace conversando con el bot: no hay que instalar software ni tocar código."}},
+            {"@type": "Question", "name": "¿Cómo reserva un cliente una cita?", "acceptedAnswer": {"@type": "Answer", "text": "El cliente escribe qué día y hora prefiere en lenguaje natural. El bot consulta los huecos libres, propone horarios y confirma la reserva en pocos mensajes."}},
+            {"@type": "Question", "name": "¿Se sincroniza con mi calendario?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, con Google Calendar. La sincronización con Cal.com está disponible según el plan que confirmes en el bot."}},
+            {"@type": "Question", "name": "¿Puedo probar el asistente antes de contratar?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. La demo de esta página funciona sin registro y muestra el flujo completo; no crea citas reales en tu calendario."}},
+            {"@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": {"@type": "Answer", "text": "Desde $399 al mes el plan Fundador (primeros 3 consultorios), $599 al mes el Estándar y $999 al mes el Pro, en pesos mexicanos más IVA. El alcance de cada plan te lo confirma el bot en la demo, antes de cualquier pago."}},
+            {"@type": "Question", "name": "¿Qué pasa con los datos de mis clientes?", "acceptedAnswer": {"@type": "Answer", "text": "Se usan únicamente para gestionar las citas de tu agenda. No se venden ni se comparten con terceros para publicidad."}},
+            {"@type": "Question", "name": "¿Funciona en mi país y zona horaria?", "acceptedAnswer": {"@type": "Answer", "text": "El bot funciona en Telegram desde cualquier país y trabaja con la zona horaria que configures para tu agenda."}}
         ]
     }
     </script>
@@ -85,14 +84,22 @@
     <!-- WebMCP discovery for AI browsing agents -->
     <link rel="mcp-actions" href="/mcp-actions.json">
 
+    <!-- Analítica sin cookies: no requiere banner de consentimiento -->
+    <script defer src="/_vercel/insights/script.js"></script>
+
     <!-- Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?v=6">
+    <link rel="stylesheet" href="css/widget.css?v=3">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+
+    <!-- Widget scripts (deferred) -->
+    <script src="js/widget.js?v=4" defer></script>
+    <script src="js/demo-chat.js?v=4" defer></script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
@@ -117,9 +124,11 @@
                 <a href="#demo" class="nav-link">Demo</a>
                 <a href="#pricing" class="nav-link">Precios</a>
                 <a href="#faq" class="nav-link">FAQ</a>
-                <a href="#contact" class="nav-link">Contactar</a>
-                <a href="#pricing" class="nav-link btn btn-primary btn-sm">Comenzar Gratis</a>
+                <a href="#contact" class="nav-link">Contacto</a>
+                <a href="https://t.me/agenda_ia_sdr_bot?start=landing" class="nav-link btn btn-primary btn-sm" target="_blank" rel="noopener" data-cta="nav-bot">Abrir el bot</a>
             </div>
+
+            <a href="https://t.me/agenda_ia_sdr_bot?start=landing" class="btn btn-primary btn-sm nav-cta-mobile" target="_blank" rel="noopener" data-cta="nav-bot-mobile">Abrir bot</a>
 
             <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
                 <span class="hamburger" aria-hidden="true"></span>
@@ -132,31 +141,23 @@
         <section class="hero" aria-labelledby="hero-title">
             <div class="container hero-grid">
                 <div class="hero-text">
-                    <span class="hero-badge"><span class="pulse-dot" aria-hidden="true"></span> Nuevo: Agentes IA con WebMCP</span>
+                    <span class="hero-badge"><span class="pulse-dot" aria-hidden="true"></span> Bot en Telegram · Demo sin registro</span>
                     <h1 id="hero-title">Automatiza tus Citas con <span class="highlight">Inteligencia Artificial</span></h1>
-                    <p class="hero-description">AgendaAI gestiona tus reservas 24/7 por Telegram, WhatsApp y Web. Se sincroniza con Google Calendar y Cal.com. Reduce no-shows un 80% y ahorra 15h/semana.</p>
+                    <p class="hero-description">Tu cliente escribe qué día quiere. El bot consulta los huecos, propone horarios, confirma la reserva y la deja en tu Google Calendar. Sin llamadas y sin cadenas de mensajes.</p>
 
-                    <form class="hero-form" action="/api/trial" method="POST"
-                        data-mcp-action="start-trial"
-                        data-mcp-description="Iniciar prueba gratuita de 14 días de AgendaAI. Requiere email."
-                        data-mcp-params='{"required": ["email"], "optional": ["plan"]}'>
-                        <label class="sr-only" for="hero-email">Email de trabajo</label>
-                        <input type="email" id="hero-email" name="email" required autocomplete="email"
-                            placeholder="tu@empresa.com"
-                            data-mcp-param="email"
-                            data-mcp-description="Email para crear la cuenta de prueba">
-                        <input type="hidden" name="plan" value="professional" data-mcp-param="plan" data-mcp-description="Plan a probar">
-                        <button type="submit" class="btn btn-primary btn-lg">Empezar Gratis 14 Días</button>
-                    </form>
-                    <p class="hero-micro">Sin tarjeta de crédito · Configuración en 10 min · Cancela en 1 clic</p>
-                    <p class="hero-alt"><a href="#demo">Ver demo de 2 min ↓</a></p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary btn-lg" href="https://t.me/agenda_ia_sdr_bot?start=landing" target="_blank" rel="noopener" data-cta="hero-bot">Abrir el bot en Telegram</a>
+                        <a class="btn btn-outline btn-lg" href="#demo">Ver la demo</a>
+                    </div>
+                    <p class="hero-micro">El bot te confirma plan y precio antes de cualquier pago · No hay que instalar nada</p>
+                    <p class="hero-alt"><a href="#how">Cómo funciona en 3 pasos ↓</a></p>
 
                     <div class="hero-trust">
-                        <span class="trust-text">Confiado por +500 negocios</span>
+                        <span class="trust-text">Lo que puedes comprobar aquí mismo</span>
                         <div class="trust-badges">
-                            <span class="badge"><span role="img" aria-label="4.9 de 5 estrellas">★★★★★</span> 4.9/5</span>
-                            <span class="badge">SOC2 Type II</span>
-                            <span class="badge">GDPR Ready</span>
+                            <span class="badge">Reserva en 3 mensajes</span>
+                            <span class="badge">Recordatorios automáticos</span>
+                            <span class="badge">Google Calendar</span>
                         </div>
                     </div>
                 </div>
@@ -165,10 +166,10 @@
                     <div class="demo-window">
                         <div class="window-header">
                             <div class="window-controls" aria-hidden="true"><span></span><span></span><span></span></div>
-                            <div class="window-title">AgendaAI — Chat en vivo</div>
-                            <span class="live-badge" aria-hidden="true"><span class="pulse-dot"></span> En vivo</span>
+                            <div class="window-title">AgendaAI — Conversación de ejemplo</div>
+                            <span class="badge">Ejemplo</span>
                         </div>
-                        <div class="chat-demo" role="log" aria-live="polite" aria-label="Ejemplo de conversación con AgendaAI (no interactivo)">
+                        <div class="chat-demo" role="img" aria-label="Ejemplo de conversación: la clienta pide una cita el martes a las 10:00, el bot confirma que hay hueco, la reserva queda confirmada y se añade a Google Calendar con un recordatorio 24 horas antes.">
                             <div class="message bot">
                                 <div class="message-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5h-2v-2h2v2zm0-4.5h-2v-6h2v6z"/></svg></div>
                                 <div class="message-content">¡Hola! Soy tu asistente de citas. ¿En qué puedo ayudarte hoy?</div>
@@ -197,8 +198,8 @@
             </div>
         </section>
 
-        <!-- Logos / social proof strip -->
-        <section class="logos" aria-label="Empresas que usan AgendaAI">
+        <!-- Sectores / encaje -->
+        <section class="logos" aria-label="Sectores donde encaja AgendaAI">
             <div class="container logos-row">
                 <span>Clínicas</span><span aria-hidden="true">·</span>
                 <span>Consultorías</span><span aria-hidden="true">·</span>
@@ -229,8 +230,8 @@
                         <div class="feature-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
                         </div>
-                        <h3>Telegram &amp; WhatsApp</h3>
-                        <p>Atención donde están tus clientes. Bots nativos en ambas plataformas con respuestas instantáneas 24/7.</p>
+                        <h3>Telegram y widget web</h3>
+                        <p>El bot atiende en Telegram y el mismo flujo vive en el widget de tu web. Tus clientes reservan donde ya están escribiendo.</p>
                     </article>
 
                     <article class="feature-card">
@@ -238,7 +239,7 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
                         </div>
                         <h3>Google Calendar &amp; Cal.com</h3>
-                        <p>Sincronización bidireccional en tiempo real. Evita dobles reservas y gestiona disponibilidad desde un solo lugar.</p>
+                        <p>El bot lee los huecos de tu Google Calendar (Cal.com según el plan) para no duplicar reservas y mantener una sola agenda.</p>
                     </article>
 
                     <article class="feature-card">
@@ -246,7 +247,7 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-3-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
                         </div>
                         <h3>Recordatorios Inteligentes</h3>
-                        <p>Recordatorios automáticos por chat y email 24h y 1h antes. Reduce no-shows hasta un 80%.</p>
+                        <p>Recordatorios automáticos por chat antes de la cita. Menos ausencias sin que tengas que llamar a nadie.</p>
                     </article>
 
                     <article class="feature-card">
@@ -254,7 +255,7 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                         </div>
                         <h3>Multi-zona &amp; Multi-idioma</h3>
-                        <p>Detección automática de zona horaria e idioma. Soporte para español, inglés, portugués y más.</p>
+                        <p>La agenda trabaja con tu zona horaria y el bot atiende en español; el flujo se adapta al canal donde escribe el cliente.</p>
                     </article>
 
                     <article class="feature-card">
@@ -262,7 +263,7 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 6 11 12 11z"/></svg>
                         </div>
                         <h3>WebMCP Ready</h3>
-                        <p>Primera plataforma de citas compatible con WebMCP. Los agentes IA pueden descubrir y completar reservas en tu web.</p>
+                        <p>Compatible con WebMCP: los agentes IA pueden descubrir las acciones de esta página y abrir el chat de reservas.</p>
                     </article>
                 </div>
             </div>
@@ -273,12 +274,12 @@
             <div class="container">
                 <header class="section-header">
                     <h2 id="how-title">Activa tu agenda en <span class="highlight">3 pasos</span></h2>
-                    <p class="section-subtitle">Sin código. Sin fricción. En menos de 10 minutos.</p>
+                    <p class="section-subtitle">Sin código. Sin instalar nada. Todo se configura conversando con el bot.</p>
                 </header>
                 <ol class="steps">
-                    <li class="step"><span class="step-num" aria-hidden="true">1</span><h3>Conecta tu calendario</h3><p>Google Calendar o Cal.com con un clic. Importamos tus citas actuales gratis.</p></li>
-                    <li class="step"><span class="step-num" aria-hidden="true">2</span><h3>Activa tus canales</h3><p>Telegram, WhatsApp y widget web. La IA responde con el tono de tu marca.</p></li>
-                    <li class="step"><span class="step-num" aria-hidden="true">3</span><h3>La IA agenda por ti</h3><p>Reservas, recordatorios y reprogramaciones en automático, 24/7.</p></li>
+                    <li class="step"><span class="step-num" aria-hidden="true">1</span><h3>Conecta tu calendario</h3><p>Enlazas tu Google Calendar (o Cal.com) para que el bot lea tus huecos reales y no duplique reservas.</p></li>
+                    <li class="step"><span class="step-num" aria-hidden="true">2</span><h3>Activa tus canales</h3><p>Abres el bot de Telegram y, si tienes web, el widget de reservas. El asistente responde con el tono de tu negocio.</p></li>
+                    <li class="step"><span class="step-num" aria-hidden="true">3</span><h3>La IA agenda por ti</h3><p>Reservas, recordatorios y reprogramaciones en automático, todos los días a cualquier hora.</p></li>
                 </ol>
             </div>
         </section>
@@ -292,71 +293,135 @@
                 </header>
 
                 <div class="demo-container">
-                    <button class="video-placeholder" aria-haspopup="dialog" aria-controls="demo-dialog">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
-                            <polygon points="23 7 16 12 23 17 23 7"/>
-                            <rect x="1" y="5" width="15" height="14" rx="2"/>
-                        </svg>
-                        <span>Ver demo interactiva (2 min)</span>
-                    </button>
+                    <!-- Live chat demo (widget embebido, modo mock sin backend) -->
+                    <div class="live-chat-card" role="region" aria-labelledby="live-chat-title">
+                        <div class="live-chat-copy">
+                            <span class="live-chat-tag"><span class="pulse-dot" aria-hidden="true"></span> Demo en vivo</span>
+                            <h3 id="live-chat-title">Reserva una cita con el asistente IA</h3>
+                            <p>Escribe en el chat como lo haría tu cliente: pide una cita, elige día y hora y confirma. Todo el flujo multi-turno funciona aquí mismo.</p>
+                            <ul class="live-chat-points">
+                                <li>Entiende lenguaje natural: «quiero una cita el jueves por la tarde»</li>
+                                <li>Consulta la disponibilidad y propone huecos reales</li>
+                                <li>Confirma la reserva en solo 3 mensajes</li>
+                            </ul>
+                            <p class="live-chat-note">La demo se ejecuta en tu navegador: no crea citas reales ni envía tus datos a ningún servidor.</p>
+                        </div>
+                        <div class="live-chat-panel">
+                            <div class="live-chat-cta">
+                                <span class="chat-mode" id="chat-mode">Demo interactiva</span>
+                                <button type="button" id="chat-open" class="btn btn-primary btn-lg"
+                                    aria-controls="appointment-widget"
+                                    data-mcp-action="open-chat-demo"
+                                    data-mcp-description="Abrir el chat flotante del asistente de citas">Abrir chat con la IA</button>
+                                <p class="live-chat-hint">El chat flotante se abre en la esquina inferior derecha. También se despliega solo al llegar a esta tarjeta.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="agenda-widget" role="region" aria-label="Demo interactiva de agenda - selecciona una fecha y hora">
+                        <div class="agenda-header">
+                            <div class="agenda-nav">
+                                <button class="agenda-nav-btn" id="agenda-prev" aria-label="Mes anterior" data-mcp-action="agenda-prev" data-mcp-description="Navegar al mes anterior en la agenda demo">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><polyline points="15 18 9 12 15 6"/></svg>
+                                </button>
+                                <div class="agenda-title" id="agenda-title" aria-live="polite"></div>
+                                <button class="agenda-nav-btn" id="agenda-next" aria-label="Mes siguiente" data-mcp-action="agenda-next" data-mcp-description="Navegar al mes siguiente en la agenda demo">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><polyline points="9 18 15 12 9 6"/></svg>
+                                </button>
+                            </div>
+                            <div class="agenda-view-toggle" role="tablist" aria-label="Cambiar vista">
+                                <button class="agenda-view-btn active" id="agenda-tab-week" role="tab" aria-selected="true" aria-controls="agenda-view-panel" data-view="week" data-mcp-action="agenda-view-week" data-mcp-description="Ver agenda en vista semanal">Semana</button>
+                                <button class="agenda-view-btn" id="agenda-tab-month" role="tab" aria-selected="false" aria-controls="agenda-view-panel" data-view="month" data-mcp-action="agenda-view-month" data-mcp-description="Ver agenda en vista mensual">Mes</button>
+                                <button class="agenda-view-btn" id="agenda-tab-day" role="tab" aria-selected="false" aria-controls="agenda-view-panel" data-view="day" data-mcp-action="agenda-view-day" data-mcp-description="Ver agenda en vista diaria">Día</button>
+                            </div>
+                        </div>
+
+                        <div id="agenda-view-panel" role="tabpanel" aria-labelledby="agenda-tab-week">
+                            <div class="agenda-grid" id="agenda-grid" role="grid" aria-label="Calendario de disponibilidad">
+                                <div class="agenda-day-headers" role="row">
+                                    <div role="columnheader">Lun</div>
+                                    <div role="columnheader">Mar</div>
+                                    <div role="columnheader">Mié</div>
+                                    <div role="columnheader">Jue</div>
+                                    <div role="columnheader">Vie</div>
+                                    <div role="columnheader">Sáb</div>
+                                    <div role="columnheader">Dom</div>
+                                </div>
+                                <div class="agenda-days" role="rowgroup" id="agenda-days"></div>
+                            </div>
+                        </div>
+
+                        <div class="agenda-slots" id="agenda-slots" role="group" tabindex="-1" hidden>
+                            <div class="agenda-slots-header">
+                                <span id="agenda-slots-date" class="agenda-slots-date"></span>
+                                <button class="agenda-slots-close" id="agenda-slots-close" aria-label="Volver al calendario">×</button>
+                            </div>
+                            <ul class="agenda-slots-list" id="agenda-slots-list" role="listbox" aria-label="Horarios disponibles para el día seleccionado"></ul>
+                            <p class="agenda-slots-empty" id="agenda-slots-empty" hidden>No hay horarios disponibles para este día. Prueba otro día.</p>
+                        </div>
+
+                        <div class="agenda-legend">
+                            <span class="legend-item"><span class="legend-color available" aria-hidden="true"></span>Disponible</span>
+                            <span class="legend-item"><span class="legend-color booked" aria-hidden="true"></span>Reservado</span>
+                            <span class="legend-item"><span class="legend-color selected" aria-hidden="true"></span>Seleccionado</span>
+                            <span class="legend-item"><span class="legend-color past" aria-hidden="true"></span>Pasado</span>
+                        </div>
+                    </div>
 
                     <div class="demo-stats">
                         <div class="stat">
-                            <span class="stat-value">98%</span>
-                            <span class="stat-label">Tasa de éxito en reservas</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-value">&lt;3s</span>
-                            <span class="stat-label">Tiempo medio por reserva</span>
-                        </div>
-                        <div class="stat">
                             <span class="stat-value">24/7</span>
-                            <span class="stat-label">Disponibilidad total</span>
+                            <span class="stat-label">Atención sin horarios</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-value">99.9%</span>
-                            <span class="stat-label">Uptime garantizado</span>
+                            <span class="stat-value">3</span>
+                            <span class="stat-label">Mensajes para reservar</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">2</span>
+                            <span class="stat-label">Canales: Telegram y web</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">0</span>
+                            <span class="stat-label">Registros para probar la demo</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonials -->
-        <section id="testimonials" class="testimonials" aria-labelledby="testimonials-title">
+        <!-- Casos de uso (sin testimonios ni cifras no verificadas) -->
+        <section id="casos" class="testimonials" aria-labelledby="casos-title">
             <div class="container">
                 <header class="section-header">
-                    <h2 id="testimonials-title">Lo que dicen nuestros <span class="highlight">clientes</span></h2>
-                    <p class="section-subtitle">Negocios de todos los tamaños confían en AgendaAI para automatizar sus reservas.</p>
+                    <h2 id="casos-title">Dónde encaja <span class="highlight">mejor</span></h2>
+                    <p class="section-subtitle">Tres ejemplos de cómo se usa el asistente en el día a día. Sin métricas prometidas: pruébalo en la demo y decide con tu propio flujo.</p>
                 </header>
 
                 <div class="testimonials-grid">
-                    <figure class="testimonial-card">
-                        <div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
-                        <blockquote><p>“AgendaAI nos ahorra 20 horas semanales. El bot de WhatsApp gestiona todo: citas, recordatorios, reprogramaciones. El ROI fue inmediato.”</p></blockquote>
-                        <figcaption class="testimonial-author">
-                            <div class="author-avatar" aria-hidden="true">MC</div>
-                            <div class="author-info"><strong>María González</strong><span>Directora, Clínica Dental Sonríe</span></div>
-                        </figcaption>
-                    </figure>
+                    <article class="testimonial-card use-case-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg>
+                        </div>
+                        <h3>Clínica dental</h3>
+                        <p>El paciente escribe «me duele una muela, ¿tenéis algo el jueves?». El bot propone los huecos libres, confirma y deja la cita en el calendario de recepción.</p>
+                    </article>
 
-                    <figure class="testimonial-card">
-                        <div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
-                        <blockquote><p>“La integración con Cal.com fue perfecta. Mis clientes reservan desde la web y se sincroniza al instante con Google Calendar. Cero dobles reservas.”</p></blockquote>
-                        <figcaption class="testimonial-author">
-                            <div class="author-avatar" aria-hidden="true">JR</div>
-                            <div class="author-info"><strong>Juan Ruiz</strong><span>Fundador, Ruiz Asesores Legales</span></div>
-                        </figcaption>
-                    </figure>
+                    <article class="testimonial-card use-case-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                        </div>
+                        <h3>Consultoría</h3>
+                        <p>Un cliente potencial pide una llamada «la semana que viene por la tarde». El bot interpreta el rango, ofrece horas concretas y bloquea la agenda del consultor.</p>
+                    </article>
 
-                    <figure class="testimonial-card">
-                        <div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
-                        <blockquote><p>“El agente IA entiende contexto: ‘la semana que viene por la tarde’ y encuentra huecos reales. Mis clientes flipan con lo natural que es.”</p></blockquote>
-                        <figcaption class="testimonial-author">
-                            <div class="author-avatar" aria-hidden="true">AL</div>
-                            <div class="author-info"><strong>Ana López</strong><span>Owner, Studio Pilates Centro</span></div>
-                        </figcaption>
-                    </figure>
+                    <article class="testimonial-card use-case-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"/></svg>
+                        </div>
+                        <h3>Salón o barbería</h3>
+                        <p>Reservas de última hora desde el móvil: el cliente elige servicio y hora, el bot confirma y le recuerda la cita antes de que salga de casa.</p>
+                    </article>
                 </div>
             </div>
         </section>
@@ -365,119 +430,87 @@
         <section id="pricing" class="pricing" aria-labelledby="pricing-title">
             <div class="container">
                 <header class="section-header">
-                    <h2 id="pricing-title">Precios transparentes, <span class="highlight">sin sorpresas</span></h2>
-                    <p class="section-subtitle">Elige el plan que se adapte a tu negocio. Todos incluyen prueba gratuita de 14 días. Sin tarjeta de crédito.</p>
+                    <h2 id="pricing-title">Planes para cada <span class="highlight">tamaño de agenda</span></h2>
+                    <p class="section-subtitle">Precios en pesos mexicanos, m&aacute;s IVA. Sin contrato forzoso: cancelas cuando quieras. El alcance de cada plan te lo confirma el bot en la demo, antes de cualquier pago.</p>
                 </header>
 
-                <div class="pricing-toggle">
-                    <span id="lbl-monthly">Mensual</span>
-                    <button type="button" role="switch" aria-checked="false" aria-labelledby="lbl-monthly lbl-yearly" id="billing-toggle" class="toggle-switch">
-                        <span class="toggle-slider" aria-hidden="true"></span>
-                    </button>
-                    <span id="lbl-yearly">Anual <span class="badge-save">-20%</span></span>
-                </div>
-                <div aria-live="polite" class="sr-only" id="price-announce"></div>
-
-                <div class="pricing-grid" role="list" aria-label="Planes de precios">
-                    <article class="pricing-card" role="listitem" data-plan="starter">
+                <div class="pricing-grid" role="group" aria-label="Planes de precios">
+                    <article class="pricing-card" data-plan="fundador">
                         <header class="pricing-header">
-                            <h3>Starter</h3>
+                            <h3>Fundador</h3>
                             <div class="price">
                                 <span class="currency">$</span>
-                                <span class="amount" data-monthly="29" data-yearly="23">29</span>
+                                <span class="amount">399</span>
                                 <span class="period">/mes</span>
                             </div>
-                            <p class="pricing-desc">Para pequeños negocios que empiezan</p>
+                            <p class="pricing-desc">Solo para los primeros 3 consultorios. Precio congelado de por vida.</p>
                         </header>
                         <ul class="pricing-features">
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Hasta 100 citas/mes</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> 1 canal (Telegram o WhatsApp)</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Google Calendar + Cal.com</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Recordatorios automáticos</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Multi-idioma</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Soporte email 48h</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> 1 profesional</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Telegram + widget web</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Hasta 300 citas al mes</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Recordatorios y confirmaciones autom&aacute;ticas</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Google Calendar / Cal.com</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Implementaci&oacute;n guiada sin costo</li>
                         </ul>
-                        <form action="/api/subscribe" method="POST" class="pricing-cta-form"
-                            data-mcp-action="subscribe-plan"
-                            data-mcp-description="Suscribirse al plan Starter de AgendaAI por $29/mes. Requiere email."
-                            data-mcp-params='{"required": ["email", "plan"], "optional": ["payment_method_id"]}'>
-                            <label class="sr-only" for="email-starter">Email para plan Starter</label>
-                            <input type="email" id="email-starter" name="email" required autocomplete="email" placeholder="tu@empresa.com"
-                                data-mcp-param="email" data-mcp-description="Email para crear la suscripción Starter">
-                            <input type="hidden" name="plan" value="starter" data-mcp-param="plan" data-mcp-description="Plan seleccionado">
-                            <button type="submit" class="btn btn-outline btn-block">Empezar Gratis 14 Días</button>
-                        </form>
+                        <div class="pricing-cta-form">
+                            <a class="btn btn-outline btn-block" href="https://t.me/agenda_ia_sdr_bot?start=fundador" target="_blank" rel="noopener" data-cta="pricing-fundador">Preguntar por el plan Fundador</a>
+                            <p class="plan-note">A cambio de un testimonio y 2 colegas a quienes presentarme.</p>
+                        </div>
                     </article>
 
-                    <article class="pricing-card popular" role="listitem" data-plan="professional" aria-label="Plan Professional - Recomendado">
-                        <div class="popular-badge">Más Popular</div>
+                    <article class="pricing-card popular" data-plan="estandar" aria-label="Plan Est&aacute;ndar - Recomendado">
+                        <div class="popular-badge">Recomendado</div>
                         <header class="pricing-header">
-                            <h3>Professional</h3>
+                            <h3>Est&aacute;ndar</h3>
                             <div class="price">
                                 <span class="currency">$</span>
-                                <span class="amount" data-monthly="79" data-yearly="63">79</span>
+                                <span class="amount">599</span>
                                 <span class="period">/mes</span>
                             </div>
-                            <p class="pricing-desc">Para PYMES en crecimiento</p>
+                            <p class="pricing-desc">Para el consultorio que ya agenda por WhatsApp todos los d&iacute;as.</p>
                         </header>
                         <ul class="pricing-features">
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Hasta 1,000 citas/mes</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Telegram + WhatsApp + Web</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Google Calendar + Cal.com + API</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Recordatorios + reprogramación IA</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Multi-idioma + multi-zona</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Analytics y reportes</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Soporte prioritario 24h</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> WebMCP + API acceso</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> 1 profesional</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Telegram + widget web</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Hasta 300 citas al mes</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Recordatorios y confirmaciones autom&aacute;ticas</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Google Calendar / Cal.com</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Panel de citas y conversaciones</li>
                         </ul>
-                        <form action="/api/subscribe" method="POST" class="pricing-cta-form"
-                            data-mcp-action="subscribe-plan"
-                            data-mcp-description="Suscribirse al plan Professional de AgendaAI por $79/mes. Requiere email."
-                            data-mcp-params='{"required": ["email", "plan"], "optional": ["payment_method_id"]}'>
-                            <label class="sr-only" for="email-pro">Email para plan Professional</label>
-                            <input type="email" id="email-pro" name="email" required autocomplete="email" placeholder="tu@empresa.com"
-                                data-mcp-param="email" data-mcp-description="Email para crear la suscripción Professional">
-                            <input type="hidden" name="plan" value="professional" data-mcp-param="plan" data-mcp-description="Plan seleccionado">
-                            <button type="submit" class="btn btn-primary btn-block">Empezar Gratis 14 Días</button>
-                        </form>
+                        <div class="pricing-cta-form">
+                            <a class="btn btn-primary btn-block" href="https://t.me/agenda_ia_sdr_bot?start=estandar" target="_blank" rel="noopener" data-cta="pricing-estandar">Hablar del plan Est&aacute;ndar</a>
+                            <p class="plan-note">Implementaci&oacute;n guiada incluida.</p>
+                        </div>
                     </article>
 
-                    <article class="pricing-card" role="listitem" data-plan="enterprise">
+                    <article class="pricing-card" data-plan="pro">
                         <header class="pricing-header">
-                            <h3>Enterprise</h3>
+                            <h3>Pro</h3>
                             <div class="price">
                                 <span class="currency">$</span>
-                                <span class="amount" data-monthly="299" data-yearly="239">299</span>
+                                <span class="amount">999</span>
                                 <span class="period">/mes</span>
                             </div>
-                            <p class="pricing-desc">Para empresas y franquicias</p>
+                            <p class="pricing-desc">Para cl&iacute;nicas con varios profesionales en la misma agenda.</p>
                         </header>
                         <ul class="pricing-features">
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Citas ilimitadas</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Canales ilimitados + API completa</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Multi-sede + multi-usuario</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> SSO + RBAC + Auditoría</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> SLA 99.9% + soporte 24/7</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Onboarding dedicado</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Contrato personalizado</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> WebMCP + Webhooks</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Hasta 3 profesionales</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Telegram + widget web</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Hasta 1,000 citas al mes</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Recordatorios y confirmaciones autom&aacute;ticas</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Google Calendar / Cal.com</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Soporte prioritario</li>
                         </ul>
-                        <form action="/api/sales" method="POST" class="pricing-cta-form"
-                            data-mcp-action="contact-sales"
-                            data-mcp-description="Contactar ventas para plan Enterprise personalizado. Requiere email y empresa."
-                            data-mcp-params='{"required": ["email", "company"], "optional": ["requirements"]}'>
-                            <label class="sr-only" for="email-ent">Email corporativo</label>
-                            <input type="email" id="email-ent" name="email" required autocomplete="email" placeholder="tu@empresa.com"
-                                data-mcp-param="email" data-mcp-description="Email corporativo de contacto">
-                            <label class="sr-only" for="company-ent">Empresa</label>
-                            <input type="text" id="company-ent" name="company" required autocomplete="organization" placeholder="Empresa"
-                                data-mcp-param="company" data-mcp-description="Nombre de la empresa">
-                            <button type="submit" class="btn btn-outline btn-block">Contactar Ventas</button>
-                        </form>
+                        <div class="pricing-cta-form">
+                            <a class="btn btn-outline btn-block" href="https://t.me/agenda_ia_sdr_bot?start=pro" target="_blank" rel="noopener" data-cta="pricing-pro">Contactar por el plan Pro</a>
+                            <p class="plan-note">Te paso una propuesta con tu operaci&oacute;n real.</p>
+                        </div>
                     </article>
                 </div>
 
-                <p class="pricing-note">Todos los planes incluyen prueba gratuita de 14 días. Cancela en cualquier momento. Impuestos no incluidos.</p>
+                <p class="pricing-note">Todos los planes incluyen Telegram, widget web, recordatorios autom&aacute;ticos y Google Calendar / Cal.com. Lo que cambia es el n&uacute;mero de profesionales, el de citas al mes y el nivel de soporte.</p>
+                <p class="pricing-note">Pago anual disponible: 10 meses por 12. El precio fundador es de por vida mientras la cuenta siga activa.</p>
             </div>
         </section>
 
@@ -491,43 +524,43 @@
 
                 <div class="faq-grid">
                     <details class="faq-item" open>
-                        <summary>¿Cómo funciona la prueba gratuita de 14 días?</summary>
-                        <p>Te damos acceso completo al plan Professional durante 14 días sin pedir tarjeta de crédito. Al final, eliges tu plan o cancelas sin compromiso.</p>
+                        <summary>¿Cómo empiezo a usar AgendaAI?</summary>
+                        <p>Escribe al bot en Telegram. Te guía en la conversación para dejar lista tu agenda y te indica el plan y el precio vigente antes de cualquier pago.</p>
                     </details>
 
                     <details class="faq-item">
                         <summary>¿Necesito conocimientos técnicos para configurarlo?</summary>
-                        <p>No. La configuración guiada tarda menos de 10 minutos. Conectas tus cuentas (Google, WhatsApp, Telegram) con un clic y el asistente te guía paso a paso.</p>
+                        <p>No. La configuración se hace conversando con el bot: no hay que instalar software ni tocar código.</p>
                     </details>
 
                     <details class="faq-item">
-                        <summary>¿Puedo cambiar de plan después?</summary>
-                        <p>Sí, puedes subir o bajar de plan en cualquier momento. Los cambios se aplican en el siguiente ciclo de facturación. Los datos se conservan siempre.</p>
+                        <summary>¿Cómo reserva un cliente una cita?</summary>
+                        <p>El cliente escribe qué día y hora prefiere en lenguaje natural. El bot consulta los huecos libres, propone horarios y confirma la reserva en pocos mensajes.</p>
                     </details>
 
                     <details class="faq-item">
-                        <summary>¿Qué pasa si supero el límite de citas?</summary>
-                        <p>Te avisamos al 80% y 95% del límite. Puedes comprar citas extra ($0.10/cita) o actualizar tu plan al instante. Nunca se bloquean reservas.</p>
+                        <summary>¿Se sincroniza con mi calendario?</summary>
+                        <p>Sí, con Google Calendar. La sincronización con Cal.com está disponible según el plan que confirmes en el bot.</p>
                     </details>
 
                     <details class="faq-item">
-                        <summary>¿Es seguro para datos de mis clientes?</summary>
-                        <p>Sí. Cifrado AES-256 en tránsito y reposo. SOC2 Type II, GDPR, HIPAA-ready. Tus datos nunca se venden ni se usan para entrenar modelos ajenos.</p>
+                        <summary>¿Puedo probar el asistente antes de contratar?</summary>
+                        <p>Sí. La demo de esta página funciona sin registro y muestra el flujo completo; no crea citas reales en tu calendario.</p>
                     </details>
 
                     <details class="faq-item">
-                        <summary>¿Puedo migrar mis citas actuales?</summary>
-                        <p>Sí. Importamos desde CSV, Google Calendar, Calendly, Cal.com y más. El equipo te ayuda gratis en la migración inicial.</p>
+                        <summary>¿Cuánto cuesta?</summary>
+                        <p>Desde $399 al mes el plan Fundador (primeros 3 consultorios), $599 el Estándar y $999 el Pro, en pesos mexicanos más IVA. El alcance de cada plan te lo confirma el bot en la demo, antes de cualquier pago.</p>
                     </details>
 
                     <details class="faq-item">
-                        <summary>¿Funciona en mi país / zona horaria?</summary>
-                        <p>Sí. Soporte global con detección automática de zona horaria. Idiomas: español, inglés, portugués, francés, italiano, alemán.</p>
+                        <summary>¿Qué pasa con los datos de mis clientes?</summary>
+                        <p>Se usan únicamente para gestionar las citas de tu agenda. No se venden ni se comparten con terceros para publicidad.</p>
                     </details>
 
                     <details class="faq-item">
-                        <summary>¿Qué integraciones tienen además de Calendar?</summary>
-                        <p>Zapier, Make, n8n, webhooks, API REST, WebMCP. Próximamente: HubSpot, Salesforce, Pipedrive, Slack, Teams.</p>
+                        <summary>¿Funciona en mi país y zona horaria?</summary>
+                        <p>El bot funciona en Telegram desde cualquier país y trabaja con la zona horaria que configures para tu agenda.</p>
                     </details>
                 </div>
             </div>
@@ -537,13 +570,13 @@
         <section id="cta" class="cta" aria-labelledby="cta-title">
             <div class="container">
                 <div class="cta-card">
-                    <h2 id="cta-title">¿Listo para automatizar tus citas?</h2>
-                    <p>Únete a +500 negocios que ya ahorran 15h/semana con AgendaAI.</p>
+                    <h2 id="cta-title">¿Quieres verlo funcionando?</h2>
+                    <p>Abre el bot y recorre el flujo completo: pedir cita, elegir hora y confirmar. Sin instalar nada.</p>
                     <div class="cta-buttons">
-                        <a href="#pricing" class="btn btn-white btn-lg">Empezar Gratis Ahora</a>
-                        <a href="#contact" class="btn btn-outline-white btn-lg">Agendar Demo Personalizada</a>
+                        <a href="https://t.me/agenda_ia_sdr_bot?start=landing" class="btn btn-white btn-lg" target="_blank" rel="noopener" data-cta="cta-bot">Abrir el bot en Telegram</a>
+                        <a href="#demo" class="btn btn-outline-white btn-lg">Probar la demo aquí</a>
                     </div>
-                    <p class="cta-note"><span aria-hidden="true">✓</span> Sin tarjeta de crédito <span aria-hidden="true">·</span> <span aria-hidden="true">✓</span> Configuración en 10 min <span aria-hidden="true">·</span> <span aria-hidden="true">✓</span> Cancelación en 1 clic</p>
+                    <p class="cta-note"><span aria-hidden="true">✓</span> Sin registro previo <span aria-hidden="true">·</span> <span aria-hidden="true">✓</span> Se abre en Telegram <span aria-hidden="true">·</span> <span aria-hidden="true">✓</span> Lo dejas cuando quieras</p>
                 </div>
             </div>
         </section>
@@ -553,64 +586,15 @@
             <div class="container container-narrow">
                 <header class="section-header">
                     <h2 id="contact-title">¿Preguntas? <span class="highlight">Hablemos</span></h2>
-                    <p class="section-subtitle">Nuestro equipo te responde en menos de 4 horas laborables.</p>
+                    <p class="section-subtitle">Te contestamos por Telegram, en el mismo sitio donde se gestiona tu agenda.</p>
                 </header>
 
-                <form id="contact-form" class="contact-form" action="/api/leads" method="POST" novalidate
-                    data-mcp-action="submit-lead"
-                    data-mcp-description="Formulario de contacto para solicitar información o demo de AgendaAI"
-                    data-mcp-params='{"required": ["name", "email", "message"], "optional": ["company", "plan_interest"]}'>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Nombre completo *</label>
-                            <input type="text" id="name" name="name" required autocomplete="name" minlength="2"
-                                data-mcp-param="name"
-                                data-mcp-description="Nombre completo de la persona de contacto"
-                                placeholder="Tu nombre" aria-describedby="name-err">
-                            <p class="field-error" id="name-err" hidden></p>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email corporativo *</label>
-                            <input type="email" id="email" name="email" required autocomplete="email"
-                                data-mcp-param="email"
-                                data-mcp-description="Email de contacto corporativo"
-                                placeholder="tu@empresa.com" aria-describedby="email-err">
-                            <p class="field-error" id="email-err" hidden></p>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="company">Empresa</label>
-                            <input type="text" id="company" name="company" autocomplete="organization"
-                                data-mcp-param="company"
-                                data-mcp-description="Nombre de la empresa u organización"
-                                placeholder="Nombre de tu empresa">
-                        </div>
-                        <div class="form-group">
-                            <label for="plan_interest">Plan de interés</label>
-                            <select id="plan_interest" name="plan_interest"
-                                data-mcp-param="plan_interest"
-                                data-mcp-description="Plan que más le interesa evaluar">
-                                <option value="">Selecciona un plan</option>
-                                <option value="starter">Starter ($29/mes)</option>
-                                <option value="professional">Professional ($79/mes)</option>
-                                <option value="enterprise">Enterprise ($299/mes)</option>
-                                <option value="not_sure">Aún no lo sé</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Mensaje *</label>
-                        <textarea id="message" name="message" required rows="5" minlength="10"
-                            data-mcp-param="message"
-                            data-mcp-description="Descripción de necesidades, dudas o solicitud de demo"
-                            placeholder="Cuéntanos qué necesitas..." aria-describedby="message-err"></textarea>
-                        <p class="field-error" id="message-err" hidden></p>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar Mensaje</button>
-                    <p aria-live="polite" id="form-status" class="form-status" hidden></p>
-                    <p class="form-note">Respondemos en menos de 4h laborables. Tus datos están seguros (<a href="/privacidad">Política de Privacidad</a>).</p>
-                </form>
+                <div class="contact-card">
+                    <h3>El bot es nuestro canal de soporte</h3>
+                    <p>Dudas sobre planes, precios o cómo dejar lista tu agenda: pregúntale al asistente en el mismo chat. Sin formularios ni correos que se quedan sin respuesta.</p>
+                    <a class="btn btn-primary btn-lg" href="https://t.me/agenda_ia_sdr_bot?start=landing" target="_blank" rel="noopener" data-cta="contact-bot">Escribir por Telegram</a>
+                    <p class="contact-note">No compartas datos sensibles en el primer mensaje: el bot solo necesita saber qué necesitas.</p>
+                </div>
             </div>
         </section>
     </main>
@@ -619,7 +603,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="/" class="logo" aria-label="AgendaAI - Inicio">
+                    <a href="#main" class="logo" aria-label="AgendaAI - Inicio">
                         <svg class="logo-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
                             <rect width="32" height="32" rx="8" fill="currentColor"/>
                             <path d="M8 10h16M8 16h12M8 22h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
@@ -627,10 +611,8 @@
                         <span class="logo-text">AgendaAI</span>
                     </a>
                     <p>Automatiza tus citas con IA. La forma inteligente de gestionar reservas.</p>
-                    <div class="social-links" aria-label="Redes sociales">
-                        <a href="https://twitter.com/agendaai" target="_blank" rel="noopener" aria-label="Twitter de AgendaAI"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
-                        <a href="https://linkedin.com/company/agendaai" target="_blank" rel="noopener" aria-label="LinkedIn de AgendaAI"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></a>
-                        <a href="https://github.com/agendaai" target="_blank" rel="noopener" aria-label="GitHub de AgendaAI"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></a>
+                    <div class="social-links" role="group" aria-label="Canal oficial">
+                        <a href="https://t.me/agenda_ia_sdr_bot?start=landing" target="_blank" rel="noopener" aria-label="AgendaAI en Telegram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M21.9 3.4 18.7 20c-.2 1-.9 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.6 8.7-7.9c.4-.3-.1-.5-.6-.2L6.6 13.3 2 11.8c-1-.3-1-1 .2-1.5l18.3-7c.8-.3 1.5.2 1.4 1.1z"/></svg></a>
                     </div>
                 </div>
 
@@ -638,77 +620,34 @@
                     <h3 class="footer-title">Producto</h3>
                     <ul>
                         <li><a href="#features">Características</a></li>
-                        <li><a href="#pricing">Precios</a></li>
                         <li><a href="#demo">Demo</a></li>
-                        <li><a href="/api-docs">API Docs</a></li>
-                        <li><a href="/integraciones">Integraciones</a></li>
-                        <li><a href="/changelog">Changelog</a></li>
+                        <li><a href="#pricing">Precios</a></li>
+                        <li><a href="#casos">Casos de uso</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </nav>
 
-                <nav class="footer-column" aria-label="Empresa">
-                    <h3 class="footer-title">Empresa</h3>
+                <nav class="footer-column" aria-label="Contacto">
+                    <h3 class="footer-title">Contacto</h3>
                     <ul>
-                        <li><a href="/nosotros">Sobre nosotros</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/carreras">Carreras</a></li>
-                        <li><a href="/prensa">Prensa</a></li>
-                        <li><a href="#contact">Contacto</a></li>
-                    </ul>
-                </nav>
-
-                <nav class="footer-column" aria-label="Recursos">
-                    <h3 class="footer-title">Recursos</h3>
-                    <ul>
-                        <li><a href="/ayuda">Centro de ayuda</a></li>
-                        <li><a href="/api-docs">API Docs</a></li>
-                        <li><a href="/webmcp">WebMCP Guide</a></li>
-                        <li><a href="/comunidad">Comunidad</a></li>
-                        <li><a href="/webinars">Webinars</a></li>
-                    </ul>
-                </nav>
-
-                <nav class="footer-column" aria-label="Legal">
-                    <h3 class="footer-title">Legal</h3>
-                    <ul>
-                        <li><a href="/privacidad">Privacidad</a></li>
-                        <li><a href="/terminos">Términos</a></li>
-                        <li><a href="/seguridad">Seguridad</a></li>
-                        <li><a href="/cookies">Cookies</a></li>
-                        <li><a href="/dpa">DPA/GDPR</a></li>
+                        <li><a href="https://t.me/agenda_ia_sdr_bot?start=landing" target="_blank" rel="noopener">Bot en Telegram</a></li>
+                        <li><a href="#contact">Soporte</a></li>
+                        <li><a href="#main">Volver arriba</a></li>
                     </ul>
                 </nav>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; <span id="year">2026</span> AgendaAI. Todos los derechos reservados.</p>
-                <div class="footer-legal">
-                    <a href="/privacidad">Política de Privacidad</a>
-                    <a href="/terminos">Términos de Servicio</a>
-                    <a href="/cookies">Política de Cookies</a>
-                </div>
+                <p>&copy; <span id="year">2026</span> AgendaAI. Los precios mostrados son de referencia.</p>
+                <p class="footer-legal-note">Sitio informativo del asistente de citas en Telegram.</p>
             </div>
         </div>
     </footer>
 
-    <dialog id="demo-dialog" aria-labelledby="demo-dialog-title">
-        <div class="dialog-content">
-            <header class="dialog-header">
-                <h2 id="demo-dialog-title">Demo: AgendaAI en acción</h2>
-                <button class="dialog-close" data-close-dialog aria-label="Cerrar demo">✕</button>
-            </header>
-            <p>En el video completo verías: conexión de Google Calendar en 1 clic, reserva por WhatsApp en &lt;3 segundos y recordatorio automático 24h antes.</p>
-            <ul class="dialog-list">
-                <li><strong>0:00</strong> — Conecta Google Calendar</li>
-                <li><strong>0:40</strong> — Cliente reserva por WhatsApp</li>
-                <li><strong>1:20</strong> — Recordatorio y anti no-show</li>
-            </ul>
-            <div class="dialog-cta">
-                <a href="#pricing" class="btn btn-primary" data-close-dialog>Probar gratis 14 días</a>
-            </div>
-        </div>
-    </dialog>
+    <!-- Contenedor del widget flotante: fuera de <main> para que ningún
+         ancestro con transform lo convierta en posición absoluta. -->
+    <div id="appointment-widget"></div>
 
-    <script src="js/main.js" defer></script>
+    <script src="js/main.js?v=6" defer></script>
 </body>
 </html>

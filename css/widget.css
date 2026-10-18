@@ -1,0 +1,637 @@
+/**
+ * Appointment Booking Web Widget - Styles
+ *
+ * Lightweight, embeddable CSS for the appointment widget.
+ * Uses CSS custom properties for easy theming.
+ */
+
+/* ============================================================================
+   CSS Custom Properties (Theme Variables)
+   ============================================================================ */
+
+:root {
+    /* Colors - override these for custom theming */
+    --appt-primary: #2563eb;
+    --appt-primary-hover: #1d4ed8;
+    --appt-primary-light: #dbeafe;
+    --appt-background: #ffffff;
+    --appt-surface: #f8fafc;
+    --appt-border: #e2e8f0;
+    --appt-text-primary: #1e293b;
+    --appt-text-secondary: #64748b;
+    --appt-text-muted: #94a3b8;
+    --appt-user-message: #2563eb;
+    --appt-user-text: #ffffff;
+    --appt-assistant-message: #f1f5f9;
+    --appt-assistant-text: #1e293b;
+    --appt-typing: #cbd5e1;
+    --appt-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    --appt-shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.16);
+    --appt-radius: 16px;
+    --appt-radius-sm: 8px;
+    --appt-transition: 0.2s ease;
+    --appt-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --appt-z-index: 2147483647;
+}
+
+/* Dark theme */
+.appt-widget--dark {
+    --appt-background: #0f172a;
+    --appt-surface: #1e293b;
+    --appt-border: #334155;
+    --appt-text-primary: #f1f5f9;
+    --appt-text-secondary: #94a3b8;
+    --appt-text-muted: #64748b;
+    --appt-assistant-message: #1e293b;
+    --appt-assistant-text: #f1f5f9;
+    --appt-typing: #475569;
+    --appt-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    --appt-shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================================================
+   Base Widget Styles
+   ============================================================================ */
+
+.appt-widget {
+    /* all:initial debe ir PRIMERO: cualquier propiedad declarada antes se
+       reinicia. position:fixed y z-index estaban antes y se perdían, por lo
+       que el widget no flotaba (se incrustaba en línea en la página). */
+    all: initial;
+    display: block;
+    position: fixed;
+    z-index: var(--appt-z-index);
+    color: var(--appt-text-primary);
+    font-family: var(--appt-font-family) !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+}
+
+/* Position variants */
+.appt-widget[data-position="bottom-right"] {
+    bottom: 24px;
+    right: 24px;
+}
+
+.appt-widget[data-position="bottom-left"] {
+    bottom: 24px;
+    left: 24px;
+}
+
+.appt-widget[data-position="top-right"] {
+    top: 24px;
+    right: 24px;
+}
+
+.appt-widget[data-position="top-left"] {
+    top: 24px;
+    left: 24px;
+}
+
+/* Hidden state */
+.appt-widget--hidden {
+    display: none !important;
+}
+
+/* ============================================================================
+   Container
+   ============================================================================ */
+
+.appt-widget__container {
+    width: 380px;
+    max-width: calc(100vw - 48px);
+    max-height: 600px;
+    /* No debe tapar la cabecera en pantallas bajas (portátil 768px de alto) */
+    max-height: min(600px, calc(100dvh - 48px));
+    background: var(--appt-background);
+    border-radius: var(--appt-radius);
+    box-shadow: var(--appt-shadow);
+    border: 1px solid var(--appt-border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: appt-slide-up 0.3s ease;
+}
+
+@keyframes appt-slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Minimized state */
+.appt-widget--minimized .appt-widget__container {
+    display: none;
+}
+
+/* ============================================================================
+   Header
+   ============================================================================ */
+
+.appt-widget__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, var(--appt-primary) 0%, var(--appt-primary-hover) 100%);
+    color: white;
+    flex-shrink: 0;
+}
+
+.appt-widget__title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+.appt-widget__subtitle {
+    font-size: 12px;
+    opacity: 0.9;
+    margin-top: 2px;
+}
+
+.appt-widget__header-actions {
+    display: flex;
+    gap: 4px;
+}
+
+.appt-widget__icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    border-radius: var(--appt-radius-sm);
+    color: white;
+    cursor: pointer;
+    transition: background-color var(--appt-transition);
+}
+
+.appt-widget__icon-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.appt-widget__icon-btn:active {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.appt-widget__icon-btn:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+/* ============================================================================
+   Messages Area
+   ============================================================================ */
+
+.appt-widget__messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: var(--appt-surface);
+    /* Custom scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: var(--appt-border) transparent;
+}
+
+.appt-widget__messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.appt-widget__messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.appt-widget__messages::-webkit-scrollbar-thumb {
+    background: var(--appt-border);
+    border-radius: 3px;
+}
+
+.appt-widget__messages::-webkit-scrollbar-thumb:hover {
+    background: var(--appt-text-muted);
+}
+
+/* ============================================================================
+   Message Bubbles
+   ============================================================================ */
+
+.appt-widget__message {
+    display: flex;
+    flex-direction: column;
+    max-width: 85%;
+    animation: appt-message-in 0.2s ease;
+}
+
+@keyframes appt-message-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* User message (right-aligned) */
+.appt-widget__message--user {
+    align-self: flex-end;
+    align-items: flex-end;
+}
+
+.appt-widget__message--user .appt-widget__message-text {
+    background: var(--appt-user-message);
+    color: var(--appt-user-text);
+    border-radius: 18px 18px 4px 18px;
+}
+
+/* Assistant message (left-aligned) */
+.appt-widget__message--assistant {
+    align-self: flex-start;
+    align-items: flex-start;
+}
+
+.appt-widget__message--assistant .appt-widget__message-text {
+    background: var(--appt-assistant-message);
+    color: var(--appt-assistant-text);
+    border-radius: 18px 18px 18px 4px;
+}
+
+.appt-widget__message-text {
+    padding: 10px 14px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    line-height: 1.4;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.appt-widget__message-text a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.appt-widget__message-text a:hover {
+    opacity: 0.8;
+}
+
+.appt-widget__message-time {
+    font-size: 10px;
+    color: var(--appt-text-muted);
+    margin-top: 4px;
+    padding: 0 4px;
+}
+
+/* ============================================================================
+   Typing Indicator
+   ============================================================================ */
+
+.appt-widget__typing {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 16px;
+    color: var(--appt-text-secondary);
+    font-size: 13px;
+}
+
+.appt-widget__typing-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--appt-typing);
+    border-radius: 50%;
+    animation: appt-typing-bounce 1.4s infinite ease-in-out both;
+}
+
+.appt-widget__typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.appt-widget__typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes appt-typing-bounce {
+    0%, 80%, 100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ============================================================================
+   Input Area
+   ============================================================================ */
+
+.appt-widget__input-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: var(--appt-background);
+    border-top: 1px solid var(--appt-border);
+    flex-shrink: 0;
+}
+
+.appt-widget__input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid var(--appt-border);
+    border-radius: 24px;
+    background: var(--appt-surface);
+    color: var(--appt-text-primary);
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.5;
+    outline: none;
+    transition: border-color var(--appt-transition), box-shadow var(--appt-transition);
+}
+
+.appt-widget__input::placeholder {
+    color: var(--appt-text-muted);
+}
+
+.appt-widget__input:hover {
+    border-color: var(--appt-text-muted);
+}
+
+.appt-widget__input:focus {
+    border-color: var(--appt-primary);
+    box-shadow: 0 0 0 3px var(--appt-primary-light);
+}
+
+.appt-widget__input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ============================================================================
+   Send Button
+   ============================================================================ */
+
+.appt-widget__send {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: var(--appt-primary);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    transition: background-color var(--appt-transition), transform var(--appt-transition);
+    flex-shrink: 0;
+}
+
+.appt-widget__send:hover:not(:disabled) {
+    background: var(--appt-primary-hover);
+    transform: scale(1.05);
+}
+
+.appt-widget__send:active:not(:disabled) {
+    transform: scale(0.95);
+}
+
+.appt-widget__send:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.appt-widget__send--sending {
+    animation: appt-spin 1s linear infinite;
+}
+
+@keyframes appt-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ============================================================================
+   Floating Button (Minimized State)
+   ============================================================================ */
+
+.appt-widget__float-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    box-shadow: var(--appt-shadow-hover);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform var(--appt-transition), box-shadow var(--appt-transition);
+    border: none;
+    background: var(--appt-primary);
+    color: white;
+    z-index: 10;
+}
+
+.appt-widget__float-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 40px rgba(37, 99, 235, 0.4);
+}
+
+.appt-widget__float-btn:active {
+    transform: scale(0.95);
+}
+
+.appt-widget__float-btn:focus-visible {
+    outline: 3px solid var(--appt-primary-light);
+    outline-offset: 3px;
+}
+
+.appt-widget__float-icon {
+    transition: transform var(--appt-transition);
+}
+
+.appt-widget__float-btn:hover .appt-widget__float-icon {
+    transform: rotate(15deg);
+}
+
+/* Notification badge */
+.appt-widget__notification-badge {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    min-width: 20px;
+    height: 20px;
+    background: #ef4444;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+    animation: appt-badge-pop 0.3s ease;
+}
+
+@keyframes appt-badge-pop {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* ============================================================================
+   Toast Notifications
+   ============================================================================ */
+
+.appt-widget__toast {
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 16px;
+    border-radius: var(--appt-radius-sm);
+    font-size: 13px;
+    font-weight: 500;
+    color: white;
+    box-shadow: var(--appt-shadow);
+    animation: appt-toast-in 0.3s ease;
+    z-index: 20;
+    white-space: nowrap;
+}
+
+@keyframes appt-toast-in {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.appt-widget__toast--success {
+    background: #10b981;
+}
+
+.appt-widget__toast--error {
+    background: #ef4444;
+}
+
+.appt-widget__toast--info {
+    background: var(--appt-primary);
+}
+
+/* ============================================================================
+   Error State
+   ============================================================================ */
+
+.appt-widget--error .appt-widget__container {
+    border-color: #ef4444;
+}
+
+/* ============================================================================
+   Responsive
+   ============================================================================ */
+
+@media (max-width: 480px) {
+    .appt-widget[data-position="bottom-right"],
+    .appt-widget[data-position="bottom-left"],
+    .appt-widget[data-position="top-right"],
+    .appt-widget[data-position="top-left"] {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;
+    }
+
+    .appt-widget__container {
+        width: 100%;
+        max-width: 100%;
+        max-height: 70vh;
+        border-radius: var(--appt-radius) var(--appt-radius) 0 0;
+    }
+
+    .appt-widget__float-btn {
+        bottom: 16px;
+        right: 16px;
+    }
+}
+
+/* ============================================================================
+   High Contrast Mode Support
+   ============================================================================ */
+
+@media (prefers-contrast: high) {
+    :root {
+        --appt-border: currentColor;
+        --appt-shadow: 0 0 0 2px currentColor;
+    }
+
+    .appt-widget__input:focus {
+        box-shadow: 0 0 0 3px currentColor;
+    }
+}
+
+/* ============================================================================
+   Reduced Motion
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .appt-widget__container,
+    .appt-widget__message,
+    .appt-widget__typing-dot,
+    .appt-widget__float-btn,
+    .appt-widget__notification-badge,
+    .appt-widget__toast,
+    .appt-widget__send--sending {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ============================================================================
+   Print Styles
+   ============================================================================ */
+
+@media print {
+    .appt-widget {
+        display: none !important;
+    }
+}
+
+/* ============================================================================
+   RTL Support
+   ============================================================================ */
+
+[dir="rtl"] .appt-widget__message--user {
+    align-self: flex-start;
+}
+
+[dir="rtl"] .appt-widget__message--user .appt-widget__message-text {
+    border-radius: 18px 18px 18px 4px;
+}
+
+[dir="rtl"] .appt-widget__message--assistant {
+    align-self: flex-end;
+}
+
+[dir="rtl"] .appt-widget__message--assistant .appt-widget__message-text {
+    border-radius: 18px 18px 4px 18px;
+}
+
+[dir="rtl"] .appt-widget[data-position="bottom-right"] {
+    left: 24px;
+    right: auto;
+}
+
+[dir="rtl"] .appt-widget[data-position="bottom-left"] {
+    right: 24px;
+    left: auto;
+}

@@ -1,0 +1,9 @@
+# AgendaAI - robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://agenda-landing-hector-gs-projects-1a437fbd.vercel.app/sitemap.xml
+
+# Este sitio es estático; el producto vive en el bot de Telegram
+Disallow: /api/

@@ -29,100 +29,10 @@
     });
   }
 
-  // Pricing toggle (mensual / anual)
-  var billingToggle = document.getElementById('billing-toggle');
-  var announce = document.getElementById('price-announce');
-  if (billingToggle) {
-    billingToggle.addEventListener('click', function () {
-      var annual = billingToggle.getAttribute('aria-checked') !== 'true';
-      billingToggle.setAttribute('aria-checked', String(annual));
-      document.querySelectorAll('.pricing-card .amount').forEach(function (el) {
-        var val = annual ? el.getAttribute('data-yearly') : el.getAttribute('data-monthly');
-        if (val) el.textContent = val;
-      });
-      document.querySelectorAll('.pricing-card .period').forEach(function (el) {
-        el.textContent = annual ? '/mes fact. anual' : '/mes';
-      });
-      if (announce) announce.textContent = annual ? 'Precios anuales con 20% de descuento.' : 'Precios mensuales.';
-    });
-  }
+  // Demo dialog removal: #chat-open ahora abre el widget flotante (js/demo-chat.js)
 
-  // Demo dialog
-  var dialog = document.getElementById('demo-dialog');
-  var openBtn = document.querySelector('.video-placeholder');
-  if (dialog && openBtn && typeof dialog.showModal === 'function') {
-    openBtn.addEventListener('click', function () { dialog.showModal(); });
-    dialog.querySelectorAll('[data-close-dialog]').forEach(function (btn) {
-      btn.addEventListener('click', function () { dialog.close(); });
-    });
-    dialog.addEventListener('click', function (e) {
-      if (e.target === dialog) dialog.close();
-    });
-  } else if (openBtn) {
-    openBtn.addEventListener('click', function () {
-      document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
-    });
-  }
-
-  // Contact form validation (progressive enhancement; backend = /api/leads)
-  var form = document.getElementById('contact-form');
-  if (form) {
-    var status = document.getElementById('form-status');
-    var setErr = function (id, msg) {
-      var input = document.getElementById(id);
-      var err = document.getElementById(id + '-err');
-      if (!input || !err) return;
-      var bad = Boolean(msg);
-      input.setAttribute('aria-invalid', String(bad));
-      err.textContent = msg || '';
-      err.hidden = !bad;
-    };
-    var showStatus = function (ok, msg) {
-      if (!status) return;
-      status.hidden = false;
-      status.className = 'form-status ' + (ok ? 'success' : 'error');
-      status.textContent = msg;
-    };
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var name = form.name.value.trim();
-      var email = form.email.value.trim();
-      var message = form.message.value.trim();
-      var firstBad = null;
-      setErr('name', name.length < 2 ? 'Escribe tu nombre (mín. 2 caracteres).' : '');
-      if (name.length < 2) firstBad = firstBad || 'name';
-      setErr('email', /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? '' : 'Escribe un email válido.');
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) firstBad = firstBad || 'email';
-      setErr('message', message.length < 10 ? 'Cuéntanos un poco más (mín. 10 caracteres).' : '');
-      if (message.length < 10) firstBad = firstBad || 'message';
-      if (firstBad) {
-        showStatus(false, 'Revisa los campos marcados e inténtalo de nuevo.');
-        document.getElementById(firstBad).focus();
-        return;
-      }
-      // Demo sin backend: simula envío exitoso
-      showStatus(true, '¡Gracias, ' + name.split(' ')[0] + '! Te responderemos en menos de 4h laborables.');
-      form.reset();
-    });
-  }
-
-  // Trial / pricing demo handlers (evitan 404 hasta tener backend)
-  document.querySelectorAll('form[action^="/api/"]').forEach(function (f) {
-    if (f.id === 'contact-form') return;
-    f.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var email = f.querySelector('input[type="email"]');
-      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
-        email.focus();
-        email.setAttribute('aria-invalid', 'true');
-        return;
-      }
-      var plan = f.querySelector('input[name="plan"]');
-      var planName = plan ? plan.value : 'professional';
-      window.location.hash = '#pricing';
-      if (announce) announce.textContent = '¡Listo! Revisa tu email para activar la prueba de ' + planName + '.';
-    });
-  });
+  // Sin formularios propios: el único canal de conversión es el bot de Telegram.
+  // (Los antiguos /api/trial, /api/subscribe, /api/leads y /api/sales no tienen backend.)
 
   // ---- Subtle motion layer (reveal, progress, counters, loading) ----
   (function motion() {
@@ -221,44 +131,345 @@
       counters.forEach(function (el) { cio.observe(el); });
     }
 
-    // Button loading feedback on demo forms (no backend yet): brief spinner → announce
-    document.querySelectorAll('form[action^="/api/"]').forEach(function (f) {
-      f.addEventListener('submit', function () {
-        var btn = f.querySelector('button[type="submit"]');
-        if (!btn || btn.classList.contains('is-loading')) return;
-        var email = f.querySelector('input[type="email"]');
-        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) return;
-        btn.classList.add('is-loading');
-        btn.setAttribute('aria-busy', 'true');
-        setTimeout(function () {
-          btn.classList.remove('is-loading');
-          btn.removeAttribute('aria-busy');
-        }, 900);
-      });
-    });
+    // Sin formularios que simular: el CTA principal abre el bot de Telegram.
   })();
 
-  // WebMCP imperative: solo acciones dinámicas (declarative cubre el resto)
-  try {
-    if ('mcpActions' in navigator && navigator.mcpActions && typeof navigator.mcpActions.register === 'function') {
-      navigator.mcpActions.register({
-        id: 'check-availability',
-        name: 'Check Availability',
-        description: 'Consultar huecos disponibles en tiempo real para reservar. Indica rango de fechas.',
-        parameters: {
-          type: 'object',
-          required: ['date_from', 'date_to'],
-          properties: {
-            date_from: { type: 'string', format: 'date', description: 'Fecha inicio YYYY-MM-DD' },
-            date_to: { type: 'string', format: 'date', description: 'Fecha fin YYYY-MM-DD' }
-          }
-        },
-        handler: async function (params) {
-          var res = await fetch('/api/slots?from=' + encodeURIComponent(params.date_from) + '&to=' + encodeURIComponent(params.date_to));
-          var data = await res.json().catch(function () { return { slots: [] }; });
-          return { success: res.ok, slots: data.slots || [] };
+  // ============ Agenda Widget Demo (mimo zen) ============
+  (function agendaDemo() {
+    var grid = document.getElementById('agenda-days');
+    var titleEl = document.getElementById('agenda-title');
+    var slotsPanel = document.getElementById('agenda-slots');
+    var slotsList = document.getElementById('agenda-slots-list');
+    var slotsDate = document.getElementById('agenda-slots-date');
+    var slotsClose = document.getElementById('agenda-slots-close');
+    var slotsEmpty = document.getElementById('agenda-slots-empty');
+    var prevBtn = document.getElementById('agenda-prev');
+    var nextBtn = document.getElementById('agenda-next');
+    var viewBtns = document.querySelectorAll('.agenda-view-btn');
+    var tabPanel = document.getElementById('agenda-view-panel');
+
+    if (!grid || !titleEl) return;
+
+    var state = {
+      currentDate: new Date(),
+      view: 'week',
+      selectedDay: null,
+      selectedSlot: null
+    };
+
+    // Índices alineados con Date.getDay() (0 = domingo)
+    var dayNames = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+    var monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+
+    function formatDate(d) {
+      return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+    }
+
+    function parseDate(s) {
+      var parts = s.split('-');
+      return new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]));
+    }
+
+    function isToday(d) {
+      var t = new Date();
+      return d.getDate() === t.getDate() && d.getMonth() === t.getMonth() && d.getFullYear() === t.getFullYear();
+    }
+
+    function isPast(d) {
+      var t = new Date();
+      t.setHours(0, 0, 0, 0);
+      return d < t;
+    }
+
+    function generateSlots(dateStr) {
+      var base = parseDate(dateStr);
+      var dayOfWeek = base.getDay();
+      var isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
+      var isPastDay = isPast(base);
+
+      var allSlots = [
+        '08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
+        '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30',
+        '16:00', '16:30', '17:00', '17:30', '18:00', '18:30', '19:00', '19:30'
+      ];
+
+      if (isWeekend) {
+        allSlots = allSlots.slice(4, 16);
+      }
+
+      var bookedTimes = ['10:00', '11:30', '14:00', '16:30', '18:00'];
+      var rng = new PseudoRandom(dateStr);
+      var slots = allSlots.map(function (time) {
+        var isBooked = bookedTimes.includes(time) || (rng.next() < 0.15 && !isPastDay);
+        return {
+          time: time,
+          status: isPastDay ? 'past' : (isBooked ? 'booked' : 'available'),
+          label: time
+        };
+      });
+
+      return slots;
+    }
+
+    function PseudoRandom(seed) {
+      var h = 0;
+      for (var i = 0; i < seed.length; i++) {
+        h = ((h << 5) - h) + seed.charCodeAt(i);
+        h |= 0;
+      }
+      this.state = Math.abs(h) || 1;
+    }
+    PseudoRandom.prototype.next = function () {
+      this.state = (this.state * 1664525 + 1013904223) % 4294967296;
+      return this.state / 4294967296;
+    };
+
+    function renderTitle() {
+      var d = state.currentDate;
+      if (state.view === 'month') {
+        titleEl.textContent = monthNames[d.getMonth()] + ' ' + d.getFullYear();
+      } else if (state.view === 'week') {
+        var start = new Date(d);
+        start.setDate(d.getDate() - d.getDay() + 1);
+        var end = new Date(start);
+        end.setDate(start.getDate() + 6);
+        titleEl.textContent = start.getDate() + ' - ' + end.getDate() + ' ' + monthNames[end.getMonth()] + ' ' + end.getFullYear();
+      } else {
+        titleEl.textContent = dayNames[d.getDay()] + ' ' + d.getDate() + ' ' + monthNames[d.getMonth()] + ' ' + d.getFullYear();
+      }
+    }
+
+    function renderGrid() {
+      grid.innerHTML = '';
+      var d = new Date(state.currentDate);
+      var days = [];
+
+      if (state.view === 'month') {
+        d.setDate(1);
+        var firstDay = d.getDay();
+        var offset = firstDay === 0 ? 6 : firstDay - 1;
+        var prevMonth = new Date(d);
+        prevMonth.setMonth(d.getMonth() - 1);
+        var daysInPrev = new Date(d.getFullYear(), d.getMonth(), 0).getDate();
+
+        for (var i = offset - 1; i >= 0; i--) {
+          var pd = new Date(prevMonth);
+          pd.setDate(daysInPrev - i);
+          days.push({ date: pd, empty: true });
         }
+
+        var daysInMonth = new Date(d.getFullYear(), d.getMonth() + 1, 0).getDate();
+        for (var i = 1; i <= daysInMonth; i++) {
+          var cd = new Date(d.getFullYear(), d.getMonth(), i);
+          days.push({ date: cd, empty: false });
+        }
+
+        var nextMonth = new Date(d);
+        nextMonth.setMonth(d.getMonth() + 1);
+        while (days.length < 42) {
+          var nd = new Date(nextMonth);
+          nd.setDate(days.length - daysInMonth - offset + 1);
+          days.push({ date: nd, empty: true });
+        }
+      } else if (state.view === 'week') {
+        var start = new Date(d);
+        start.setDate(d.getDate() - d.getDay() + 1);
+        for (var i = 0; i < 7; i++) {
+          var wd = new Date(start);
+          wd.setDate(start.getDate() + i);
+          days.push({ date: wd, empty: false });
+        }
+      } else {
+        days.push({ date: new Date(d), empty: false });
+      }
+
+      var row = null;
+      days.forEach(function (day, index) {
+        // Filas ARIA de 7 celdas (mes/semana) o 1 celda (día) para una jerarquía grid > row > gridcell válida
+        if (index % 7 === 0) {
+          row = document.createElement('div');
+          row.setAttribute('role', 'row');
+          grid.appendChild(row);
+        }
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'agenda-day';
+        btn.setAttribute('role', 'gridcell');
+        btn.setAttribute('aria-label', dayNames[day.date.getDay()] + ' ' + day.date.getDate());
+
+        var isSelected = Boolean(state.selectedDay) && formatDate(day.date) === formatDate(state.selectedDay);
+        btn.setAttribute('aria-selected', String(isSelected));
+
+        if (day.empty) {
+          btn.classList.add('empty');
+          btn.textContent = '';
+        } else {
+          btn.textContent = day.date.getDate();
+          if (isToday(day.date)) btn.classList.add('today');
+          if (isPast(day.date)) btn.classList.add('past');
+          if (isSelected) {
+            btn.classList.add('selected');
+          }
+          var slots = generateSlots(formatDate(day.date));
+          if (slots.some(function (s) { return s.status === 'available'; })) {
+            btn.classList.add('has-slots');
+          }
+          btn.dataset.date = formatDate(day.date);
+          btn.addEventListener('click', function () {
+            if (!day.empty && !isPast(day.date)) openSlots(day.date);
+          });
+        }
+        row.appendChild(btn);
       });
     }
-  } catch (err) { /* WebMCP opcional: la landing funciona sin él */ }
+
+    function openSlots(date) {
+      state.selectedDay = date;
+      state.selectedSlot = null;
+      var dateStr = formatDate(date);
+      var slots = generateSlots(dateStr);
+
+      slotsDate.textContent = dayNames[date.getDay()] + ', ' + date.getDate() + ' de ' + monthNames[date.getMonth()];
+      slotsList.innerHTML = '';
+
+      var hasAvailable = slots.some(function (s) { return s.status === 'available'; });
+      slotsEmpty.hidden = hasAvailable;
+
+      slots.forEach(function (slot) {
+        var li = document.createElement('li');
+        li.className = 'agenda-slot ' + slot.status;
+        li.setAttribute('role', 'option');
+        li.setAttribute('aria-selected', 'false');
+        li.dataset.time = slot.time;
+
+        li.innerHTML =
+          '<span class="agenda-slot-time">' + slot.time + '</span>' +
+          '<span class="agenda-slot-status ' + slot.status + '">' +
+            (slot.status === 'available' ? 'Disponible' : slot.status === 'booked' ? 'Reservado' : 'Pasado') +
+          '</span>';
+
+        if (slot.status === 'available') {
+          li.tabIndex = 0;
+          li.addEventListener('click', function () {
+            selectSlot(li, slot);
+          });
+          li.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+              e.preventDefault();
+              selectSlot(li, slot);
+            }
+          });
+        } else {
+          li.setAttribute('aria-disabled', 'true');
+        }
+        slotsList.appendChild(li);
+      });
+
+      renderGrid();
+      slotsPanel.hidden = false;
+      slotsPanel.focus();
+    }
+
+    function selectSlot(el, slot) {
+      var prev = slotsList.querySelector('.agenda-slot.selected');
+      if (prev) {
+        prev.classList.remove('selected');
+        prev.setAttribute('aria-selected', 'false');
+        var status = prev.querySelector('.agenda-slot-status');
+        if (status) {
+          status.className = 'agenda-slot-status available';
+          status.textContent = 'Disponible';
+        }
+      }
+      el.classList.add('selected');
+      el.setAttribute('aria-selected', 'true');
+      var statusEl = el.querySelector('.agenda-slot-status');
+      if (statusEl) {
+        statusEl.className = 'agenda-slot-status selected';
+        statusEl.textContent = 'Seleccionado';
+      }
+      state.selectedSlot = slot;
+    }
+
+    function closeSlots() {
+      slotsPanel.hidden = true;
+      state.selectedDay = null;
+      state.selectedSlot = null;
+      renderGrid();
+    }
+
+    function navigate(delta) {
+      var d = new Date(state.currentDate);
+      if (state.view === 'month') {
+        d.setMonth(d.getMonth() + delta);
+      } else if (state.view === 'week') {
+        d.setDate(d.getDate() + delta * 7);
+      } else {
+        d.setDate(d.getDate() + delta);
+      }
+      state.currentDate = d;
+      closeSlots();
+      renderTitle();
+      renderGrid();
+    }
+
+    function setView(view) {
+      state.view = view;
+      viewBtns.forEach(function (btn) {
+        var active = btn.dataset.view === view;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-selected', String(active));
+        if (active && tabPanel && btn.id) tabPanel.setAttribute('aria-labelledby', btn.id);
+      });
+      closeSlots();
+      renderTitle();
+      renderGrid();
+    }
+
+    prevBtn.addEventListener('click', function () { navigate(-1); });
+    nextBtn.addEventListener('click', function () { navigate(1); });
+    slotsClose.addEventListener('click', closeSlots);
+    viewBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () { setView(btn.dataset.view); });
+      // Navegación por teclado del tablist (WAI-ARIA Tabs pattern)
+      btn.addEventListener('keydown', function (e) {
+        var list = Array.prototype.slice.call(viewBtns);
+        var i = list.indexOf(btn);
+        var next = null;
+        if (e.key === 'ArrowRight') next = list[(i + 1) % list.length];
+        else if (e.key === 'ArrowLeft') next = list[(i - 1 + list.length) % list.length];
+        else if (e.key === 'Home') next = list[0];
+        else if (e.key === 'End') next = list[list.length - 1];
+        if (next) {
+          e.preventDefault();
+          next.focus();
+          setView(next.dataset.view);
+        }
+      });
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !slotsPanel.hidden) {
+        closeSlots();
+      }
+    });
+
+    renderTitle();
+    renderGrid();
+  })();
+
+  // WebMCP: la acción imperativa "check-availability" se retiró porque apuntaba a
+  // /api/slots (sin backend). Las acciones declarativas de la página siguen activas.
+
+  // Analítica: un evento por clic en CTA (data-cta). Si Vercel Analytics no está
+  // habilitado, el guard de typeof evita errores en consola.
+  document.addEventListener('click', function (e) {
+    var el = e.target instanceof Element ? e.target.closest('[data-cta]') : null;
+    if (!el) return;
+    try {
+      if (typeof window.va === 'function') {
+        window.va('event', { name: 'cta_click', data: { cta: el.dataset.cta } });
+      }
+    } catch (_) {}
+  }, true);
 })();

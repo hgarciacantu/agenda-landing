@@ -1,0 +1,6 @@
+.vercel
+backups/
+cloudflared.exe
+node_modules/
+*.log
+.DS_Store
