@@ -580,15 +580,16 @@
   var sessionReady = false;
   var degraded = false;
   var autoOpened = false;
+  var userOpened = false;
   var io = null;
 
   function applyBrandVars() {
     var s = document.documentElement.style;
-    s.setProperty('--appt-primary', '#4F46E5');
-    s.setProperty('--appt-primary-hover', '#4338CA');
-    s.setProperty('--appt-primary-light', '#EEF2FF');
-    s.setProperty('--appt-user-message', '#4F46E5');
-    s.setProperty('--appt-font-family', "'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif");
+    s.setProperty('--appt-primary', '#812DF2');
+    s.setProperty('--appt-primary-hover', '#6A1FD0');
+    s.setProperty('--appt-primary-light', '#EFE1FF');
+    s.setProperty('--appt-user-message', '#812DF2');
+    s.setProperty('--appt-font-family', "'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif");
   }
 
   function createWidget(apiUrl, assistantName) {
@@ -598,7 +599,7 @@
       autoOpen: false, // burbuja flotante visible desde el inicio; se abre al llegar al demo
       theme: 'light',
       position: 'bottom-right',
-      primaryColor: '#4F46E5',
+      primaryColor: '#812DF2',
       businessName: 'AgendaAI',
       assistantName: assistantName,
       onSessionCreate: function () { sessionReady = true; },
@@ -622,17 +623,26 @@
   }
 
   function openOnce() {
-    if (autoOpened || !instance) return;
+    if (autoOpened || userOpened || !instance) return;
+    // En móvil el panel ocupa toda la pantalla y roba el foco: solo apertura manual.
+    if (window.matchMedia && window.matchMedia('(max-width:900px)').matches) return;
     autoOpened = true;
     instance.open();
-    if (io) io.disconnect();
   }
 
   function watchCard() {
     var card = document.querySelector('.live-chat-card');
     if (!card || !('IntersectionObserver' in window)) return;
     io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { if (en.isIntersecting) openOnce(); });
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          openOnce();
+        } else if (autoOpened && !userOpened && instance) {
+          // No dejar el chat flotante tapando precios, FAQ o el footer.
+          instance.close();
+          autoOpened = false;
+        }
+      });
     }, { threshold: 0.3 });
     io.observe(card);
   }
@@ -647,7 +657,10 @@
 
     var openBtn = document.getElementById('chat-open');
     if (openBtn) {
-      openBtn.addEventListener('click', function () { if (instance) instance.open(); });
+      openBtn.addEventListener('click', function () {
+        userOpened = true;
+        if (instance) instance.open();
+      });
     }
 
     detectBackend().then(function (base) {

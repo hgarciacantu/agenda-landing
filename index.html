@@ -1,653 +1,2350 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- SEO -->
-    <title>AgendaAI: automatiza tus citas con IA en Telegram</title>
-    <meta name="description" content="Tus clientes reservan citas por Telegram en 3 mensajes. AgendaAI consulta huecos, confirma, programa recordatorios y sincroniza con Google Calendar.">
-    <meta name="author" content="AgendaAI">
-    <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="theme-color" content="#4F46E5">
-    <link rel="canonical" href="https://agenda-landing-hector-gs-projects-1a437fbd.vercel.app/">
+    <title>AgendaAI: automatiza tus citas con IA por WhatsApp</title>
+    <meta
+      name="description"
+      content="Tus clientes reservan citas por WhatsApp en 3 mensajes. AgendaAI consulta huecos, confirma, programa recordatorios y sincroniza con Google Calendar."
+    />
+    <meta name="author" content="AgendaAI" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#812DF2" />
+    <meta name="color-scheme" content="light" />
+    <link
+      rel="canonical"
+      href="https://agenda-landing-hector-gs-projects-1a437fbd.vercel.app/"
+    />
     <!-- TODO(dominio): este alias de Vercel es el único dominio vivo hoy. Cuando
          exista el dominio definitivo hay que sustituirlo en canonical, og:url,
          twitter:image, JSON-LD (url/image), sitemap.xml y robots.txt. -->
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://agenda-landing-hector-gs-projects-1a437fbd.vercel.app/">
-    <meta property="og:site_name" content="AgendaAI">
-    <meta property="og:locale" content="es_ES">
-    <meta property="og:title" content="AgendaAI: automatiza tus citas con IA en Telegram">
-    <meta property="og:description" content="Tu cliente escribe, el bot consulta huecos, confirma y agenda. Reservas por Telegram con recordatorios y Google Calendar.">
-    <meta property="og:image" content="https://agenda-landing-hector-gs-projects-1a437fbd.vercel.app/images/og-image.jpg">
-    <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="AgendaAI: automatiza tus citas con IA en Telegram">
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://agenda-landing-hector-gs-projects-1a437fbd.vercel.app/"
+    />
+    <meta property="og:site_name" content="AgendaAI" />
+    <meta property="og:locale" content="es_ES" />
+    <meta
+      property="og:title"
+      content="AgendaAI: automatiza tus citas con IA por WhatsApp"
+    />
+    <meta
+      property="og:description"
+      content="Tu cliente escribe, el bot consulta huecos, confirma y agenda. Reservas por WhatsApp con recordatorios y Google Calendar."
+    />
+    <meta
+      property="og:image"
+      content="https://agenda-landing-hector-gs-projects-1a437fbd.vercel.app/images/og-image.jpg"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="AgendaAI: automatiza tus citas con IA por WhatsApp"
+    />
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AgendaAI: automatiza tus citas con IA en Telegram">
-    <meta name="twitter:description" content="Tu cliente escribe, el bot consulta huecos, confirma y agenda. Reservas por Telegram con recordatorios y Google Calendar.">
-    <meta name="twitter:image" content="https://agenda-landing-hector-gs-projects-1a437fbd.vercel.app/images/og-image.jpg">
-    <meta name="twitter:image:alt" content="AgendaAI: automatiza tus citas con IA en Telegram">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="AgendaAI: automatiza tus citas con IA por WhatsApp"
+    />
+    <meta
+      name="twitter:description"
+      content="Tu cliente escribe, el bot consulta huecos, confirma y agenda. Reservas por WhatsApp con recordatorios y Google Calendar."
+    />
+    <meta
+      name="twitter:image"
+      content="https://agenda-landing-hector-gs-projects-1a437fbd.vercel.app/images/og-image.jpg"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="AgendaAI: automatiza tus citas con IA por WhatsApp"
+    />
 
     <!-- Structured Data: Software -->
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "AgendaAI",
         "url": "https://agenda-landing-hector-gs-projects-1a437fbd.vercel.app/",
         "image": "https://agenda-landing-hector-gs-projects-1a437fbd.vercel.app/images/og-image.jpg",
         "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Telegram, Web",
+        "operatingSystem": "WhatsApp, Web",
         "inLanguage": "es",
-        "description": "Asistente de citas con IA en Telegram: consulta disponibilidad, confirma reservas, envía recordatorios y sincroniza con Google Calendar.",
-        "sameAs": ["https://t.me/agenda_ia_sdr_bot"],
+        "description": "Asistente de citas con IA por WhatsApp: consulta disponibilidad, confirma reservas, envía recordatorios y sincroniza con Google Calendar.",
         "featureList": [
-            "Reserva de citas por lenguaje natural en Telegram",
-            "Consulta de disponibilidad y confirmación de reservas",
-            "Recordatorios automáticos antes de la cita",
-            "Sincronización con Google Calendar y Cal.com",
-            "Widget de chat embebible para la web"
+          "Reserva de citas por lenguaje natural en WhatsApp",
+          "Consulta de disponibilidad y confirmación de reservas",
+          "Sincronización con Google Calendar",
+          "Widget embebible para la web"
         ],
         "offers": [
-            {"@type": "Offer", "name": "Fundador", "price": "399", "priceCurrency": "MXN", "category": "subscription", "description": "Primeros 3 consultorios. Precio congelado de por vida."},
-            {"@type": "Offer", "name": "Estándar", "price": "599", "priceCurrency": "MXN", "category": "subscription", "description": "1 profesional, hasta 300 citas al mes."},
-            {"@type": "Offer", "name": "Pro", "price": "999", "priceCurrency": "MXN", "category": "subscription", "description": "Hasta 3 profesionales, hasta 1,000 citas al mes."}
+          {
+            "@type": "Offer",
+            "name": "Fundador",
+            "price": "399",
+            "priceCurrency": "MXN",
+            "category": "subscription",
+            "description": "Primeros 3 consultorios. Precio congelado de por vida."
+          },
+          {
+            "@type": "Offer",
+            "name": "Estándar",
+            "price": "599",
+            "priceCurrency": "MXN",
+            "category": "subscription",
+            "description": "1 profesional, panel de métricas, implementación guiada."
+          }
         ]
-    }
+      }
     </script>
 
     <!-- Structured Data: FAQ (debe coincidir con el bloque visible #faq) -->
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-            {"@type": "Question", "name": "¿Cómo empiezo a usar AgendaAI?", "acceptedAnswer": {"@type": "Answer", "text": "Escribe al bot en Telegram. Te guía en la conversación para dejar lista tu agenda y te indica el plan y el precio vigente antes de cualquier pago."}},
-            {"@type": "Question", "name": "¿Necesito conocimientos técnicos para configurarlo?", "acceptedAnswer": {"@type": "Answer", "text": "No. La configuración se hace conversando con el bot: no hay que instalar software ni tocar código."}},
-            {"@type": "Question", "name": "¿Cómo reserva un cliente una cita?", "acceptedAnswer": {"@type": "Answer", "text": "El cliente escribe qué día y hora prefiere en lenguaje natural. El bot consulta los huecos libres, propone horarios y confirma la reserva en pocos mensajes."}},
-            {"@type": "Question", "name": "¿Se sincroniza con mi calendario?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, con Google Calendar. La sincronización con Cal.com está disponible según el plan que confirmes en el bot."}},
-            {"@type": "Question", "name": "¿Puedo probar el asistente antes de contratar?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. La demo de esta página funciona sin registro y muestra el flujo completo; no crea citas reales en tu calendario."}},
-            {"@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": {"@type": "Answer", "text": "Desde $399 al mes el plan Fundador (primeros 3 consultorios), $599 al mes el Estándar y $999 al mes el Pro, en pesos mexicanos más IVA. El alcance de cada plan te lo confirma el bot en la demo, antes de cualquier pago."}},
-            {"@type": "Question", "name": "¿Qué pasa con los datos de mis clientes?", "acceptedAnswer": {"@type": "Answer", "text": "Se usan únicamente para gestionar las citas de tu agenda. No se venden ni se comparten con terceros para publicidad."}},
-            {"@type": "Question", "name": "¿Funciona en mi país y zona horaria?", "acceptedAnswer": {"@type": "Answer", "text": "El bot funciona en Telegram desde cualquier país y trabaja con la zona horaria que configures para tu agenda."}}
+          {
+            "@type": "Question",
+            "name": "¿Cómo empiezo a usar AgendaAI?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Escribe al bot por WhatsApp. Te guía en la conversación para dejar lista tu agenda y te indica el plan y el precio vigente antes de cualquier pago."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Necesito conocimientos técnicos para configurarlo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. La configuración se hace conversando con el bot: no hay que instalar software ni tocar código."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo reserva un cliente una cita?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El cliente escribe qué día y hora prefiere en lenguaje natural. El bot consulta los huecos libres, propone horarios y confirma la reserva en pocos mensajes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Se sincroniza con mi calendario?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí, con Google Calendar. El bot lee los huecos de tu calendario para no duplicar reservas y mantener una sola agenda."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Puedo probar el asistente antes de contratar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. La demo de esta página funciona sin registro y muestra el flujo completo; no crea citas reales en tu calendario."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto cuesta?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Desde $399 al mes el plan Fundador (primeros 3 consultorios), $599 el Estándar, en pesos mexicanos más IVA. El alcance de cada plan te lo confirma el bot en la demo, antes de cualquier pago."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué pasa con los datos de mis clientes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Se usan únicamente para gestionar las citas de tu agenda. No se venden ni se comparten con terceros para publicidad."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Funciona en mi país y zona horaria?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El bot funciona por WhatsApp desde cualquier país y trabaja con la zona horaria que configures para tu agenda."
+            }
+          }
         ]
-    }
+      }
     </script>
 
     <!-- WebMCP discovery for AI browsing agents -->
-    <link rel="mcp-actions" href="/mcp-actions.json">
+    <link rel="mcp-actions" href="/mcp-actions.json" />
 
     <!-- Analítica sin cookies: no requiere banner de consentimiento -->
     <script defer src="/_vercel/insights/script.js"></script>
 
     <!-- Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/styles.css?v=6">
-    <link rel="stylesheet" href="css/widget.css?v=3">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+    <link rel="stylesheet" href="css/styles.css?v=12" />
+    <link rel="stylesheet" href="css/widget.css?v=4" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <link
+      rel="stylesheet"
+      href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600&display=swap"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      />
+      <link
+        rel="stylesheet"
+        href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600&display=swap"
+      />
+    </noscript>
 
     <!-- Widget scripts (deferred) -->
     <script src="js/widget.js?v=4" defer></script>
-    <script src="js/demo-chat.js?v=4" defer></script>
+    <script src="js/demo-chat.js?v=6" defer></script>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-    <link rel="apple-touch-icon" href="images/favicon.svg">
-</head>
-<body>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link rel="apple-touch-icon" href="images/favicon.svg" />
+  </head>
+  <body>
     <a href="#main" class="skip-link">Saltar al contenido principal</a>
     <div class="scroll-progress" aria-hidden="true"></div>
 
     <header class="header">
-        <nav class="nav container" aria-label="Navegación principal">
-            <a href="/" class="logo" aria-label="AgendaAI - Inicio">
-                <svg class="logo-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
-                    <rect width="32" height="32" rx="8" fill="currentColor"/>
-                    <path d="M8 10h16M8 16h12M8 22h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-                </svg>
-                <span class="logo-text">AgendaAI</span>
-            </a>
+      <nav class="nav container" aria-label="Navegación principal">
+        <a href="/" class="logo" aria-label="AgendaAI - Inicio">
+          <svg
+            class="logo-icon"
+            viewBox="0 0 32 32"
+            fill="none"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <rect width="32" height="32" rx="8" fill="currentColor" />
+            <path
+              d="M8 10h16M8 16h12M8 22h8"
+              stroke="white"
+              stroke-width="2.5"
+              stroke-linecap="round"
+            />
+          </svg>
+          <span class="logo-text">AgendaAI</span>
+        </a>
 
-            <div class="nav-links" id="nav-menu">
-                <a href="#features" class="nav-link">Características</a>
-                <a href="#demo" class="nav-link">Demo</a>
-                <a href="#pricing" class="nav-link">Precios</a>
-                <a href="#faq" class="nav-link">FAQ</a>
-                <a href="#contact" class="nav-link">Contacto</a>
-                <a href="https://t.me/agenda_ia_sdr_bot?start=landing" class="nav-link btn btn-primary btn-sm" target="_blank" rel="noopener" data-cta="nav-bot">Abrir el bot</a>
-            </div>
+        <div class="nav-links" id="nav-menu">
+          <a href="#features" class="nav-link">Características</a>
+          <a href="#giros" class="nav-link">Giros</a>
+          <a href="#demo" class="nav-link">Demo</a>
+          <a href="#pricing" class="nav-link">Precios</a>
+          <a href="#faq" class="nav-link">FAQ</a>
+          <a href="#contact" class="nav-link">Contacto</a>
+          <a
+            href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20quiero%20automatizar%20mis%20citas"
+            class="nav-link btn btn-primary btn-sm"
+            target="_blank"
+            rel="noopener"
+            data-cta="nav-bot"
+            >Abrir el bot</a
+          >
+        </div>
 
-            <a href="https://t.me/agenda_ia_sdr_bot?start=landing" class="btn btn-primary btn-sm nav-cta-mobile" target="_blank" rel="noopener" data-cta="nav-bot-mobile">Abrir bot</a>
+        <a
+          href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20quiero%20automatizar%20mis%20citas"
+          class="btn btn-primary btn-sm nav-cta-mobile"
+          target="_blank"
+          rel="noopener"
+          data-cta="nav-bot-mobile"
+          >Abrir bot</a
+        >
 
-            <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
-                <span class="hamburger" aria-hidden="true"></span>
-            </button>
-        </nav>
+        <button
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          aria-label="Abrir menú"
+        >
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+      </nav>
     </header>
 
     <main id="main">
-        <!-- Hero -->
-        <section class="hero" aria-labelledby="hero-title">
-            <div class="container hero-grid">
-                <div class="hero-text">
-                    <span class="hero-badge"><span class="pulse-dot" aria-hidden="true"></span> Bot en Telegram · Demo sin registro</span>
-                    <h1 id="hero-title">Automatiza tus Citas con <span class="highlight">Inteligencia Artificial</span></h1>
-                    <p class="hero-description">Tu cliente escribe qué día quiere. El bot consulta los huecos, propone horarios, confirma la reserva y la deja en tu Google Calendar. Sin llamadas y sin cadenas de mensajes.</p>
+      <!-- Hero -->
+      <header class="hero" aria-labelledby="hero-title">
+        <div class="container hero-grid">
+          <div class="hero-text">
+            <span class="hero-badge"
+              ><span class="pulse-dot" aria-hidden="true"></span> Bot por
+              WhatsApp · Demo sin registro</span
+            >
+            <h1 id="hero-title">
+              Automatiza tus Citas con
+              <span class="highlight">Inteligencia Artificial</span>
+            </h1>
+            <p class="hero-description">
+              Tu cliente escribe qué día quiere. El bot consulta los huecos,
+              propone horarios, confirma la reserva y la deja en tu Google
+              Calendar. Sin llamadas y sin cadenas de mensajes.
+            </p>
 
-                    <div class="hero-actions">
-                        <a class="btn btn-primary btn-lg" href="https://t.me/agenda_ia_sdr_bot?start=landing" target="_blank" rel="noopener" data-cta="hero-bot">Abrir el bot en Telegram</a>
-                        <a class="btn btn-outline btn-lg" href="#demo">Ver la demo</a>
+            <div class="hero-actions">
+              <a
+                class="btn btn-primary btn-lg"
+                href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20quiero%20automatizar%20mis%20citas"
+                target="_blank"
+                rel="noopener"
+                data-cta="hero-bot"
+                >Abrir el bot en WhatsApp</a
+              >
+              <a class="btn btn-outline btn-lg" href="#demo">Ver la demo</a>
+            </div>
+            <p class="hero-micro">
+              El bot te confirma plan y precio antes de cualquier pago · No hay
+              que instalar nada
+            </p>
+            <p class="hero-alt">
+              <a href="#how">Cómo funciona en 3 pasos ↓</a>
+            </p>
+
+            <div class="hero-trust">
+              <span class="trust-text">Lo que puedes comprobar aquí mismo</span>
+              <div class="trust-badges">
+                <span class="badge">Reserva en 3 mensajes</span>
+                <span class="badge">Recordatorios automáticos</span>
+                <span class="badge">Google Calendar</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="demo-window">
+              <div class="window-header">
+                <div class="window-controls" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="window-title">
+                  AgendaAI — Conversación de ejemplo
+                </div>
+                <span class="badge">Ejemplo</span>
+              </div>
+              <div
+                class="chat-demo"
+                role="img"
+                aria-label="Ejemplo de conversación: la clienta pide una cita el martes a las 10:00, el bot confirma que hay hueco, la reserva queda confirmada y se añade a Google Calendar con un recordatorio 24 horas antes."
+              >
+                <div class="message bot">
+                  <div class="message-avatar" aria-hidden="true">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      focusable="false"
+                    >
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5h-2v-2h2v2zm0-4.5h-2v-6h2v6z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="message-content">
+                    ¡Hola! Soy tu asistente de citas. ¿En qué puedo ayudarte
+                    hoy?
+                  </div>
+                </div>
+                <div class="message user">
+                  <div class="message-content">
+                    Quiero agendar una cita para el martes a las 10am
+                  </div>
+                </div>
+                <div class="message bot">
+                  <div class="message-avatar" aria-hidden="true">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      focusable="false"
+                    >
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5h-2v-2h2v2zm0-4.5h-2v-6h2v6z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="message-content">
+                    Perfecto. Tengo disponibilidad el martes a las 10:00.
+                    ¿Confirmo la reserva?
+                  </div>
+                </div>
+                <div class="message user">
+                  <div class="message-content">Sí, confirma por favor</div>
+                </div>
+                <div class="message bot">
+                  <div class="message-avatar" aria-hidden="true">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      focusable="false"
+                    >
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5h-2v-2h2v2zm0-4.5h-2v-6h2v6z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="message-content">
+                    <span aria-hidden="true">✅</span> ¡Reserva confirmada!
+                    Martes 10:00. Añadida a Google Calendar + recordatorio 24h
+                    antes.
+                  </div>
+                </div>
+              </div>
+              <div class="chat-input-area" aria-hidden="true">
+                <div class="fake-input">Escribe tu mensaje…</div>
+                <div class="fake-send">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    focusable="false"
+                  >
+                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Giros: selector por industria -->
+      <section id="giros" class="giros" aria-labelledby="giros-title">
+        <div class="container">
+          <header class="section-header">
+            <h2 id="giros-title">
+              Tu negocio no es igual a los demás.
+              <span class="highlight">Tu agenda tampoco.</span>
+            </h2>
+            <p class="section-subtitle">
+              Elige tu giro y mira cómo el asistente agenda, recuerda y reagenda
+              con el ritmo real de tu día.
+            </p>
+          </header>
+
+          <div class="giros-tabrail">
+            <div class="giros-tablist" role="tablist" aria-label="Giros">
+              <button
+                type="button"
+                class="giros-tab"
+                id="giros-tab-clinica"
+                role="tab"
+                aria-selected="true"
+                aria-controls="giros-panel-clinica"
+                tabindex="0"
+                data-giro="clinica"
+              >
+                <span class="giros-tab-icon" aria-hidden="true"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    focusable="false"
+                  >
+                    <path
+                      d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8z"
+                    />
+                    <path d="M12 9v6M9 12h6" /></svg
+                ></span>
+                <span>Clínicas y consultorios</span>
+              </button>
+              <button
+                type="button"
+                class="giros-tab"
+                id="giros-tab-salon"
+                role="tab"
+                aria-selected="false"
+                aria-controls="giros-panel-salon"
+                tabindex="-1"
+                data-giro="salon"
+              >
+                <span class="giros-tab-icon" aria-hidden="true"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    focusable="false"
+                  >
+                    <circle cx="6" cy="6" r="3" />
+                    <circle cx="6" cy="18" r="3" />
+                    <path
+                      d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"
+                    /></svg
+                ></span>
+                <span>Salones de belleza</span>
+              </button>
+              <button
+                type="button"
+                class="giros-tab"
+                id="giros-tab-gimnasio"
+                role="tab"
+                aria-selected="false"
+                aria-controls="giros-panel-gimnasio"
+                tabindex="-1"
+                data-giro="gimnasio"
+              >
+                <span class="giros-tab-icon" aria-hidden="true"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    focusable="false"
+                  >
+                    <path d="M2 12h2M20 12h2M8 12h8" />
+                    <rect x="4" y="7" width="4" height="10" rx="1" />
+                    <rect x="16" y="7" width="4" height="10" rx="1" /></svg
+                ></span>
+                <span>Gimnasios y estudios</span>
+              </button>
+              <button
+                type="button"
+                class="giros-tab"
+                id="giros-tab-taller"
+                role="tab"
+                aria-selected="false"
+                aria-controls="giros-panel-taller"
+                tabindex="-1"
+                data-giro="taller"
+              >
+                <span class="giros-tab-icon" aria-hidden="true"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    focusable="false"
+                  >
+                    <path
+                      d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+                    /></svg
+                ></span>
+                <span>Talleres mecánicos</span>
+              </button>
+              <button
+                type="button"
+                class="giros-tab"
+                id="giros-tab-consultoria"
+                role="tab"
+                aria-selected="false"
+                aria-controls="giros-panel-consultoria"
+                tabindex="-1"
+                data-giro="consultoria"
+              >
+                <span class="giros-tab-icon" aria-hidden="true"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    focusable="false"
+                  >
+                    <rect x="2" y="7" width="20" height="14" rx="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /></svg
+                ></span>
+                <span>Consultorías y despachos</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="giros-panels">
+            <!-- 1 · Clínicas -->
+            <article
+              class="giros-panel"
+              id="giros-panel-clinica"
+              role="tabpanel"
+              aria-labelledby="giros-tab-clinica"
+              tabindex="0"
+            >
+              <div class="giros-copy">
+                <p class="giros-eyebrow">Clínicas y consultorios</p>
+                <h3>Deja de perder pacientes por no alcanzar a contestar</h3>
+                <p class="giros-lead">
+                  El bot contesta en tu horario y fuera de él, propone los
+                  huecos reales de tu calendario y deja la cita confirmada. Tú
+                  solo revisas la agenda.
+                </p>
+                <ul class="giros-points">
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg
+                    >Recordatorio 24 h antes por WhatsApp
+                  </li>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg
+                    >Reagendado automático si el paciente necesita mover la cita
+                  </li>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg
+                    >Anticipo o política de cancelación antes de apartar el
+                    hueco
+                  </li>
+                </ul>
+                <a class="btn btn-primary" href="#demo" data-cta="giros-clinica"
+                  >Probar con mi negocio</a
+                >
+              </div>
+              <div class="giros-visual">
+                <figure
+                  class="giros-photo"
+                  tabindex="0"
+                  aria-labelledby="giros-photo-label-clinica giros-photo-title-clinica"
+                >
+                  <img
+                    class="giros-photo-img"
+                    src="images/giros/clinic.jpg"
+                    alt="Consultorio dental luminoso con sillón, lámpara de exploración y equipo de rayos X junto a la ventana."
+                    width="1200"
+                    height="802"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div class="giros-photo-overlay">
+                    <p
+                      class="giros-photo-kicker"
+                      id="giros-photo-label-clinica"
+                    >
+                      Clínica dental
+                    </p>
+                    <p class="giros-photo-title" id="giros-photo-title-clinica">
+                      Citas que sí llegan
+                    </p>
+                    <ul class="giros-photo-points">
+                      <li>
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <polyline points="20 6 9 17 4 12" /></svg
+                        >Confirmación y recordatorio 24 h
+                      </li>
+                      <li>
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <polyline points="20 6 9 17 4 12" /></svg
+                        >Reagenda sin llamadas
+                      </li>
+                    </ul>
+                  </div>
+                  <span class="giros-photo-cue" aria-hidden="true"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      focusable="false"
+                    >
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                      <circle cx="12" cy="12" r="3" /></svg
+                  ></span>
+                </figure>
+                <div
+                  class="giros-mock"
+                  role="img"
+                  aria-label="Ejemplo de conversación: el paciente pide cita el jueves, el bot ofrece dos horarios y confirma la consulta con recordatorio 24 horas antes."
+                >
+                  <div class="mock-chat">
+                    <div class="mock-head">
+                      <span class="mock-avatar"
+                        ><svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <rect x="3" y="4" width="18" height="18" rx="2" />
+                          <path d="M16 2v4M8 2v4M3 10h18" /></svg
+                      ></span>
+                      <span class="mock-id"
+                        ><span class="mock-name">AgendaAI</span
+                        ><span class="mock-status"
+                          >Responde al instante</span
+                        ></span
+                      >
                     </div>
-                    <p class="hero-micro">El bot te confirma plan y precio antes de cualquier pago · No hay que instalar nada</p>
-                    <p class="hero-alt"><a href="#how">Cómo funciona en 3 pasos ↓</a></p>
-
-                    <div class="hero-trust">
-                        <span class="trust-text">Lo que puedes comprobar aquí mismo</span>
-                        <div class="trust-badges">
-                            <span class="badge">Reserva en 3 mensajes</span>
-                            <span class="badge">Recordatorios automáticos</span>
-                            <span class="badge">Google Calendar</span>
-                        </div>
+                    <div class="mock-thread">
+                      <p class="mock-bubble">
+                        Hola, me duele una muela. ¿Tienen algo el jueves?
+                      </p>
+                      <p class="mock-bubble out">
+                        Sí: jueves 5 a las 10:00 o 12:30 con el Dr. Ruiz. ¿Cuál
+                        te acomoda?
+                      </p>
+                      <p class="mock-bubble">10:00, por favor</p>
+                      <p class="mock-confirm">
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <polyline points="20 6 9 17 4 12" /></svg
+                        >Consulta confirmada · jue 5, 10:00
+                      </p>
                     </div>
+                    <p class="mock-foot">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-3-3-9" />
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0" /></svg
+                      >Recordatorio programado 24 h antes
+                    </p>
+                  </div>
                 </div>
+              </div>
+            </article>
 
-                <div class="hero-visual">
-                    <div class="demo-window">
-                        <div class="window-header">
-                            <div class="window-controls" aria-hidden="true"><span></span><span></span><span></span></div>
-                            <div class="window-title">AgendaAI — Conversación de ejemplo</div>
-                            <span class="badge">Ejemplo</span>
-                        </div>
-                        <div class="chat-demo" role="img" aria-label="Ejemplo de conversación: la clienta pide una cita el martes a las 10:00, el bot confirma que hay hueco, la reserva queda confirmada y se añade a Google Calendar con un recordatorio 24 horas antes.">
-                            <div class="message bot">
-                                <div class="message-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5h-2v-2h2v2zm0-4.5h-2v-6h2v6z"/></svg></div>
-                                <div class="message-content">¡Hola! Soy tu asistente de citas. ¿En qué puedo ayudarte hoy?</div>
-                            </div>
-                            <div class="message user">
-                                <div class="message-content">Quiero agendar una cita para el martes a las 10am</div>
-                            </div>
-                            <div class="message bot">
-                                <div class="message-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5h-2v-2h2v2zm0-4.5h-2v-6h2v6z"/></svg></div>
-                                <div class="message-content">Perfecto. Tengo disponibilidad el martes a las 10:00. ¿Confirmo la reserva?</div>
-                            </div>
-                            <div class="message user">
-                                <div class="message-content">Sí, confirma por favor</div>
-                            </div>
-                            <div class="message bot">
-                                <div class="message-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5h-2v-2h2v2zm0-4.5h-2v-6h2v6z"/></svg></div>
-                                <div class="message-content"><span aria-hidden="true">✅</span> ¡Reserva confirmada! Martes 10:00. Añadida a Google Calendar + recordatorio 24h antes.</div>
-                            </div>
-                        </div>
-                        <div class="chat-input-area" aria-hidden="true">
-                            <div class="fake-input">Escribe tu mensaje…</div>
-                            <div class="fake-send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></div>
-                        </div>
+            <!-- 2 · Salones -->
+            <article
+              class="giros-panel"
+              id="giros-panel-salon"
+              role="tabpanel"
+              aria-labelledby="giros-tab-salon"
+              tabindex="0"
+              hidden
+            >
+              <div class="giros-copy">
+                <p class="giros-eyebrow">Salones de belleza</p>
+                <h3>Que tu silla no quede vacía por una cita que se olvidó</h3>
+                <p class="giros-lead">
+                  Tu clienta reserva desde el móvil, el bot confirma el servicio
+                  con su duración real y le recuerda la cita antes de que salga
+                  de casa.
+                </p>
+                <ul class="giros-points">
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg
+                    >Recordatorio 24 h antes y aviso el mismo día
+                  </li>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg
+                    >Lista de espera que se activa cuando se libera un hueco
+                  </li>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg
+                    >Anticipo al reservar y reagendado sin llamadas
+                  </li>
+                </ul>
+                <a class="btn btn-primary" href="#demo" data-cta="giros-salon"
+                  >Probar con mi negocio</a
+                >
+              </div>
+              <div class="giros-visual">
+                <figure
+                  class="giros-photo"
+                  tabindex="0"
+                  aria-labelledby="giros-photo-label-salon giros-photo-title-salon"
+                >
+                  <img
+                    class="giros-photo-img"
+                    data-src="images/giros/salon.jpg"
+                    alt="Mujer de espaldas con cabello largo ondulado recogido con las manos frente a una pared rosa."
+                    width="1200"
+                    height="801"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div class="giros-photo-overlay">
+                    <p class="giros-photo-kicker" id="giros-photo-label-salon">
+                      Salón de belleza
+                    </p>
+                    <p class="giros-photo-title" id="giros-photo-title-salon">
+                      Silla ocupada, agenda al día
+                    </p>
+                    <ul class="giros-photo-points">
+                      <li>
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <polyline points="20 6 9 17 4 12" /></svg
+                        >Duración real de cada servicio
+                      </li>
+                      <li>
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <polyline points="20 6 9 17 4 12" /></svg
+                        >Anticipo y reagenda automática
+                      </li>
+                    </ul>
+                  </div>
+                  <span class="giros-photo-cue" aria-hidden="true"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      focusable="false"
+                    >
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                      <circle cx="12" cy="12" r="3" /></svg
+                  ></span>
+                </figure>
+                <div
+                  class="giros-mock"
+                  role="img"
+                  aria-label="Ejemplo de conversación: la clienta pide corte y peinado el sábado, el bot confirma el horario y la cita queda apartada con anticipo."
+                >
+                  <div class="mock-chat">
+                    <div class="mock-head">
+                      <span class="mock-avatar"
+                        ><svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <circle cx="6" cy="6" r="3" />
+                          <circle cx="6" cy="18" r="3" />
+                          <path
+                            d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"
+                          /></svg
+                      ></span>
+                      <span class="mock-id"
+                        ><span class="mock-name">AgendaAI</span
+                        ><span class="mock-status"
+                          >Responde al instante</span
+                        ></span
+                      >
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sectores / encaje -->
-        <section class="logos" aria-label="Sectores donde encaja AgendaAI">
-            <div class="container logos-row">
-                <span>Clínicas</span><span aria-hidden="true">·</span>
-                <span>Consultorías</span><span aria-hidden="true">·</span>
-                <span>Salones</span><span aria-hidden="true">·</span>
-                <span>Gimnasios</span><span aria-hidden="true">·</span>
-                <span>Talleres</span>
-            </div>
-        </section>
-
-        <!-- Features -->
-        <section id="features" class="features" aria-labelledby="features-title">
-            <div class="container">
-                <header class="section-header">
-                    <h2 id="features-title">Todo lo que necesitas para <span class="highlight">automatizar tus citas</span></h2>
-                    <p class="section-subtitle">AgendaAI combina IA conversacional con integraciones nativas para que tus clientes reserven sin fricción.</p>
-                </header>
-
-                <div class="features-grid">
-                    <article class="feature-card">
-                        <div class="feature-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                        </div>
-                        <h3>Chat IA Natural</h3>
-                        <p>Tus clientes hablan como con una persona. La IA entiende contexto, preguntas complejas y gestiona la reserva completa.</p>
-                    </article>
-
-                    <article class="feature-card">
-                        <div class="feature-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-                        </div>
-                        <h3>Telegram y widget web</h3>
-                        <p>El bot atiende en Telegram y el mismo flujo vive en el widget de tu web. Tus clientes reservan donde ya están escribiendo.</p>
-                    </article>
-
-                    <article class="feature-card">
-                        <div class="feature-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-                        </div>
-                        <h3>Google Calendar &amp; Cal.com</h3>
-                        <p>El bot lee los huecos de tu Google Calendar (Cal.com según el plan) para no duplicar reservas y mantener una sola agenda.</p>
-                    </article>
-
-                    <article class="feature-card">
-                        <div class="feature-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-3-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-                        </div>
-                        <h3>Recordatorios Inteligentes</h3>
-                        <p>Recordatorios automáticos por chat antes de la cita. Menos ausencias sin que tengas que llamar a nadie.</p>
-                    </article>
-
-                    <article class="feature-card">
-                        <div class="feature-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                        </div>
-                        <h3>Multi-zona &amp; Multi-idioma</h3>
-                        <p>La agenda trabaja con tu zona horaria y el bot atiende en español; el flujo se adapta al canal donde escribe el cliente.</p>
-                    </article>
-
-                    <article class="feature-card">
-                        <div class="feature-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 6 11 12 11z"/></svg>
-                        </div>
-                        <h3>WebMCP Ready</h3>
-                        <p>Compatible con WebMCP: los agentes IA pueden descubrir las acciones de esta página y abrir el chat de reservas.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- How it works -->
-        <section id="how" class="how" aria-labelledby="how-title">
-            <div class="container">
-                <header class="section-header">
-                    <h2 id="how-title">Activa tu agenda en <span class="highlight">3 pasos</span></h2>
-                    <p class="section-subtitle">Sin código. Sin instalar nada. Todo se configura conversando con el bot.</p>
-                </header>
-                <ol class="steps">
-                    <li class="step"><span class="step-num" aria-hidden="true">1</span><h3>Conecta tu calendario</h3><p>Enlazas tu Google Calendar (o Cal.com) para que el bot lea tus huecos reales y no duplique reservas.</p></li>
-                    <li class="step"><span class="step-num" aria-hidden="true">2</span><h3>Activa tus canales</h3><p>Abres el bot de Telegram y, si tienes web, el widget de reservas. El asistente responde con el tono de tu negocio.</p></li>
-                    <li class="step"><span class="step-num" aria-hidden="true">3</span><h3>La IA agenda por ti</h3><p>Reservas, recordatorios y reprogramaciones en automático, todos los días a cualquier hora.</p></li>
-                </ol>
-            </div>
-        </section>
-
-        <!-- Demo -->
-        <section id="demo" class="demo" aria-labelledby="demo-title">
-            <div class="container">
-                <header class="section-header">
-                    <h2 id="demo-title">Mira cómo funciona en <span class="highlight">tiempo real</span></h2>
-                    <p class="section-subtitle">Prueba la experiencia completa sin registrarte. Chatea con el agente y reserva una cita de prueba.</p>
-                </header>
-
-                <div class="demo-container">
-                    <!-- Live chat demo (widget embebido, modo mock sin backend) -->
-                    <div class="live-chat-card" role="region" aria-labelledby="live-chat-title">
-                        <div class="live-chat-copy">
-                            <span class="live-chat-tag"><span class="pulse-dot" aria-hidden="true"></span> Demo en vivo</span>
-                            <h3 id="live-chat-title">Reserva una cita con el asistente IA</h3>
-                            <p>Escribe en el chat como lo haría tu cliente: pide una cita, elige día y hora y confirma. Todo el flujo multi-turno funciona aquí mismo.</p>
-                            <ul class="live-chat-points">
-                                <li>Entiende lenguaje natural: «quiero una cita el jueves por la tarde»</li>
-                                <li>Consulta la disponibilidad y propone huecos reales</li>
-                                <li>Confirma la reserva en solo 3 mensajes</li>
-                            </ul>
-                            <p class="live-chat-note">La demo se ejecuta en tu navegador: no crea citas reales ni envía tus datos a ningún servidor.</p>
-                        </div>
-                        <div class="live-chat-panel">
-                            <div class="live-chat-cta">
-                                <span class="chat-mode" id="chat-mode">Demo interactiva</span>
-                                <button type="button" id="chat-open" class="btn btn-primary btn-lg"
-                                    aria-controls="appointment-widget"
-                                    data-mcp-action="open-chat-demo"
-                                    data-mcp-description="Abrir el chat flotante del asistente de citas">Abrir chat con la IA</button>
-                                <p class="live-chat-hint">El chat flotante se abre en la esquina inferior derecha. También se despliega solo al llegar a esta tarjeta.</p>
-                            </div>
-                        </div>
+                    <div class="mock-thread">
+                      <p class="mock-bubble">
+                        ¿Tienes lugar el sábado para corte y peinado?
+                      </p>
+                      <p class="mock-bubble out">
+                        Sí: sábado 14:00 o 17:30. El servicio dura 90 min. ¿Te
+                        aparto las 14:00?
+                      </p>
+                      <p class="mock-bubble">Sí, las 14:00</p>
+                      <p class="mock-confirm">
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <polyline points="20 6 9 17 4 12" /></svg
+                        >Cita confirmada · sáb 7, 14:00
+                      </p>
                     </div>
+                    <p class="mock-foot">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-3-3-9" />
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0" /></svg
+                      >Recordatorio programado 24 h antes
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </article>
 
-                    <div class="agenda-widget" role="region" aria-label="Demo interactiva de agenda - selecciona una fecha y hora">
-                        <div class="agenda-header">
-                            <div class="agenda-nav">
-                                <button class="agenda-nav-btn" id="agenda-prev" aria-label="Mes anterior" data-mcp-action="agenda-prev" data-mcp-description="Navegar al mes anterior en la agenda demo">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><polyline points="15 18 9 12 15 6"/></svg>
-                                </button>
-                                <div class="agenda-title" id="agenda-title" aria-live="polite"></div>
-                                <button class="agenda-nav-btn" id="agenda-next" aria-label="Mes siguiente" data-mcp-action="agenda-next" data-mcp-description="Navegar al mes siguiente en la agenda demo">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><polyline points="9 18 15 12 9 6"/></svg>
-                                </button>
-                            </div>
-                            <div class="agenda-view-toggle" role="tablist" aria-label="Cambiar vista">
-                                <button class="agenda-view-btn active" id="agenda-tab-week" role="tab" aria-selected="true" aria-controls="agenda-view-panel" data-view="week" data-mcp-action="agenda-view-week" data-mcp-description="Ver agenda en vista semanal">Semana</button>
-                                <button class="agenda-view-btn" id="agenda-tab-month" role="tab" aria-selected="false" aria-controls="agenda-view-panel" data-view="month" data-mcp-action="agenda-view-month" data-mcp-description="Ver agenda en vista mensual">Mes</button>
-                                <button class="agenda-view-btn" id="agenda-tab-day" role="tab" aria-selected="false" aria-controls="agenda-view-panel" data-view="day" data-mcp-action="agenda-view-day" data-mcp-description="Ver agenda en vista diaria">Día</button>
-                            </div>
-                        </div>
-
-                        <div id="agenda-view-panel" role="tabpanel" aria-labelledby="agenda-tab-week">
-                            <div class="agenda-grid" id="agenda-grid" role="grid" aria-label="Calendario de disponibilidad">
-                                <div class="agenda-day-headers" role="row">
-                                    <div role="columnheader">Lun</div>
-                                    <div role="columnheader">Mar</div>
-                                    <div role="columnheader">Mié</div>
-                                    <div role="columnheader">Jue</div>
-                                    <div role="columnheader">Vie</div>
-                                    <div role="columnheader">Sáb</div>
-                                    <div role="columnheader">Dom</div>
-                                </div>
-                                <div class="agenda-days" role="rowgroup" id="agenda-days"></div>
-                            </div>
-                        </div>
-
-                        <div class="agenda-slots" id="agenda-slots" role="group" tabindex="-1" hidden>
-                            <div class="agenda-slots-header">
-                                <span id="agenda-slots-date" class="agenda-slots-date"></span>
-                                <button class="agenda-slots-close" id="agenda-slots-close" aria-label="Volver al calendario">×</button>
-                            </div>
-                            <ul class="agenda-slots-list" id="agenda-slots-list" role="listbox" aria-label="Horarios disponibles para el día seleccionado"></ul>
-                            <p class="agenda-slots-empty" id="agenda-slots-empty" hidden>No hay horarios disponibles para este día. Prueba otro día.</p>
-                        </div>
-
-                        <div class="agenda-legend">
-                            <span class="legend-item"><span class="legend-color available" aria-hidden="true"></span>Disponible</span>
-                            <span class="legend-item"><span class="legend-color booked" aria-hidden="true"></span>Reservado</span>
-                            <span class="legend-item"><span class="legend-color selected" aria-hidden="true"></span>Seleccionado</span>
-                            <span class="legend-item"><span class="legend-color past" aria-hidden="true"></span>Pasado</span>
-                        </div>
+            <!-- 3 · Gimnasios -->
+            <article
+              class="giros-panel"
+              id="giros-panel-gimnasio"
+              role="tabpanel"
+              aria-labelledby="giros-tab-gimnasio"
+              tabindex="0"
+              hidden
+            >
+              <div class="giros-copy">
+                <p class="giros-eyebrow">Gimnasios y estudios</p>
+                <h3>Llena tus clases sin perseguir a nadie por WhatsApp</h3>
+                <p class="giros-lead">
+                  El bot muestra los lugares que quedan, apunta a quien reserva
+                  y avisa en cuanto se libera un espacio. La lista de espera se
+                  mueve sola.
+                </p>
+                <ul class="giros-points">
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg
+                    >Cupo por clase y por horario, sin sobreventa
+                  </li>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg
+                    >Lista de espera que avisa al liberarse un lugar
+                  </li>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg
+                    >Recordatorio antes de la clase y cancelación en un mensaje
+                  </li>
+                </ul>
+                <a
+                  class="btn btn-primary"
+                  href="#demo"
+                  data-cta="giros-gimnasio"
+                  >Probar con mi negocio</a
+                >
+              </div>
+              <div class="giros-visual">
+                <figure
+                  class="giros-photo"
+                  tabindex="0"
+                  aria-labelledby="giros-photo-label-gimnasio giros-photo-title-gimnasio"
+                >
+                  <img
+                    class="giros-photo-img"
+                    data-src="images/giros/gym.jpg"
+                    alt="Rack de mancuernas en primer plano y una persona entrenando al fondo de un gimnasio."
+                    width="1200"
+                    height="800"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div class="giros-photo-overlay">
+                    <p
+                      class="giros-photo-kicker"
+                      id="giros-photo-label-gimnasio"
+                    >
+                      Gimnasio
+                    </p>
+                    <p
+                      class="giros-photo-title"
+                      id="giros-photo-title-gimnasio"
+                    >
+                      Clases llenas, cero perseguir
+                    </p>
+                    <ul class="giros-photo-points">
+                      <li>
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <polyline points="20 6 9 17 4 12" /></svg
+                        >Cupo exacto por clase
+                      </li>
+                      <li>
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <polyline points="20 6 9 17 4 12" /></svg
+                        >Lista de espera que avisa
+                      </li>
+                    </ul>
+                  </div>
+                  <span class="giros-photo-cue" aria-hidden="true"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      focusable="false"
+                    >
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                      <circle cx="12" cy="12" r="3" /></svg
+                  ></span>
+                </figure>
+                <div
+                  class="giros-mock"
+                  role="img"
+                  aria-label="Ejemplo de conversación: el alumno pregunta por la clase de las 7, el bot le confirma los lugares disponibles y lo anota en la lista."
+                >
+                  <div class="mock-chat">
+                    <div class="mock-head">
+                      <span class="mock-avatar"
+                        ><svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <path d="M2 12h2M20 12h2M8 12h8" />
+                          <rect x="4" y="7" width="4" height="10" rx="1" />
+                          <rect
+                            x="16"
+                            y="7"
+                            width="4"
+                            height="10"
+                            rx="1"
+                          /></svg
+                      ></span>
+                      <span class="mock-id"
+                        ><span class="mock-name">AgendaAI</span
+                        ><span class="mock-status"
+                          >Responde al instante</span
+                        ></span
+                      >
                     </div>
-
-                    <div class="demo-stats">
-                        <div class="stat">
-                            <span class="stat-value">24/7</span>
-                            <span class="stat-label">Atención sin horarios</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-value">3</span>
-                            <span class="stat-label">Mensajes para reservar</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-value">2</span>
-                            <span class="stat-label">Canales: Telegram y web</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-value">0</span>
-                            <span class="stat-label">Registros para probar la demo</span>
-                        </div>
+                    <div class="mock-thread">
+                      <p class="mock-bubble">¿Hay lugar en la clase de 7 pm?</p>
+                      <p class="mock-bubble out">
+                        Quedan 3 lugares en spinning de 19:00 con Ana. ¿Te
+                        anoto?
+                      </p>
+                      <p class="mock-bubble">Sí, anótame</p>
+                      <p class="mock-confirm">
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <polyline points="20 6 9 17 4 12" /></svg
+                        >Lugar apartado · hoy 19:00
+                      </p>
                     </div>
+                    <p class="mock-foot">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-3-3-9" />
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0" /></svg
+                      >Aviso enviado antes de la clase
+                    </p>
+                  </div>
                 </div>
-            </div>
-        </section>
+              </div>
+            </article>
 
-        <!-- Casos de uso (sin testimonios ni cifras no verificadas) -->
-        <section id="casos" class="testimonials" aria-labelledby="casos-title">
-            <div class="container">
-                <header class="section-header">
-                    <h2 id="casos-title">Dónde encaja <span class="highlight">mejor</span></h2>
-                    <p class="section-subtitle">Tres ejemplos de cómo se usa el asistente en el día a día. Sin métricas prometidas: pruébalo en la demo y decide con tu propio flujo.</p>
-                </header>
-
-                <div class="testimonials-grid">
-                    <article class="testimonial-card use-case-card">
-                        <div class="feature-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg>
-                        </div>
-                        <h3>Clínica dental</h3>
-                        <p>El paciente escribe «me duele una muela, ¿tenéis algo el jueves?». El bot propone los huecos libres, confirma y deja la cita en el calendario de recepción.</p>
-                    </article>
-
-                    <article class="testimonial-card use-case-card">
-                        <div class="feature-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                        </div>
-                        <h3>Consultoría</h3>
-                        <p>Un cliente potencial pide una llamada «la semana que viene por la tarde». El bot interpreta el rango, ofrece horas concretas y bloquea la agenda del consultor.</p>
-                    </article>
-
-                    <article class="testimonial-card use-case-card">
-                        <div class="feature-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" focusable="false"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"/></svg>
-                        </div>
-                        <h3>Salón o barbería</h3>
-                        <p>Reservas de última hora desde el móvil: el cliente elige servicio y hora, el bot confirma y le recuerda la cita antes de que salga de casa.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pricing -->
-        <section id="pricing" class="pricing" aria-labelledby="pricing-title">
-            <div class="container">
-                <header class="section-header">
-                    <h2 id="pricing-title">Planes para cada <span class="highlight">tamaño de agenda</span></h2>
-                    <p class="section-subtitle">Precios en pesos mexicanos, m&aacute;s IVA. Sin contrato forzoso: cancelas cuando quieras. El alcance de cada plan te lo confirma el bot en la demo, antes de cualquier pago.</p>
-                </header>
-
-                <div class="pricing-grid" role="group" aria-label="Planes de precios">
-                    <article class="pricing-card" data-plan="fundador">
-                        <header class="pricing-header">
-                            <h3>Fundador</h3>
-                            <div class="price">
-                                <span class="currency">$</span>
-                                <span class="amount">399</span>
-                                <span class="period">/mes</span>
-                            </div>
-                            <p class="pricing-desc">Solo para los primeros 3 consultorios. Precio congelado de por vida.</p>
-                        </header>
-                        <ul class="pricing-features">
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> 1 profesional</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Telegram + widget web</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Hasta 300 citas al mes</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Recordatorios y confirmaciones autom&aacute;ticas</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Google Calendar / Cal.com</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Implementaci&oacute;n guiada sin costo</li>
-                        </ul>
-                        <div class="pricing-cta-form">
-                            <a class="btn btn-outline btn-block" href="https://t.me/agenda_ia_sdr_bot?start=fundador" target="_blank" rel="noopener" data-cta="pricing-fundador">Preguntar por el plan Fundador</a>
-                            <p class="plan-note">A cambio de un testimonio y 2 colegas a quienes presentarme.</p>
-                        </div>
-                    </article>
-
-                    <article class="pricing-card popular" data-plan="estandar" aria-label="Plan Est&aacute;ndar - Recomendado">
-                        <div class="popular-badge">Recomendado</div>
-                        <header class="pricing-header">
-                            <h3>Est&aacute;ndar</h3>
-                            <div class="price">
-                                <span class="currency">$</span>
-                                <span class="amount">599</span>
-                                <span class="period">/mes</span>
-                            </div>
-                            <p class="pricing-desc">Para el consultorio que ya agenda por WhatsApp todos los d&iacute;as.</p>
-                        </header>
-                        <ul class="pricing-features">
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> 1 profesional</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Telegram + widget web</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Hasta 300 citas al mes</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Recordatorios y confirmaciones autom&aacute;ticas</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Google Calendar / Cal.com</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Panel de citas y conversaciones</li>
-                        </ul>
-                        <div class="pricing-cta-form">
-                            <a class="btn btn-primary btn-block" href="https://t.me/agenda_ia_sdr_bot?start=estandar" target="_blank" rel="noopener" data-cta="pricing-estandar">Hablar del plan Est&aacute;ndar</a>
-                            <p class="plan-note">Implementaci&oacute;n guiada incluida.</p>
-                        </div>
-                    </article>
-
-                    <article class="pricing-card" data-plan="pro">
-                        <header class="pricing-header">
-                            <h3>Pro</h3>
-                            <div class="price">
-                                <span class="currency">$</span>
-                                <span class="amount">999</span>
-                                <span class="period">/mes</span>
-                            </div>
-                            <p class="pricing-desc">Para cl&iacute;nicas con varios profesionales en la misma agenda.</p>
-                        </header>
-                        <ul class="pricing-features">
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Hasta 3 profesionales</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Telegram + widget web</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Hasta 1,000 citas al mes</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Recordatorios y confirmaciones autom&aacute;ticas</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Google Calendar / Cal.com</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg> Soporte prioritario</li>
-                        </ul>
-                        <div class="pricing-cta-form">
-                            <a class="btn btn-outline btn-block" href="https://t.me/agenda_ia_sdr_bot?start=pro" target="_blank" rel="noopener" data-cta="pricing-pro">Contactar por el plan Pro</a>
-                            <p class="plan-note">Te paso una propuesta con tu operaci&oacute;n real.</p>
-                        </div>
-                    </article>
-                </div>
-
-                <p class="pricing-note">Todos los planes incluyen Telegram, widget web, recordatorios autom&aacute;ticos y Google Calendar / Cal.com. Lo que cambia es el n&uacute;mero de profesionales, el de citas al mes y el nivel de soporte.</p>
-                <p class="pricing-note">Pago anual disponible: 10 meses por 12. El precio fundador es de por vida mientras la cuenta siga activa.</p>
-            </div>
-        </section>
-
-        <!-- FAQ -->
-        <section id="faq" class="faq" aria-labelledby="faq-title">
-            <div class="container container-narrow">
-                <header class="section-header">
-                    <h2 id="faq-title">Preguntas <span class="highlight">frecuentes</span></h2>
-                    <p class="section-subtitle">Todo lo que necesitas saber antes de empezar.</p>
-                </header>
-
-                <div class="faq-grid">
-                    <details class="faq-item" open>
-                        <summary>¿Cómo empiezo a usar AgendaAI?</summary>
-                        <p>Escribe al bot en Telegram. Te guía en la conversación para dejar lista tu agenda y te indica el plan y el precio vigente antes de cualquier pago.</p>
-                    </details>
-
-                    <details class="faq-item">
-                        <summary>¿Necesito conocimientos técnicos para configurarlo?</summary>
-                        <p>No. La configuración se hace conversando con el bot: no hay que instalar software ni tocar código.</p>
-                    </details>
-
-                    <details class="faq-item">
-                        <summary>¿Cómo reserva un cliente una cita?</summary>
-                        <p>El cliente escribe qué día y hora prefiere en lenguaje natural. El bot consulta los huecos libres, propone horarios y confirma la reserva en pocos mensajes.</p>
-                    </details>
-
-                    <details class="faq-item">
-                        <summary>¿Se sincroniza con mi calendario?</summary>
-                        <p>Sí, con Google Calendar. La sincronización con Cal.com está disponible según el plan que confirmes en el bot.</p>
-                    </details>
-
-                    <details class="faq-item">
-                        <summary>¿Puedo probar el asistente antes de contratar?</summary>
-                        <p>Sí. La demo de esta página funciona sin registro y muestra el flujo completo; no crea citas reales en tu calendario.</p>
-                    </details>
-
-                    <details class="faq-item">
-                        <summary>¿Cuánto cuesta?</summary>
-                        <p>Desde $399 al mes el plan Fundador (primeros 3 consultorios), $599 el Estándar y $999 el Pro, en pesos mexicanos más IVA. El alcance de cada plan te lo confirma el bot en la demo, antes de cualquier pago.</p>
-                    </details>
-
-                    <details class="faq-item">
-                        <summary>¿Qué pasa con los datos de mis clientes?</summary>
-                        <p>Se usan únicamente para gestionar las citas de tu agenda. No se venden ni se comparten con terceros para publicidad.</p>
-                    </details>
-
-                    <details class="faq-item">
-                        <summary>¿Funciona en mi país y zona horaria?</summary>
-                        <p>El bot funciona en Telegram desde cualquier país y trabaja con la zona horaria que configures para tu agenda.</p>
-                    </details>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section id="cta" class="cta" aria-labelledby="cta-title">
-            <div class="container">
-                <div class="cta-card">
-                    <h2 id="cta-title">¿Quieres verlo funcionando?</h2>
-                    <p>Abre el bot y recorre el flujo completo: pedir cita, elegir hora y confirmar. Sin instalar nada.</p>
-                    <div class="cta-buttons">
-                        <a href="https://t.me/agenda_ia_sdr_bot?start=landing" class="btn btn-white btn-lg" target="_blank" rel="noopener" data-cta="cta-bot">Abrir el bot en Telegram</a>
-                        <a href="#demo" class="btn btn-outline-white btn-lg">Probar la demo aquí</a>
+            <!-- 4 · Talleres -->
+            <article
+              class="giros-panel"
+              id="giros-panel-taller"
+              role="tabpanel"
+              aria-labelledby="giros-tab-taller"
+              tabindex="0"
+              hidden
+            >
+              <div class="giros-copy">
+                <p class="giros-eyebrow">Talleres mecánicos</p>
+                <h3>Agenda servicios sin soltar la llave inglesa</h3>
+                <p class="giros-lead">
+                  El cliente describe la falla, el bot agenda la revisión en el
+                  hueco que tengas libre y le avisa cuando el auto está listo
+                  para recoger.
+                </p>
+                <ul class="giros-points">
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg
+                    >Cita por tipo de servicio: frenos, afinación, diagnóstico
+                  </li>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg
+                    >Aviso automático cuando el auto está listo
+                  </li>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg
+                    >Reagendado si falta una refacción, sin llamar al cliente
+                  </li>
+                </ul>
+                <a class="btn btn-primary" href="#demo" data-cta="giros-taller"
+                  >Probar con mi negocio</a
+                >
+              </div>
+              <div class="giros-visual">
+                <figure
+                  class="giros-photo"
+                  tabindex="0"
+                  aria-labelledby="giros-photo-label-taller giros-photo-title-taller"
+                >
+                  <img
+                    class="giros-photo-img"
+                    data-src="images/giros/taller.jpg"
+                    alt="Mecánico revisando el motor de un auto con el cofre abierto en un taller."
+                    width="1200"
+                    height="1200"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div class="giros-photo-overlay">
+                    <p class="giros-photo-kicker" id="giros-photo-label-taller">
+                      Taller mecánico
+                    </p>
+                    <p class="giros-photo-title" id="giros-photo-title-taller">
+                      Bahía ocupada, cliente avisado
+                    </p>
+                    <ul class="giros-photo-points">
+                      <li>
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <polyline points="20 6 9 17 4 12" /></svg
+                        >Revisión agendada en un mensaje
+                      </li>
+                      <li>
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <polyline points="20 6 9 17 4 12" /></svg
+                        >Aviso cuando el auto está listo
+                      </li>
+                    </ul>
+                  </div>
+                  <span class="giros-photo-cue" aria-hidden="true"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      focusable="false"
+                    >
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                      <circle cx="12" cy="12" r="3" /></svg
+                  ></span>
+                </figure>
+                <div
+                  class="giros-mock"
+                  role="img"
+                  aria-label="Ejemplo de conversación: el cliente pide revisión de frenos, el bot ofrece dos horarios y confirma el servicio para el día siguiente."
+                >
+                  <div class="mock-chat">
+                    <div class="mock-head">
+                      <span class="mock-avatar"
+                        ><svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <path
+                            d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+                          /></svg
+                      ></span>
+                      <span class="mock-id"
+                        ><span class="mock-name">AgendaAI</span
+                        ><span class="mock-status"
+                          >Responde al instante</span
+                        ></span
+                      >
                     </div>
-                    <p class="cta-note"><span aria-hidden="true">✓</span> Sin registro previo <span aria-hidden="true">·</span> <span aria-hidden="true">✓</span> Se abre en Telegram <span aria-hidden="true">·</span> <span aria-hidden="true">✓</span> Lo dejas cuando quieras</p>
+                    <div class="mock-thread">
+                      <p class="mock-bubble">
+                        ¿Pueden revisar los frenos mañana?
+                      </p>
+                      <p class="mock-bubble out">
+                        Sí: mañana 9:00 o 11:30. La revisión de frenos toma 45
+                        min. ¿Cuál te queda?
+                      </p>
+                      <p class="mock-bubble">9:00</p>
+                      <p class="mock-confirm">
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <polyline points="20 6 9 17 4 12" /></svg
+                        >Servicio agendado · mañana 9:00
+                      </p>
+                    </div>
+                    <p class="mock-foot">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-3-3-9" />
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0" /></svg
+                      >Aviso enviado al terminar el servicio
+                    </p>
+                  </div>
                 </div>
-            </div>
-        </section>
+              </div>
+            </article>
 
-        <!-- Contact -->
-        <section id="contact" class="contact" aria-labelledby="contact-title">
-            <div class="container container-narrow">
-                <header class="section-header">
-                    <h2 id="contact-title">¿Preguntas? <span class="highlight">Hablemos</span></h2>
-                    <p class="section-subtitle">Te contestamos por Telegram, en el mismo sitio donde se gestiona tu agenda.</p>
-                </header>
-
-                <div class="contact-card">
-                    <h3>El bot es nuestro canal de soporte</h3>
-                    <p>Dudas sobre planes, precios o cómo dejar lista tu agenda: pregúntale al asistente en el mismo chat. Sin formularios ni correos que se quedan sin respuesta.</p>
-                    <a class="btn btn-primary btn-lg" href="https://t.me/agenda_ia_sdr_bot?start=landing" target="_blank" rel="noopener" data-cta="contact-bot">Escribir por Telegram</a>
-                    <p class="contact-note">No compartas datos sensibles en el primer mensaje: el bot solo necesita saber qué necesitas.</p>
+            <!-- 5 · Consultorías -->
+            <article
+              class="giros-panel"
+              id="giros-panel-consultoria"
+              role="tabpanel"
+              aria-labelledby="giros-tab-consultoria"
+              tabindex="0"
+              hidden
+            >
+              <div class="giros-copy">
+                <p class="giros-eyebrow">Consultorías y despachos</p>
+                <h3>Menos correos para agendar, más horas facturables</h3>
+                <p class="giros-lead">
+                  Quien quiere una llamada elige un hueco de tu calendario y el
+                  bot confirma la videollamada con el enlace. Sin cadenas de
+                  correos.
+                </p>
+                <ul class="giros-points">
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg
+                    >Solo ofrece huecos libres de tu Google Calendar
+                  </li>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg
+                    >Confirmación con enlace de videollamada
+                  </li>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg
+                    >Recordatorio y reagendado antes de la sesión
+                  </li>
+                </ul>
+                <a
+                  class="btn btn-primary"
+                  href="#demo"
+                  data-cta="giros-consultoria"
+                  >Probar con mi negocio</a
+                >
+              </div>
+              <div class="giros-visual">
+                <figure
+                  class="giros-photo"
+                  tabindex="0"
+                  aria-labelledby="giros-photo-label-consultoria giros-photo-title-consultoria"
+                >
+                  <img
+                    class="giros-photo-img"
+                    data-src="images/giros/consultoria.jpg"
+                    alt="Oficina moderna con pasillo de cristal, sala de espera y área de café."
+                    width="1200"
+                    height="801"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div class="giros-photo-overlay">
+                    <p
+                      class="giros-photo-kicker"
+                      id="giros-photo-label-consultoria"
+                    >
+                      Consultoría
+                    </p>
+                    <p
+                      class="giros-photo-title"
+                      id="giros-photo-title-consultoria"
+                    >
+                      Horas facturables, no correos
+                    </p>
+                    <ul class="giros-photo-points">
+                      <li>
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <polyline points="20 6 9 17 4 12" /></svg
+                        >Solo huecos libres reales
+                      </li>
+                      <li>
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <polyline points="20 6 9 17 4 12" /></svg
+                        >Videollamada con enlace
+                      </li>
+                    </ul>
+                  </div>
+                  <span class="giros-photo-cue" aria-hidden="true"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      focusable="false"
+                    >
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                      <circle cx="12" cy="12" r="3" /></svg
+                  ></span>
+                </figure>
+                <div
+                  class="giros-mock"
+                  role="img"
+                  aria-label="Ejemplo de conversación: el cliente propone hablar la próxima semana, el bot ofrece dos huecos y confirma la videollamada con enlace."
+                >
+                  <div class="mock-chat">
+                    <div class="mock-head">
+                      <span class="mock-avatar"
+                        ><svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <rect x="2" y="7" width="20" height="14" rx="2" />
+                          <path
+                            d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"
+                          /></svg
+                      ></span>
+                      <span class="mock-id"
+                        ><span class="mock-name">AgendaAI</span
+                        ><span class="mock-status"
+                          >Responde al instante</span
+                        ></span
+                      >
+                    </div>
+                    <div class="mock-thread">
+                      <p class="mock-bubble">
+                        ¿Podemos hablar la próxima semana por la tarde?
+                      </p>
+                      <p class="mock-bubble out">
+                        Tengo martes 16:00 y miércoles 17:30. ¿Cuál te sirve?
+                      </p>
+                      <p class="mock-bubble">Martes 16:00</p>
+                      <p class="mock-confirm">
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <polyline points="20 6 9 17 4 12" /></svg
+                        >Llamada confirmada · mar 3, 16:00
+                      </p>
+                    </div>
+                    <p class="mock-foot">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-3-3-9" />
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0" /></svg
+                      >Enlace de videollamada enviado
+                    </p>
+                  </div>
                 </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section id="features" class="features" aria-labelledby="features-title">
+        <div class="container">
+          <header class="section-header">
+            <h2 id="features-title">
+              Todo lo que necesitas para
+              <span class="highlight">automatizar tus citas</span>
+            </h2>
+            <p class="section-subtitle">
+              AgendaAI combina IA conversacional con integraciones nativas para
+              que tus clientes reserven sin fricción.
+            </p>
+          </header>
+
+          <div class="features-grid">
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  focusable="false"
+                >
+                  <path
+                    d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                  />
+                </svg>
+              </div>
+              <h3>Chat IA Natural</h3>
+              <p>
+                Tus clientes hablan como con una persona. La IA entiende
+                contexto, preguntas complejas y gestiona la reserva completa.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  focusable="false"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <path d="M8 21h8M12 17v4" />
+                </svg>
+              </div>
+              <h3>WhatsApp y widget web</h3>
+              <p>
+                El bot atiende en WhatsApp y el mismo flujo vive en el widget de
+                tu web. Tus clientes reservan donde ya están escribiendo.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  focusable="false"
+                >
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <path d="M16 2v4M8 2v4M3 10h18" />
+                </svg>
+              </div>
+              <h3>Google Calendar</h3>
+              <p>
+                El bot lee los huecos de tu Google Calendar para no duplicar
+                reservas y mantener una sola agenda.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  focusable="false"
+                >
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-3-3-9" />
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                </svg>
+              </div>
+              <h3>Recordatorios Inteligentes</h3>
+              <p>
+                Recordatorios automáticos por chat antes de la cita. Menos
+                ausencias sin que tengas que llamar a nadie.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  focusable="false"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+              </div>
+              <h3>Multi-zona &amp; Multi-idioma</h3>
+              <p>
+                La agenda trabaja con tu zona horaria y el bot atiende en
+                español; el flujo se adapta al canal donde escribe el cliente.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  focusable="false"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 6 11 12 11z" />
+                </svg>
+              </div>
+              <h3>WebMCP Ready</h3>
+              <p>
+                Compatible con WebMCP: los agentes IA pueden descubrir las
+                acciones de esta página y abrir el chat de reservas.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section id="how" class="how" aria-labelledby="how-title">
+        <div class="container">
+          <header class="section-header">
+            <h2 id="how-title">
+              Activa tu agenda en <span class="highlight">3 pasos</span>
+            </h2>
+            <p class="section-subtitle">
+              Sin código. Sin instalar nada. Todo se configura conversando con
+              el bot.
+            </p>
+          </header>
+          <ol class="steps">
+            <li class="step">
+              <span class="step-num" aria-hidden="true">1</span>
+              <h3>Conecta tu calendario</h3>
+              <p>
+                Enlazas tu Google Calendar para que el bot lea tus huecos reales
+                y no duplique reservas.
+              </p>
+            </li>
+            <li class="step">
+              <span class="step-num" aria-hidden="true">2</span>
+              <h3>Activa tus canales</h3>
+              <p>
+                Abre el bot de WhatsApp y, si tienes web, el widget de reservas.
+                El asistente responde con el tono de tu negocio.
+              </p>
+            </li>
+            <li class="step">
+              <span class="step-num" aria-hidden="true">3</span>
+              <h3>La IA agenda por ti</h3>
+              <p>
+                Reservas, recordatorios y reprogramaciones en automático, todos
+                los días a cualquier hora.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Demo -->
+      <section id="demo" class="demo" aria-labelledby="demo-title">
+        <div class="container">
+          <header class="section-header">
+            <h2 id="demo-title">
+              Mira cómo funciona en <span class="highlight">tiempo real</span>
+            </h2>
+            <p class="section-subtitle">
+              Prueba la experiencia completa sin registrarte. Chatea con el
+              agente y reserva una cita de prueba.
+            </p>
+          </header>
+
+          <div class="demo-container">
+            <!-- Live chat demo (widget embebido, modo mock sin backend) -->
+            <div
+              class="live-chat-card"
+              role="region"
+              aria-labelledby="live-chat-title"
+            >
+              <div class="live-chat-copy">
+                <span class="live-chat-tag"
+                  ><span class="pulse-dot" aria-hidden="true"></span> Demo en
+                  vivo</span
+                >
+                <h3 id="live-chat-title">
+                  Reserva una cita con el asistente IA
+                </h3>
+                <p>
+                  Escribe en el chat como lo haría tu cliente: pide una cita,
+                  elige día y hora y confirma. Todo el flujo multi-turno
+                  funciona aquí mismo.
+                </p>
+                <ul class="live-chat-points">
+                  <li>
+                    Entiende lenguaje natural: «quiero una cita el jueves por la
+                    tarde»
+                  </li>
+                  <li>Consulta la disponibilidad y propone huecos reales</li>
+                  <li>Confirma la reserva en solo 3 mensajes</li>
+                </ul>
+                <p class="live-chat-note">
+                  La demo se ejecuta en tu navegador: no crea citas reales ni
+                  envía tus datos a ningún servidor.
+                </p>
+              </div>
+              <div class="live-chat-panel">
+                <div class="live-chat-cta">
+                  <span class="chat-mode" id="chat-mode">Demo interactiva</span>
+                  <button
+                    type="button"
+                    id="chat-open"
+                    class="btn btn-primary btn-lg"
+                    aria-controls="appointment-widget"
+                    data-mcp-action="open-chat-demo"
+                    data-mcp-description="Abrir el chat flotante del asistente de citas"
+                  >
+                    Abrir chat con la IA
+                  </button>
+                  <p class="live-chat-hint">
+                    El chat flotante se abre en la esquina inferior derecha.
+                    También se despliega solo al llegar a esta tarjeta.
+                  </p>
+                </div>
+              </div>
             </div>
-        </section>
+
+            <div class="demo-stats">
+              <div class="stat">
+                <span class="stat-value">24/7</span>
+                <span class="stat-label">Atención sin horarios</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">3</span>
+                <span class="stat-label">Mensajes para reservar</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">2</span>
+                <span class="stat-label">Canales: WhatsApp y web</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">&lt;3s</span>
+                <span class="stat-label">Tiempo medio por reserva</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Casos de uso (sin testimonios ni cifras no verificadas) -->
+      <section id="casos" class="testimonials" aria-labelledby="casos-title">
+        <div class="container">
+          <header class="section-header">
+            <h2 id="casos-title">
+              Dónde encaja <span class="highlight">mejor</span>
+            </h2>
+            <p class="section-subtitle">
+              Tres ejemplos de cómo se usa el asistente en el día a día. Sin
+              métricas prometidas: pruébalo en la demo y decide con tu propio
+              flujo.
+            </p>
+          </header>
+
+          <div class="testimonials-grid">
+            <article class="testimonial-card use-case-card">
+              <div class="feature-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  focusable="false"
+                >
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4" />
+                </svg>
+              </div>
+              <h3>Clínica dental</h3>
+              <p>
+                El paciente escribe «me duele una muela, ¿tenéis algo el
+                jueves?». El bot propone los huecos libres, confirma y deja la
+                cita en el calendario de recepción.
+              </p>
+            </article>
+
+            <article class="testimonial-card use-case-card">
+              <div class="feature-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  focusable="false"
+                >
+                  <rect x="2" y="7" width="20" height="14" rx="2" />
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+              </div>
+              <h3>Consultoría</h3>
+              <p>
+                Un cliente potencial pide una llamada «la semana que viene por
+                la tarde». El bot interpreta el rango, ofrece horas concretas y
+                bloquea la agenda del consultor.
+              </p>
+            </article>
+
+            <article class="testimonial-card use-case-card">
+              <div class="feature-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  focusable="false"
+                >
+                  <circle cx="6" cy="6" r="3" />
+                  <circle cx="6" cy="18" r="3" />
+                  <path
+                    d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"
+                  />
+                </svg>
+              </div>
+              <h3>Salón o barbería</h3>
+              <p>
+                Reservas de última hora desde el móvil: el cliente elige
+                servicio y hora, el bot confirma y le recuerda la cita antes de
+                que salga de casa.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing -->
+      <section id="pricing" class="pricing" aria-labelledby="pricing-title">
+        <div class="container">
+          <header class="section-header">
+            <h2 id="pricing-title">
+              Planes para cada <span class="highlight">tamaño de agenda</span>
+            </h2>
+            <p class="section-subtitle">
+              Precios en pesos mexicanos, más IVA. Sin contrato forzoso:
+              cancelas cuando quieras. El alcance de cada plan te lo confirma el
+              bot en la demo, antes de cualquier pago.
+            </p>
+          </header>
+
+          <div class="pricing-grid" role="group" aria-label="Planes de precios">
+            <article class="pricing-card" data-plan="fundador">
+              <header class="pricing-header">
+                <h3>Fundador</h3>
+                <div class="price">
+                  <span class="currency">$</span>
+                  <span class="amount">399</span>
+                  <span class="period">/mes</span>
+                </div>
+                <p class="pricing-desc">
+                  Solo para los primeros 3 consultorios. Precio congelado de por
+                  vida.
+                </p>
+              </header>
+              <ul class="pricing-features">
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  1 agenda (1 profesional)
+                </li>
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  WhatsApp + widget web
+                </li>
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Google Calendar sincronizado
+                </li>
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Implementación guiada sin costo
+                </li>
+              </ul>
+              <div class="pricing-cta-form">
+                <a
+                  class="btn btn-outline btn-block"
+                  href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20plan%20Fundador"
+                  target="_blank"
+                  rel="noopener"
+                  data-cta="pricing-fundador"
+                  >Preguntar por el plan Fundador</a
+                >
+                <p class="plan-note">
+                  A cambio de un testimonio y 2 colegas a quienes presentarme.
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="pricing-card popular"
+              data-plan="estandar"
+              aria-label="Plan Estándar - Recomendado"
+            >
+              <div class="popular-badge">Recomendado</div>
+              <header class="pricing-header">
+                <h3>Estándar</h3>
+                <div class="price">
+                  <span class="currency">$</span>
+                  <span class="amount">599</span>
+                  <span class="period">/mes</span>
+                </div>
+                <p class="pricing-desc">
+                  Para el consultorio que ya agenda por WhatsApp todos los días.
+                </p>
+              </header>
+              <ul class="pricing-features">
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  1 agenda (1 profesional)
+                </li>
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  WhatsApp + widget web
+                </li>
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Google Calendar sincronizado
+                </li>
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Panel de citas y métricas
+                </li>
+                <li>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Implementación guiada incluida
+                </li>
+              </ul>
+              <div class="pricing-cta-form">
+                <a
+                  class="btn btn-primary btn-block"
+                  href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20plan%20Est%C3%A1ndar"
+                  target="_blank"
+                  rel="noopener"
+                  data-cta="pricing-estandar"
+                  >Hablar del plan Estándar</a
+                >
+                <p class="plan-note">Implementación guiada incluida.</p>
+              </div>
+            </article>
+          </div>
+
+          <p class="pricing-note">
+            Ambos planes incluyen WhatsApp, widget web y Google Calendar. El
+            Estándar añade panel de métricas. Recordatorios automáticos en
+            desarrollo (actualmente vía WhatsApp, migración en curso).
+          </p>
+          <p class="pricing-note">
+            Pago anual disponible: 10 meses por 12. El precio fundador es de por
+            vida mientras la cuenta siga activa.
+          </p>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="faq" aria-labelledby="faq-title">
+        <div class="container container-narrow">
+          <header class="section-header">
+            <h2 id="faq-title">
+              Preguntas <span class="highlight">frecuentes</span>
+            </h2>
+            <p class="section-subtitle">
+              Todo lo que necesitas saber antes de empezar.
+            </p>
+          </header>
+
+          <div class="faq-grid">
+            <details class="faq-item" open>
+              <summary>¿Cómo empiezo a usar AgendaAI?</summary>
+              <p>
+                Escribe al bot por WhatsApp. Te guía en la conversación para
+                dejar lista tu agenda y te indica el plan y el precio vigente
+                antes de cualquier pago.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                ¿Necesito conocimientos técnicos para configurarlo?
+              </summary>
+              <p>
+                No. La configuración se hace conversando con el bot: no hay que
+                instalar software ni tocar código.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>¿Cómo reserva un cliente una cita?</summary>
+              <p>
+                El cliente escribe qué día y hora prefiere en lenguaje natural.
+                El bot consulta los huecos libres, propone horarios y confirma
+                la reserva en pocos mensajes.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>¿Se sincroniza con mi calendario?</summary>
+              <p>
+                Sí, con Google Calendar. El bot lee los huecos de tu calendario
+                para no duplicar reservas y mantener una sola agenda.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>¿Puedo probar el asistente antes de contratar?</summary>
+              <p>
+                Sí. La demo de esta página funciona sin registro y muestra el
+                flujo completo; no crea citas reales en tu calendario.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>¿Cuánto cuesta?</summary>
+              <p>
+                Desde $399 al mes el plan Fundador (primeros 3 consultorios),
+                $599 el Estándar, en pesos mexicanos más IVA. El alcance de cada
+                plan te lo confirma el bot en la demo, antes de cualquier pago.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>¿Qué pasa con los datos de mis clientes?</summary>
+              <p>
+                Se usan únicamente para gestionar las citas de tu agenda. No se
+                venden ni se comparten con terceros para publicidad.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>¿Funciona en mi país y zona horaria?</summary>
+              <p>
+                El bot funciona por WhatsApp desde cualquier país y trabaja con
+                la zona horaria que configures para tu agenda.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section id="cta" class="cta" aria-labelledby="cta-title">
+        <div class="container">
+          <div class="cta-card">
+            <h2 id="cta-title">¿Quieres verlo funcionando?</h2>
+            <p>
+              Abre el bot y recorre el flujo completo: pedir cita, elegir hora y
+              confirmar. Sin instalar nada.
+            </p>
+            <div class="cta-buttons">
+              <a
+                href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20quiero%20automatizar%20mis%20citas"
+                class="btn btn-white btn-lg"
+                target="_blank"
+                rel="noopener"
+                data-cta="cta-bot"
+                >Abrir el bot en WhatsApp</a
+              >
+              <a href="#demo" class="btn btn-outline-white btn-lg"
+                >Probar la demo aquí</a
+              >
+            </div>
+            <p class="cta-note">
+              <span aria-hidden="true">✓</span> Sin registro previo
+              <span aria-hidden="true">·</span>
+              <span aria-hidden="true">✓</span> Se abre en WhatsApp
+              <span aria-hidden="true">·</span>
+              <span aria-hidden="true">✓</span> Lo dejas cuando quieras
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="contact" aria-labelledby="contact-title">
+        <div class="container container-narrow">
+          <header class="section-header">
+            <h2 id="contact-title">
+              ¿Preguntas? <span class="highlight">Hablemos</span>
+            </h2>
+            <p class="section-subtitle">
+              Te contestamos por WhatsApp, en el mismo sitio donde se gestiona
+              tu agenda.
+            </p>
+          </header>
+
+          <div class="contact-card">
+            <h3>El bot es nuestro canal de soporte</h3>
+            <p>
+              Dudas sobre planes, precios o cómo dejar lista tu agenda:
+              pregúntale al asistente en el mismo chat. Sin formularios ni
+              correos que se quedan sin respuesta.
+            </p>
+            <a
+              class="btn btn-primary btn-lg"
+              href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20tengo%20una%20pregunta"
+              target="_blank"
+              rel="noopener"
+              data-cta="contact-bot"
+              >Escribir por WhatsApp</a
+            >
+            <p class="contact-note">
+              No compartas datos sensibles en el primer mensaje: el bot solo
+              necesita saber qué necesitas.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="#main" class="logo" aria-label="AgendaAI - Inicio">
-                        <svg class="logo-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
-                            <rect width="32" height="32" rx="8" fill="currentColor"/>
-                            <path d="M8 10h16M8 16h12M8 22h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-                        </svg>
-                        <span class="logo-text">AgendaAI</span>
-                    </a>
-                    <p>Automatiza tus citas con IA. La forma inteligente de gestionar reservas.</p>
-                    <div class="social-links" role="group" aria-label="Canal oficial">
-                        <a href="https://t.me/agenda_ia_sdr_bot?start=landing" target="_blank" rel="noopener" aria-label="AgendaAI en Telegram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M21.9 3.4 18.7 20c-.2 1-.9 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.6 8.7-7.9c.4-.3-.1-.5-.6-.2L6.6 13.3 2 11.8c-1-.3-1-1 .2-1.5l18.3-7c.8-.3 1.5.2 1.4 1.1z"/></svg></a>
-                    </div>
-                </div>
-
-                <nav class="footer-column" aria-label="Producto">
-                    <h3 class="footer-title">Producto</h3>
-                    <ul>
-                        <li><a href="#features">Características</a></li>
-                        <li><a href="#demo">Demo</a></li>
-                        <li><a href="#pricing">Precios</a></li>
-                        <li><a href="#casos">Casos de uso</a></li>
-                        <li><a href="#faq">FAQ</a></li>
-                    </ul>
-                </nav>
-
-                <nav class="footer-column" aria-label="Contacto">
-                    <h3 class="footer-title">Contacto</h3>
-                    <ul>
-                        <li><a href="https://t.me/agenda_ia_sdr_bot?start=landing" target="_blank" rel="noopener">Bot en Telegram</a></li>
-                        <li><a href="#contact">Soporte</a></li>
-                        <li><a href="#main">Volver arriba</a></li>
-                    </ul>
-                </nav>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#main" class="logo" aria-label="AgendaAI - Inicio">
+              <svg
+                class="logo-icon"
+                viewBox="0 0 32 32"
+                fill="none"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <rect width="32" height="32" rx="8" fill="currentColor" />
+                <path
+                  d="M8 10h16M8 16h12M8 22h8"
+                  stroke="white"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+              <span class="logo-text">AgendaAI</span>
+            </a>
+            <p>
+              Automatiza tus citas con IA. La forma inteligente de gestionar
+              reservas.
+            </p>
+            <div class="social-links" role="group" aria-label="Canal oficial">
+              <a
+                href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20quiero%20automatizar%20mis%20citas"
+                target="_blank"
+                rel="noopener"
+                aria-label="AgendaAI en WhatsApp"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.152-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.454.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.42 4.386c-.708-.306-1.263-.489-1.694-.625-.712-.227-1.36-.195-1.871-.118-.571.085-1.758.719-2.006 1.413-.248.694-.248 1.289-.173 1.413.074.124.272.198.57.347.708.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"
+                  /></svg
+              ></a>
             </div>
+          </div>
 
-            <div class="footer-bottom">
-                <p>&copy; <span id="year">2026</span> AgendaAI. Los precios mostrados son de referencia.</p>
-                <p class="footer-legal-note">Sitio informativo del asistente de citas en Telegram.</p>
-            </div>
+          <nav class="footer-column" aria-label="Producto">
+            <h3 class="footer-title">Producto</h3>
+            <ul>
+              <li><a href="#features">Características</a></li>
+              <li><a href="#giros">Giros</a></li>
+              <li><a href="#demo">Demo</a></li>
+              <li><a href="#pricing">Precios</a></li>
+              <li><a href="#casos">Casos de uso</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </nav>
+
+          <nav class="footer-column" aria-label="Contacto">
+            <h3 class="footer-title">Contacto</h3>
+            <ul>
+              <li>
+                <a
+                  href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20quiero%20automatizar%20mis%20citas"
+                  target="_blank"
+                  rel="noopener"
+                  >Bot en WhatsApp</a
+                >
+              </li>
+              <li><a href="#contact">Soporte</a></li>
+              <li><a href="#main">Volver arriba</a></li>
+            </ul>
+          </nav>
         </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="year">2026</span> AgendaAI. Los precios mostrados
+            son de referencia.
+          </p>
+          <p class="footer-legal-note">
+            Sitio informativo del asistente de citas por WhatsApp.
+          </p>
+        </div>
+      </div>
     </footer>
 
     <!-- Contenedor del widget flotante: fuera de <main> para que ningún
          ancestro con transform lo convierta en posición absoluta. -->
     <div id="appointment-widget"></div>
 
-    <script src="js/main.js?v=6" defer></script>
-</body>
+    <script src="js/giros.js?v=3" defer></script>
+    <script src="js/main.js?v=9" defer></script>
+  </body>
 </html>

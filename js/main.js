@@ -14,6 +14,8 @@
       menu.classList.toggle('open', open);
       toggle.setAttribute('aria-expanded', String(open));
       toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      // Lock the page behind the sheet (only active under the mobile breakpoint)
+      document.body.classList.toggle('menu-open', open);
     };
     toggle.addEventListener('click', function () {
       setOpen(!menu.classList.contains('open'));
@@ -27,11 +29,50 @@
         toggle.focus();
       }
     });
+    // Close when tapping the page behind the sheet
+    document.addEventListener('click', function (e) {
+      if (!menu.classList.contains('open')) return;
+      if (menu.contains(e.target) || toggle.contains(e.target)) return;
+      setOpen(false);
+    });
+    // Never leave the sheet (or the scroll lock) active on desktop widths
+    var desktop = window.matchMedia('(min-width: 921px)');
+    var onBreakpoint = function (e) { if (e.matches) setOpen(false); };
+    if (desktop.addEventListener) desktop.addEventListener('change', onBreakpoint);
+    else if (desktop.addListener) desktop.addListener(onBreakpoint);
   }
+
+  // Active section in the desktop nav (visual state only; no ARIA changes needed)
+  (function activeNav() {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav-link[href^="#"]:not(.btn)'));
+    if (!links.length || !('IntersectionObserver' in window)) return;
+    var byId = Object.create(null);
+    links.forEach(function (link) {
+      var id = link.getAttribute('href').slice(1);
+      var section = id && document.getElementById(id);
+      if (section) byId[id] = { link: link, section: section };
+    });
+    var setActive = function (id) {
+      links.forEach(function (link) {
+        var active = link.getAttribute('href') === '#' + id;
+        link.classList.toggle('is-active', active);
+        if (active) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    };
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var hit = Object.keys(byId).filter(function (id) { return byId[id].section === en.target; })[0];
+        if (hit) setActive(hit);
+      });
+    }, { rootMargin: '-42% 0px -52% 0px', threshold: 0 });
+    Object.keys(byId).forEach(function (id) { io.observe(byId[id].section); });
+  })();
 
   // Demo dialog removal: #chat-open ahora abre el widget flotante (js/demo-chat.js)
 
-  // Sin formularios propios: el único canal de conversión es el bot de Telegram.
+  // Sin formularios propios: el único canal de conversión es el bot de WhatsApp.
   // (Los antiguos /api/trial, /api/subscribe, /api/leads y /api/sales no tienen backend.)
 
   // ---- Subtle motion layer (reveal, progress, counters, loading) ----
@@ -61,9 +102,11 @@
     document.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
-    // Scroll reveal: auto-target cards/sections, stagger siblings
+    // Scroll reveal: auto-target cards below the fold, stagger siblings.
+    // Section headers are deliberately excluded so anchor jumps never land on
+    // an invisible heading.
     var targets = document.querySelectorAll(
-      '.section-header, .feature-card, .step, .stat, .testimonial-card, .pricing-card, .faq-item, .cta-card, .contact-form, .demo-container, .logos-row'
+      '.feature-card, .step, .stat, .testimonial-card, .pricing-card, .faq-item, .cta-card, .contact-card, .live-chat-card, .agenda-widget, .pricing-note, .giros-tablist'
     );
     if ('IntersectionObserver' in window && targets.length) {
       // Group stagger: siblings inside same grid share incremental delay
@@ -79,7 +122,7 @@
             io.unobserve(en.target);
           }
         });
-      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      }, { threshold: 0, rootMargin: '0px 0px -6% 0px' });
       targets.forEach(function (el) {
         el.classList.add('reveal');
         io.observe(el);
@@ -99,10 +142,11 @@
       if (chatFallback) chatFallback.classList.add('play');
     }
 
-    // Animated counters for .stat-value numbers (98%, <3s, 24/7, 99.9% → count where numeric)
+    // Animated counters for .stat-value numbers (24/7, 3, 2, 0 → count where numeric)
     var counters = document.querySelectorAll('.stat-value');
     var animateNum = function (el) {
-      var raw = el.textContent.trim();
+      if (!el || el.dataset.counted === 'true') return;
+      var raw = (el.textContent || '').trim();
       var m = raw.match(/(\d+(?:[.,]\d+)?)/);
       if (!m) return;
       var decimals = (m[1].split(/[.,]/)[1] || '').length;
@@ -110,15 +154,20 @@
       if (!isFinite(target)) return;
       var prefix = raw.slice(0, m.index);
       var suffix = raw.slice(m.index + m[0].length);
+      el.dataset.counted = 'true';
       var dur = 900, t0 = null;
       var step = function (t) {
-        if (!t0) t0 = t;
+        if (t0 === null) t0 = t;
         var k = Math.min(1, (t - t0) / dur);
         var eased = 1 - Math.pow(1 - k, 3);
-        var val = (target * eased).toFixed(decimals);
-        el.textContent = prefix + val + suffix;
-        if (k < 1) requestAnimationFrame(step);
-        else el.classList.add('counted');
+        if (k < 1) {
+          el.textContent = prefix + (target * eased).toFixed(decimals) + suffix;
+          requestAnimationFrame(step);
+        } else {
+          // Restore the exact original string (e.g. "24/7")
+          el.textContent = raw;
+          el.classList.add('counted');
+        }
       };
       requestAnimationFrame(step);
     };
@@ -131,7 +180,7 @@
       counters.forEach(function (el) { cio.observe(el); });
     }
 
-    // Sin formularios que simular: el CTA principal abre el bot de Telegram.
+    // Sin formularios que simular: el CTA principal abre el bot de WhatsApp.
   })();
 
   // ============ Agenda Widget Demo (mimo zen) ============
@@ -303,10 +352,16 @@
         if (day.empty) {
           btn.classList.add('empty');
           btn.textContent = '';
+          btn.tabIndex = -1;
+          btn.setAttribute('aria-disabled', 'true');
         } else {
           btn.textContent = day.date.getDate();
           if (isToday(day.date)) btn.classList.add('today');
-          if (isPast(day.date)) btn.classList.add('past');
+          if (isPast(day.date)) {
+            btn.classList.add('past');
+            btn.tabIndex = -1;
+            btn.setAttribute('aria-disabled', 'true');
+          }
           if (isSelected) {
             btn.classList.add('selected');
           }
@@ -391,11 +446,17 @@
       state.selectedSlot = slot;
     }
 
-    function closeSlots() {
+    function closeSlots(restoreFocus) {
+      var focusDate = state.selectedDay ? formatDate(state.selectedDay) : null;
       slotsPanel.hidden = true;
       state.selectedDay = null;
       state.selectedSlot = null;
       renderGrid();
+      // Al cerrar con ratón/Escape, devolvemos el foco al día que abrió el panel.
+      if (restoreFocus && focusDate) {
+        var dayBtn = grid.querySelector('[data-date="' + focusDate + '"]');
+        if (dayBtn) dayBtn.focus();
+      }
     }
 
     function navigate(delta) {
@@ -428,7 +489,7 @@
 
     prevBtn.addEventListener('click', function () { navigate(-1); });
     nextBtn.addEventListener('click', function () { navigate(1); });
-    slotsClose.addEventListener('click', closeSlots);
+    slotsClose.addEventListener('click', function () { closeSlots(true); });
     viewBtns.forEach(function (btn) {
       btn.addEventListener('click', function () { setView(btn.dataset.view); });
       // Navegación por teclado del tablist (WAI-ARIA Tabs pattern)
@@ -450,7 +511,7 @@
 
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && !slotsPanel.hidden) {
-        closeSlots();
+        closeSlots(true);
       }
     });
 
